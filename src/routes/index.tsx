@@ -13,7 +13,6 @@ import tankBefore from "@/assets/portfolio-tank-before.jpg";
 import tankAfter from "@/assets/portfolio-tank-after.jpg";
 import floorBefore from "@/assets/portfolio-floor-before.jpg";
 import floorAfter from "@/assets/portfolio-floor-after.jpg";
-import pallovaSafety from "@/assets/pallova-safety.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -298,26 +297,30 @@ function ClientsSection() {
 
 function Safety() {
   const norms = [
-    "NR-18 — Segurança na construção",
+    "NR-18 — Segurança na indústria da construção",
     "NR-35 — Trabalho em altura",
-    "NBR 6494 — Andaimes",
+    "NBR 6494 — Segurança nos andaimes",
+    "Uso obrigatório de EPI e EPC",
     "Inspeção e liberação de andaimes",
-    "EPI e EPC obrigatórios",
+    "Sinalização e isolamento de áreas",
+    "Controle de acesso e identificação de estruturas",
   ];
   return (
-    <section className="relative overflow-visible bg-brand text-white lg:mt-40">
-      <div className="container-x grid items-center gap-10 py-16 lg:grid-cols-9 lg:gap-12 lg:py-20">
-        <div className="lg:col-span-5">
+    <section className="bg-brand text-white">
+      <div className="container-x grid gap-14 py-20 lg:grid-cols-2 lg:py-24">
+        <div>
           <span className="eyebrow eyebrow-light">Segurança e Normas</span>
           <h2 className="mt-5 text-3xl text-white sm:text-4xl md:text-5xl">
             Segurança não é diferencial. <span className="text-white/70">É obrigação.</span>
           </h2>
-          <p className="mt-6 max-w-md text-white/90">
-            Cada serviço é planejado para reduzir riscos e garantir conformidade com as normas vigentes.
+          <p className="mt-6 max-w-lg text-white/90">
+            Na Rocha Forte, cada serviço é planejado para reduzir riscos, proteger nossas
+            equipes e garantir conformidade com as normas vigentes. Trabalhamos com inspeções,
+            controle de liberação e identificação de andaimes em todas as frentes de obra.
           </p>
         </div>
 
-        <ul className="grid gap-3 self-center lg:col-span-4">
+        <ul className="grid gap-3 self-center">
           {norms.map((n) => (
             <li key={n} className="flex items-start gap-3 border-b border-white/20 pb-3 last:border-0">
               <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center bg-white text-brand">
@@ -327,23 +330,6 @@ function Safety() {
             </li>
           ))}
         </ul>
-      </div>
-
-      <img
-        src={pallovaSafety.url}
-        alt="Profissional Rocha Forte com EPI"
-        className="mx-auto block w-64 drop-shadow-2xl sm:w-80 lg:hidden"
-        style={{ filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.25))" }}
-      />
-
-      <div
-        className="hidden lg:absolute lg:right-[clamp(1.25rem,4vw,2.5rem)] lg:top-[-60px] lg:bottom-[-60px] lg:block lg:w-[500px] lg:max-w-none lg:overflow-hidden lg:rounded-[16px]"
-      >
-        <img
-          src={pallovaSafety.url}
-          alt="Profissional Rocha Forte com EPI"
-          className="h-full w-full object-cover"
-        />
       </div>
     </section>
   );

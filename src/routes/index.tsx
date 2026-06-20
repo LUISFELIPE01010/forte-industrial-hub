@@ -9,7 +9,7 @@ import { Counter } from "@/components/site/Counter";
 import { ClientLogos } from "@/components/site/ClientLogos";
 import heroImg from "@/assets/hero-scaffold.jpg";
 import aboutImg from "@/assets/about-office.jpg";
-import sobreProfissionalImg from "@/assets/sobre-profissional.png.asset.json";
+import sobreProfissionalImg from "@/assets/sobre-profissional-2.png.asset.json";
 import tankBefore from "@/assets/portfolio-tank-before.jpg";
 import tankAfter from "@/assets/portfolio-tank-after.jpg";
 import floorBefore from "@/assets/portfolio-floor-before.jpg";

@@ -1,23 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  ArrowDown,
-  ChevronRight,
-  Check,
-  ShieldCheck,
-  Building2,
-  Users,
-  Globe2,
-  Hammer,
-  PaintRoller,
-  Wrench,
-  Flame,
-  Cog,
-  FileCheck2,
-  MapPin,
-  Clock,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, ArrowDown, ChevronRight, Check, ShieldCheck, Building2, Users, Globe2, Hammer, PaintRoller, Wrench, Flame, Cog, FileCheck2, MapPin, Clock, Sparkles } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
@@ -37,16 +19,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Rocha Forte Serviços | Andaimes, Pintura e Manutenção Industrial — Cubatão/SP" },
-      {
-        name: "description",
-        content:
-          "Andaimes, manutenção industrial, pintura técnica e caldeiraria com equipes experientes, controle operacional e segurança rigorosa. Atendimento nacional.",
-      },
+      { name: "description", content: "Andaimes, manutenção industrial, pintura técnica e caldeiraria com equipes experientes, controle operacional e segurança rigorosa. Atendimento nacional." },
       { property: "og:title", content: "Rocha Forte Serviços | Soluções Industriais" },
-      {
-        property: "og:description",
-        content: "Andaimes, manutenção, pintura técnica e caldeiraria com quem entende de campo.",
-      },
+      { property: "og:description", content: "Andaimes, manutenção, pintura técnica e caldeiraria com quem entende de campo." },
     ],
   }),
   component: Home,
@@ -76,11 +51,7 @@ function Home() {
 function Hero() {
   return (
     <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden">
-      <img
-        src={heroImg}
-        alt="Andaime industrial montado em planta petroquímica"
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
-      />
+      <img src={heroImg} alt="Andaime industrial montado em planta petroquímica" className="absolute inset-0 -z-10 h-full w-full object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-carbon/70 via-carbon/65 to-carbon/85" />
       <div className="absolute inset-0 -z-10 bg-carbon/40 backdrop-blur-[2px]" />
 
@@ -92,8 +63,7 @@ function Hero() {
             Andaimes, Manutenção e Pintura Industrial com quem <span className="text-brand">entende de campo.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-base text-white/85 md:text-lg md:leading-relaxed">
-            Atendemos indústrias em todo o Brasil com equipes experientes, controle operacional rigoroso e compromisso
-            com segurança.
+            Atendemos indústrias em todo o Brasil com equipes experientes, controle operacional rigoroso e compromisso com segurança.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a
@@ -133,16 +103,15 @@ function Credentials() {
     <section className="bg-brand text-white">
       <div className="container-x grid gap-10 py-14 sm:grid-cols-2 md:grid-cols-4 md:py-16">
         {items.map(({ Icon, n, suffix, label }) => (
-          <div
-            key={label}
-            className="flex items-start gap-4 border-l border-white/25 pl-5 first:border-l-0 first:pl-0 sm:[&:nth-child(3)]:border-l-0 sm:[&:nth-child(3)]:pl-0 md:[&:nth-child(3)]:border-l md:[&:nth-child(3)]:pl-5"
-          >
+          <div key={label} className="flex items-start gap-4 border-l border-white/25 pl-5 first:border-l-0 first:pl-0 sm:[&:nth-child(3)]:border-l-0 sm:[&:nth-child(3)]:pl-0 md:[&:nth-child(3)]:border-l md:[&:nth-child(3)]:pl-5">
             <Icon className="mt-1 h-7 w-7 shrink-0 text-white" strokeWidth={1.5} />
             <div className="min-w-0">
               <div className="font-display text-4xl font-extrabold leading-none md:text-5xl">
                 <Counter to={n} suffix={suffix} />
               </div>
-              <div className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/85">{label}</div>
+              <div className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/85">
+                {label}
+              </div>
             </div>
           </div>
         ))}
@@ -161,28 +130,20 @@ function About() {
             Mais do que serviços. Soluções para os maiores desafios industriais do país.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-graphite">
-            A Rocha Forte Serviços Ltda é especializada em locação e montagem de andaimes, cimbramentos, fachadeiros,
-            escoramentos, pintura técnica e manutenções industriais. Com escritório central em Cubatão/SP e centros de
-            distribuição industrial em São Paulo, Pindamonhangaba, Curitiba e Uberaba, atendemos empresas de qualquer
+            A Rocha Forte Serviços Ltda é especializada em locação e montagem de andaimes,
+            cimbramentos, fachadeiros, escoramentos, pintura técnica e manutenções industriais.
+            Com escritório central em Cubatão/SP e centros de distribuição industrial em
+            São Paulo, Pindamonhangaba, Curitiba e Uberaba, atendemos empresas de qualquer
             porte com equipe técnica qualificada e processos controlados.
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              {
-                t: "Missão",
-                d: "Ser referência em qualidade e segurança nas prestações de serviços industriais brasileiros, contribuindo para o desenvolvimento sustentável.",
-              },
-              {
-                t: "Visão",
-                d: "Buscar inovações tecnológicas que gerem resultados positivos aos nossos clientes, conquistando reconhecimento nacional pelo fazer bem feito.",
-              },
+              { t: "Missão", d: "Ser referência em qualidade e segurança nas prestações de serviços industriais brasileiros, contribuindo para o desenvolvimento sustentável." },
+              { t: "Visão", d: "Buscar inovações tecnológicas que gerem resultados positivos aos nossos clientes, conquistando reconhecimento nacional pelo fazer bem feito." },
               { t: "Valores", d: "Transparência · Respeito · Idoneidade · Flexibilidade" },
             ].map((c) => (
-              <article
-                key={c.t}
-                className="relative border-t-[3px] border-brand bg-white p-5 shadow-[0_1px_0_0_var(--color-border)] transition-shadow hover:shadow-[0_12px_28px_-18px_rgba(0,0,0,0.25)]"
-              >
+              <article key={c.t} className="relative border-t-[3px] border-brand bg-white p-5 shadow-[0_1px_0_0_var(--color-border)] transition-shadow hover:shadow-[0_12px_28px_-18px_rgba(0,0,0,0.25)]">
                 <h3 className="font-display text-lg font-extrabold uppercase tracking-tight text-carbon">{c.t}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-graphite">{c.d}</p>
               </article>
@@ -206,7 +167,7 @@ function About() {
             className="relative z-10 aspect-[5/4] w-full object-cover"
           />
           <div className="absolute -bottom-5 -left-5 hidden h-44 w-44 border-[3px] border-brand md:block" />
-          <div className="absolute top-20 -right-5 hidden h-28 w-28 bg-carbon md:block" />
+          <div className="absolute -top-5 -right-5 hidden h-28 w-28 bg-carbon md:block" />
         </div>
       </div>
     </section>
@@ -261,7 +222,9 @@ function Services() {
               <h3 className="mt-6 font-display text-xl font-extrabold leading-tight text-carbon transition-colors group-hover:text-white">
                 {s.title}
               </h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-graphite group-hover:text-white/75">{s.text}</p>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-graphite group-hover:text-white/75">
+                {s.text}
+              </p>
               <span className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand group-hover:text-white">
                 Saiba mais <ArrowRight className="h-4 w-4" />
               </span>
@@ -275,18 +238,8 @@ function Services() {
 
 function PortfolioFeature() {
   const pairs = [
-    {
-      before: tankBefore,
-      after: tankAfter,
-      alt: "Tanque industrial",
-      title: "Tanque industrial — pintura anticorrosiva",
-    },
-    {
-      before: floorBefore,
-      after: floorAfter,
-      alt: "Piso industrial",
-      title: "Piso industrial — epóxi azul com demarcação",
-    },
+    { before: tankBefore, after: tankAfter, alt: "Tanque industrial", title: "Tanque industrial — pintura anticorrosiva" },
+    { before: floorBefore, after: floorAfter, alt: "Piso industrial", title: "Piso industrial — epóxi azul com demarcação" },
   ];
   return (
     <section className="section bg-carbon text-white">
@@ -294,7 +247,9 @@ function PortfolioFeature() {
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-xl">
             <span className="eyebrow eyebrow-light">Portfólio</span>
-            <h2 className="mt-5 text-3xl text-white sm:text-4xl md:text-5xl">Resultados que falam por si.</h2>
+            <h2 className="mt-5 text-3xl text-white sm:text-4xl md:text-5xl">
+              Resultados que falam por si.
+            </h2>
             <p className="mt-4 text-white/70">
               Arraste para ver antes e depois de trabalhos executados pela Rocha Forte.
             </p>
@@ -308,7 +263,9 @@ function PortfolioFeature() {
           {pairs.map((p) => (
             <div key={p.title}>
               <BeforeAfter before={p.before} after={p.after} alt={p.alt} />
-              <div className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/70">{p.title}</div>
+              <div className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/70">
+                {p.title}
+              </div>
             </div>
           ))}
         </div>
@@ -359,9 +316,9 @@ function Safety() {
             Segurança não é diferencial. <span className="text-white/70">É obrigação.</span>
           </h2>
           <p className="mt-6 max-w-lg text-white/90">
-            Na Rocha Forte, cada serviço é planejado para reduzir riscos, proteger nossas equipes e garantir
-            conformidade com as normas vigentes. Trabalhamos com inspeções, controle de liberação e identificação de
-            andaimes em todas as frentes de obra.
+            Na Rocha Forte, cada serviço é planejado para reduzir riscos, proteger nossas
+            equipes e garantir conformidade com as normas vigentes. Trabalhamos com inspeções,
+            controle de liberação e identificação de andaimes em todas as frentes de obra.
           </p>
         </div>
 
@@ -382,36 +339,12 @@ function Safety() {
 
 function Differentials() {
   const items = [
-    {
-      Icon: Wrench,
-      t: "Experiência Industrial",
-      d: "Equipe acostumada com rotina de fábrica, paradas de manutenção e ambientes de alta exigência operacional.",
-    },
-    {
-      Icon: FileCheck2,
-      t: "Controle por Fichas",
-      d: "Montagem, desmontagem e liberação de andaimes com registro e identificação de cada estrutura.",
-    },
-    {
-      Icon: MapPin,
-      t: "Atuação Nacional",
-      d: "Escritório em Cubatão e CDIs em São Paulo, Pindamonhangaba, Curitiba e Uberaba.",
-    },
-    {
-      Icon: Cog,
-      t: "Planejamento e Documentação",
-      d: "Apoio técnico em projetos, medições e acompanhamento de execução com documentação de campo.",
-    },
-    {
-      Icon: Users,
-      t: "Equipe Qualificada",
-      d: "Profissionais treinados, com uso correto de EPIs e experiência em ambientes industriais de alto risco.",
-    },
-    {
-      Icon: Clock,
-      t: "Flexibilidade de Atendimento",
-      d: "Demandas de rotina, paradas programadas, emergências e contratos de longo prazo.",
-    },
+    { Icon: Wrench, t: "Experiência Industrial", d: "Equipe acostumada com rotina de fábrica, paradas de manutenção e ambientes de alta exigência operacional." },
+    { Icon: FileCheck2, t: "Controle por Fichas", d: "Montagem, desmontagem e liberação de andaimes com registro e identificação de cada estrutura." },
+    { Icon: MapPin, t: "Atuação Nacional", d: "Escritório em Cubatão e CDIs em São Paulo, Pindamonhangaba, Curitiba e Uberaba." },
+    { Icon: Cog, t: "Planejamento e Documentação", d: "Apoio técnico em projetos, medições e acompanhamento de execução com documentação de campo." },
+    { Icon: Users, t: "Equipe Qualificada", d: "Profissionais treinados, com uso correto de EPIs e experiência em ambientes industriais de alto risco." },
+    { Icon: Clock, t: "Flexibilidade de Atendimento", d: "Demandas de rotina, paradas programadas, emergências e contratos de longo prazo." },
   ];
   return (
     <section className="section bg-background">

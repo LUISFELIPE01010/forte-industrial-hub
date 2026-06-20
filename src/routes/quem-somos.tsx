@@ -6,6 +6,10 @@ import { PageHero } from "@/components/site/PageHero";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { MapPin } from "lucide-react";
 import aboutImg from "@/assets/about-office.jpg";
+import abrinqSeal from "@/assets/certifications/abrinq.png.asset.json";
+import esgSeal from "@/assets/certifications/esg.png.asset.json";
+import profSustSeal from "@/assets/certifications/profissional-sustentavel.png.asset.json";
+import odsSeal from "@/assets/certifications/ods.png.asset.json";
 
 export const Route = createFileRoute("/quem-somos")({
   head: () => ({
@@ -113,12 +117,17 @@ function QuemSomos() {
               Compromisso com sustentabilidade e responsabilidade social.
             </h2>
             <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-              {["Fundação Abrinq", "ESG", "Profissional Sustentável", "ODS — Agenda 2030"].map((s) => (
-                <div key={s} className="flex aspect-square flex-col items-center justify-center border border-border bg-white p-6 text-center">
-                  <div className="grid h-14 w-14 place-items-center rounded-full border-2 border-brand font-display text-xs font-extrabold text-brand">
-                    SELO
+              {[
+                { label: "Fundação Abrinq", img: abrinqSeal.url },
+                { label: "ESG", img: esgSeal.url },
+                { label: "Profissional Sustentável", img: profSustSeal.url },
+                { label: "ODS — Agenda 2030", img: odsSeal.url },
+              ].map((s) => (
+                <div key={s.label} className="flex aspect-square flex-col items-center justify-center border border-border bg-white p-6 text-center">
+                  <div className="flex h-32 w-32 items-center justify-center">
+                    <img src={s.img} alt={s.label} className="max-h-full max-w-full object-contain" loading="lazy" />
                   </div>
-                  <div className="mt-4 font-display text-sm font-extrabold uppercase tracking-tight text-carbon">{s}</div>
+                  <div className="mt-4 font-display text-sm font-extrabold uppercase tracking-tight text-carbon">{s.label}</div>
                 </div>
               ))}
             </div>

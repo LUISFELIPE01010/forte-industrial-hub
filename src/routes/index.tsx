@@ -305,7 +305,7 @@ function Safety() {
     "EPI e EPC obrigatórios",
   ];
   return (
-    <section className="relative bg-brand text-white lg:mt-40">
+    <section className="relative overflow-visible bg-brand text-white lg:mt-40">
       <div className="container-x grid items-center gap-10 py-16 lg:grid-cols-9 lg:gap-12 lg:py-20">
         <div className="lg:col-span-5">
           <span className="eyebrow eyebrow-light">Segurança e Normas</span>
@@ -332,9 +332,19 @@ function Safety() {
       <img
         src={pallovaSafety.url}
         alt="Profissional Rocha Forte com EPI"
-        className="mx-auto block w-64 drop-shadow-2xl sm:w-80 lg:absolute lg:right-[clamp(1.25rem,4vw,2.5rem)] lg:bottom-[-100px] lg:w-[680px] lg:max-w-none"
+        className="mx-auto block w-64 drop-shadow-2xl sm:w-80 lg:hidden"
         style={{ filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.25))" }}
       />
+
+      <div
+        className="hidden lg:absolute lg:right-[clamp(1.25rem,4vw,2.5rem)] lg:top-[-60px] lg:bottom-[-60px] lg:block lg:w-[500px] lg:max-w-none lg:overflow-hidden lg:rounded-[16px]"
+      >
+        <img
+          src={pallovaSafety.url}
+          alt="Profissional Rocha Forte com EPI"
+          className="h-full w-full object-cover"
+        />
+      </div>
     </section>
   );
 }

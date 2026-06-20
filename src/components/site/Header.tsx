@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import { Menu, Phone, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/rocha-forte-logo.png.asset.json";
 
-const nav = [
+const nav: { to: string; label: string; hasMenu?: boolean }[] = [
   { to: "/", label: "Home" },
   { to: "/quem-somos", label: "Quem Somos" },
   { to: "/servicos", label: "Serviços", hasMenu: true },
   { to: "/portfolio", label: "Portfólio" },
   { to: "/clientes", label: "Clientes" },
   { to: "/contato", label: "Contato" },
-] as const;
+];
 
 const services = [
   { to: "/servicos/andaimes", label: "Andaimes" },

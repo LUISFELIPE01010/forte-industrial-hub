@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
@@ -111,6 +111,3 @@ export function ServicePage({
   );
 }
 
-export const Route = createFileRoute("/servicos/_template")({
-  component: () => null,
-});

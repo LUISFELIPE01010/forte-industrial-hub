@@ -306,7 +306,7 @@ function Safety() {
   ];
   return (
     <section className="relative bg-brand text-white lg:mt-40">
-      <div className="container-x grid items-center gap-10 py-16 lg:grid-cols-12 lg:gap-12 lg:py-20">
+      <div className="container-x grid items-center gap-10 py-16 lg:grid-cols-9 lg:gap-12 lg:py-20">
         <div className="lg:col-span-5">
           <span className="eyebrow eyebrow-light">Segurança e Normas</span>
           <h2 className="mt-5 text-3xl text-white sm:text-4xl md:text-5xl">
@@ -327,16 +327,14 @@ function Safety() {
             </li>
           ))}
         </ul>
-
-        <div className="relative lg:col-span-3">
-          <img
-            src={pallovaSafety.url}
-            alt="Profissional Rocha Forte com EPI"
-            className="mx-auto block w-64 sm:w-80 lg:absolute lg:bottom-0 lg:right-0 lg:w-full lg:max-w-sm lg:-translate-y-0 lg:[transform:translateY(-12%)]"
-            style={{ filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.25))" }}
-          />
-        </div>
       </div>
+
+      <img
+        src={pallovaSafety.url}
+        alt="Profissional Rocha Forte com EPI"
+        className="mx-auto block w-64 drop-shadow-2xl sm:w-80 lg:absolute lg:right-[clamp(1.25rem,4vw,2.5rem)] lg:top-[-60px] lg:h-[calc(100%_+_120px)] lg:w-auto lg:max-w-sm lg:object-contain"
+        style={{ filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.25))" }}
+      />
     </section>
   );
 }

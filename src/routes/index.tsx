@@ -13,6 +13,7 @@ import tankBefore from "@/assets/portfolio-tank-before.jpg";
 import tankAfter from "@/assets/portfolio-tank-after.jpg";
 import floorBefore from "@/assets/portfolio-floor-before.jpg";
 import floorAfter from "@/assets/portfolio-floor-after.jpg";
+import pallovaSafety from "@/assets/pallova-safety.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({

@@ -11,7 +11,7 @@ import maintenance from "@/assets/service-maintenance.jpg";
 import painting from "@/assets/cta-painting.jpg";
 import caldeiraria from "@/assets/service-caldeiraria.jpg";
 
-export const Route = createFileRoute("/servicos")({
+export const Route = createFileRoute("/servicos/")({
   head: () => ({
     meta: [
       { title: "Serviços — Andaimes, Manutenção, Pintura e Caldeiraria | Rocha Forte" },

@@ -74,7 +74,7 @@ export function ClientLogos({ variant = "marquee" }: { variant?: "marquee" | "gr
               src={c.src}
               alt={c.name}
               loading="lazy"
-              className="max-h-16 max-w-[160px] object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+              className="max-h-16 max-w-[160px] object-contain transition-transform duration-300 hover:scale-105"
             />
           </div>
         ))}

@@ -174,9 +174,7 @@ function InfoBlock({ Icon, title, children }: { Icon: React.ComponentType<{ clas
   return (
     <div className="border border-border bg-white p-6">
       <div className="flex items-center gap-3">
-        <span className="grid h-9 w-9 place-items-center bg-carbon text-brand">
-          <Icon className="h-4 w-4" />
-        </span>
+        <Icon className="h-7 w-7 text-brand" />
         <div className="text-xs font-semibold uppercase tracking-[0.14em] text-steel">{title}</div>
       </div>
       <div className="mt-4 text-sm leading-relaxed text-carbon">{children}</div>

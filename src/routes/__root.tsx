@@ -77,19 +77,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Rocha Forte Serviços | Andaimes, Pintura e Manutenção Industrial — Cubatão/SP" },
+      {
+        name: "description",
+        content:
+          "Empresa especializada em andaimes, manutenção industrial, pintura técnica e caldeiraria. Atendemos indústrias em todo o Brasil. Fale com a Rocha Forte.",
+      },
+      { name: "author", content: "Rocha Forte Serviços Ltda" },
+      { name: "theme-color", content: "#1A1A1A" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:site_name", content: "Rocha Forte Serviços" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap",
       },
     ],
   }),

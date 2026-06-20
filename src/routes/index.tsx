@@ -54,7 +54,7 @@ function Hero() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-carbon/70 via-carbon/65 to-carbon/85" />
 
       <div className="container-x w-full pb-20 pt-32 md:pb-28">
-        <div className="max-w-4xl fade-up rounded-xl bg-black/40 p-6 backdrop-blur-sm sm:p-8 md:p-10">
+        <div className="max-w-4xl fade-up rounded-xl bg-white/30 p-6 backdrop-blur-sm sm:p-8 md:p-10">
           <span className="red-rule mb-7" />
           <span className="eyebrow eyebrow-light">Soluções Industriais</span>
           <h1 className="mt-6 text-[2.5rem] leading-[1.02] text-white sm:text-5xl md:text-6xl lg:text-[4.25rem]">

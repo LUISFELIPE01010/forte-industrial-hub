@@ -71,10 +71,10 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <a
             href="tel:+551333240071"
-            className="flex items-center gap-2 text-sm font-medium text-white/85 hover:text-white whitespace-nowrap"
+            className="hidden items-center gap-2 text-sm font-medium text-white/85 hover:text-white whitespace-nowrap xl:flex"
           >
             <Phone className="h-4 w-4 text-brand" />
             (13) 3324-0071
@@ -83,9 +83,9 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
             href="https://wa.me/551333240554?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
             target="_blank"
             rel="noopener"
-            className="btn-base btn-primary !py-3"
+            className="btn-base btn-primary !py-2.5 !px-4 !text-[0.7rem]"
           >
-            Solicitar Orçamento
+            Orçamento
           </a>
         </div>
 

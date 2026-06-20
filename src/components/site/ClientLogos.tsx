@@ -16,7 +16,6 @@ import logo15 from "@/assets/clients/15.png";
 import logo16 from "@/assets/clients/16.png";
 import logo17 from "@/assets/clients/17.png";
 import logo18 from "@/assets/clients/18.png";
-import logo19 from "@/assets/clients/19.png";
 
 const clients: { name: string; src: string }[] = [
   { name: "Petrobras", src: logo1 },

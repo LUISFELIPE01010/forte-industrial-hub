@@ -9,6 +9,7 @@ import { Counter } from "@/components/site/Counter";
 import { ClientLogos } from "@/components/site/ClientLogos";
 import heroImg from "@/assets/hero-scaffold.jpg";
 import aboutImg from "@/assets/about-office.jpg";
+import sobreProfissionalImg from "@/assets/sobre-profissional.png.asset.json";
 import tankBefore from "@/assets/portfolio-tank-before.jpg";
 import tankAfter from "@/assets/portfolio-tank-after.jpg";
 import floorBefore from "@/assets/portfolio-floor-before.jpg";
@@ -158,8 +159,8 @@ function About() {
 
         <div className="relative">
           <img
-            src={aboutImg}
-            alt="Pátio da Rocha Forte com equipamentos de andaime"
+            src={sobreProfissionalImg.url}
+            alt="Profissional da Rocha Forte em obra industrial"
             width={1280}
             height={960}
             loading="lazy"

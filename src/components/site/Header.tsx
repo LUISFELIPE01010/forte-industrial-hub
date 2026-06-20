@@ -47,7 +47,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
           {nav.map((item) => (
             <div key={item.to} className="group relative">
               <Link
-                to={item.to}
+                to={item.to as any}
                 className="flex items-center gap-1 px-4 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-white/85 transition-colors hover:text-white"
                 activeProps={{ className: "text-white" }}
               >
@@ -59,7 +59,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
                   {services.map((s) => (
                     <Link
                       key={s.to}
-                      to={s.to}
+                      to={s.to as any}
                       className="block px-5 py-3.5 text-sm font-medium text-white/80 hover:bg-brand hover:text-white"
                     >
                       {s.label}
@@ -106,7 +106,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
             {nav.map((item) => (
               <Link
                 key={item.to}
-                to={item.to}
+                to={item.to as any}
                 onClick={() => setOpen(false)}
                 className="border-b border-white/5 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-white/90"
               >

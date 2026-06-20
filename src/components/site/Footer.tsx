@@ -42,7 +42,7 @@ export function Footer() {
             ["/contato", "Contato"],
           ].map(([to, label]) => (
             <li key={to as string}>
-              <Link to={to as string} className="text-sm text-white/70 hover:text-white">
+              <Link to={to as any} className="text-sm text-white/70 hover:text-white">
                 {label}
               </Link>
             </li>
@@ -57,7 +57,7 @@ export function Footer() {
             ["/servicos/caldeiraria", "Caldeiraria"],
           ].map(([to, label]) => (
             <li key={to as string}>
-              <Link to={to as string} className="text-sm text-white/70 hover:text-white">
+              <Link to={to as any} className="text-sm text-white/70 hover:text-white">
                 {label}
               </Link>
             </li>

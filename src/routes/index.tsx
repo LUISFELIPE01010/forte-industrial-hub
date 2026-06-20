@@ -356,9 +356,7 @@ function Differentials() {
         <div className="mt-12 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3">
           {items.map((d) => (
             <div key={d.t} className="bg-white p-7 transition-colors hover:bg-mist">
-              <div className="grid h-12 w-12 place-items-center bg-carbon text-brand">
-                <d.Icon className="h-6 w-6" strokeWidth={1.5} />
-              </div>
+              <d.Icon className="h-10 w-10 text-brand" strokeWidth={1.5} />
               <h3 className="mt-5 font-display text-xl font-extrabold uppercase tracking-tight text-carbon">{d.t}</h3>
               <p className="mt-2 text-sm leading-relaxed text-graphite">{d.d}</p>
             </div>

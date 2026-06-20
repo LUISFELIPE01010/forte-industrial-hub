@@ -48,7 +48,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
             <div key={item.to} className="group relative">
               <Link
                 to={item.to as any}
-                className="flex items-center gap-1 px-4 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-white/85 transition-colors hover:text-white"
+                className="flex items-center gap-1 px-4 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-white/85 transition-colors hover:text-white whitespace-nowrap"
                 activeProps={{ className: "text-white" }}
               >
                 {item.label}
@@ -74,7 +74,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
         <div className="hidden items-center gap-4 lg:flex">
           <a
             href="tel:+551333240071"
-            className="flex items-center gap-2 text-sm font-medium text-white/85 hover:text-white"
+            className="flex items-center gap-2 text-sm font-medium text-white/85 hover:text-white whitespace-nowrap"
           >
             <Phone className="h-4 w-4 text-brand" />
             (13) 3324-0071

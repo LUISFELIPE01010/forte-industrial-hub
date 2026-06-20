@@ -6,6 +6,10 @@ import { PageHero } from "@/components/site/PageHero";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { MapPin } from "lucide-react";
 import aboutImg from "@/assets/about-office.jpg";
+import abrinqSeal from "@/assets/certifications/abrinq.png.asset.json";
+import esgSeal from "@/assets/certifications/esg.png.asset.json";
+import profSustSeal from "@/assets/certifications/profissional-sustentavel.png.asset.json";
+import odsSeal from "@/assets/certifications/ods.png.asset.json";
 
 export const Route = createFileRoute("/quem-somos")({
   head: () => ({

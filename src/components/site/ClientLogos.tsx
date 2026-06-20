@@ -36,7 +36,6 @@ const clients: { name: string; src: string }[] = [
   { name: "COFCO INTL", src: logo16 },
   { name: "Confab", src: logo17 },
   { name: "Citrosuco", src: logo18 },
-  { name: "Fundação Abrinq", src: logo19 },
 ];
 
 export function ClientLogos({ variant = "marquee" }: { variant?: "marquee" | "grid" }) {

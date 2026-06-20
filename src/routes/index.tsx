@@ -159,8 +159,8 @@ function About() {
 
         <div className="relative">
           <img
-            src={aboutImg}
-            alt="Pátio da Rocha Forte com equipamentos de andaime"
+            src={sobreProfissionalImg.url}
+            alt="Profissional da Rocha Forte em obra industrial"
             width={1280}
             height={960}
             loading="lazy"

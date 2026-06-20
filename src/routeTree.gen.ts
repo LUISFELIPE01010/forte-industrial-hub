@@ -9,19 +9,53 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicosRouteImport } from './routes/servicos'
+import { Route as SegurancaRouteImport } from './routes/seguranca'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as ClientesRouteImport } from './routes/clientes'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
+import { Route as ServicosPinturaRouteImport } from './routes/servicos.pintura'
+import { Route as ServicosManutencaoRouteImport } from './routes/servicos.manutencao'
+import { Route as ServicosCaldeirariaRouteImport } from './routes/servicos.caldeiraria'
+import { Route as ServicosAndaimesRouteImport } from './routes/servicos.andaimes'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicosRoute = ServicosRouteImport.update({
   id: '/servicos',
   path: '/servicos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SegurancaRoute = SegurancaRouteImport.update({
+  id: '/seguranca',
+  path: '/seguranca',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QuemSomosRoute = QuemSomosRouteImport.update({
   id: '/quem-somos',
   path: '/quem-somos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientesRoute = ClientesRouteImport.update({
+  id: '/clientes',
+  path: '/clientes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -34,41 +68,139 @@ const ServicosIndexRoute = ServicosIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ServicosRoute,
 } as any)
+const ServicosPinturaRoute = ServicosPinturaRouteImport.update({
+  id: '/pintura',
+  path: '/pintura',
+  getParentRoute: () => ServicosRoute,
+} as any)
+const ServicosManutencaoRoute = ServicosManutencaoRouteImport.update({
+  id: '/manutencao',
+  path: '/manutencao',
+  getParentRoute: () => ServicosRoute,
+} as any)
+const ServicosCaldeirariaRoute = ServicosCaldeirariaRouteImport.update({
+  id: '/caldeiraria',
+  path: '/caldeiraria',
+  getParentRoute: () => ServicosRoute,
+} as any)
+const ServicosAndaimesRoute = ServicosAndaimesRouteImport.update({
+  id: '/andaimes',
+  path: '/andaimes',
+  getParentRoute: () => ServicosRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/clientes': typeof ClientesRoute
+  '/contato': typeof ContatoRoute
+  '/portfolio': typeof PortfolioRoute
   '/quem-somos': typeof QuemSomosRoute
+  '/seguranca': typeof SegurancaRoute
   '/servicos': typeof ServicosRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/servicos/andaimes': typeof ServicosAndaimesRoute
+  '/servicos/caldeiraria': typeof ServicosCaldeirariaRoute
+  '/servicos/manutencao': typeof ServicosManutencaoRoute
+  '/servicos/pintura': typeof ServicosPinturaRoute
   '/servicos/': typeof ServicosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/clientes': typeof ClientesRoute
+  '/contato': typeof ContatoRoute
+  '/portfolio': typeof PortfolioRoute
   '/quem-somos': typeof QuemSomosRoute
+  '/seguranca': typeof SegurancaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/servicos/andaimes': typeof ServicosAndaimesRoute
+  '/servicos/caldeiraria': typeof ServicosCaldeirariaRoute
+  '/servicos/manutencao': typeof ServicosManutencaoRoute
+  '/servicos/pintura': typeof ServicosPinturaRoute
   '/servicos': typeof ServicosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/clientes': typeof ClientesRoute
+  '/contato': typeof ContatoRoute
+  '/portfolio': typeof PortfolioRoute
   '/quem-somos': typeof QuemSomosRoute
+  '/seguranca': typeof SegurancaRoute
   '/servicos': typeof ServicosRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/servicos/andaimes': typeof ServicosAndaimesRoute
+  '/servicos/caldeiraria': typeof ServicosCaldeirariaRoute
+  '/servicos/manutencao': typeof ServicosManutencaoRoute
+  '/servicos/pintura': typeof ServicosPinturaRoute
   '/servicos/': typeof ServicosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/quem-somos' | '/servicos' | '/servicos/'
+  fullPaths:
+    | '/'
+    | '/clientes'
+    | '/contato'
+    | '/portfolio'
+    | '/quem-somos'
+    | '/seguranca'
+    | '/servicos'
+    | '/sitemap.xml'
+    | '/servicos/andaimes'
+    | '/servicos/caldeiraria'
+    | '/servicos/manutencao'
+    | '/servicos/pintura'
+    | '/servicos/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/quem-somos' | '/servicos'
-  id: '__root__' | '/' | '/quem-somos' | '/servicos' | '/servicos/'
+  to:
+    | '/'
+    | '/clientes'
+    | '/contato'
+    | '/portfolio'
+    | '/quem-somos'
+    | '/seguranca'
+    | '/sitemap.xml'
+    | '/servicos/andaimes'
+    | '/servicos/caldeiraria'
+    | '/servicos/manutencao'
+    | '/servicos/pintura'
+    | '/servicos'
+  id:
+    | '__root__'
+    | '/'
+    | '/clientes'
+    | '/contato'
+    | '/portfolio'
+    | '/quem-somos'
+    | '/seguranca'
+    | '/servicos'
+    | '/sitemap.xml'
+    | '/servicos/andaimes'
+    | '/servicos/caldeiraria'
+    | '/servicos/manutencao'
+    | '/servicos/pintura'
+    | '/servicos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ClientesRoute: typeof ClientesRoute
+  ContatoRoute: typeof ContatoRoute
+  PortfolioRoute: typeof PortfolioRoute
   QuemSomosRoute: typeof QuemSomosRoute
+  SegurancaRoute: typeof SegurancaRoute
   ServicosRoute: typeof ServicosRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/servicos': {
       id: '/servicos'
       path: '/servicos'
@@ -76,11 +208,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/seguranca': {
+      id: '/seguranca'
+      path: '/seguranca'
+      fullPath: '/seguranca'
+      preLoaderRoute: typeof SegurancaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/quem-somos': {
       id: '/quem-somos'
       path: '/quem-somos'
       fullPath: '/quem-somos'
       preLoaderRoute: typeof QuemSomosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clientes': {
+      id: '/clientes'
+      path: '/clientes'
+      fullPath: '/clientes'
+      preLoaderRoute: typeof ClientesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -97,14 +257,50 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicosIndexRouteImport
       parentRoute: typeof ServicosRoute
     }
+    '/servicos/pintura': {
+      id: '/servicos/pintura'
+      path: '/pintura'
+      fullPath: '/servicos/pintura'
+      preLoaderRoute: typeof ServicosPinturaRouteImport
+      parentRoute: typeof ServicosRoute
+    }
+    '/servicos/manutencao': {
+      id: '/servicos/manutencao'
+      path: '/manutencao'
+      fullPath: '/servicos/manutencao'
+      preLoaderRoute: typeof ServicosManutencaoRouteImport
+      parentRoute: typeof ServicosRoute
+    }
+    '/servicos/caldeiraria': {
+      id: '/servicos/caldeiraria'
+      path: '/caldeiraria'
+      fullPath: '/servicos/caldeiraria'
+      preLoaderRoute: typeof ServicosCaldeirariaRouteImport
+      parentRoute: typeof ServicosRoute
+    }
+    '/servicos/andaimes': {
+      id: '/servicos/andaimes'
+      path: '/andaimes'
+      fullPath: '/servicos/andaimes'
+      preLoaderRoute: typeof ServicosAndaimesRouteImport
+      parentRoute: typeof ServicosRoute
+    }
   }
 }
 
 interface ServicosRouteChildren {
+  ServicosAndaimesRoute: typeof ServicosAndaimesRoute
+  ServicosCaldeirariaRoute: typeof ServicosCaldeirariaRoute
+  ServicosManutencaoRoute: typeof ServicosManutencaoRoute
+  ServicosPinturaRoute: typeof ServicosPinturaRoute
   ServicosIndexRoute: typeof ServicosIndexRoute
 }
 
 const ServicosRouteChildren: ServicosRouteChildren = {
+  ServicosAndaimesRoute: ServicosAndaimesRoute,
+  ServicosCaldeirariaRoute: ServicosCaldeirariaRoute,
+  ServicosManutencaoRoute: ServicosManutencaoRoute,
+  ServicosPinturaRoute: ServicosPinturaRoute,
   ServicosIndexRoute: ServicosIndexRoute,
 }
 
@@ -114,8 +310,13 @@ const ServicosRouteWithChildren = ServicosRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ClientesRoute: ClientesRoute,
+  ContatoRoute: ContatoRoute,
+  PortfolioRoute: PortfolioRoute,
   QuemSomosRoute: QuemSomosRoute,
+  SegurancaRoute: SegurancaRoute,
   ServicosRoute: ServicosRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

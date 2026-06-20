@@ -332,7 +332,7 @@ function Safety() {
       <img
         src={pallovaSafety.url}
         alt="Profissional Rocha Forte com EPI"
-        className="mx-auto block w-64 drop-shadow-2xl sm:w-80 lg:absolute lg:right-[clamp(1.25rem,4vw,2.5rem)] lg:bottom-[-80px] lg:w-[520px] lg:max-w-none"
+        className="mx-auto block w-64 drop-shadow-2xl sm:w-80 lg:absolute lg:right-[clamp(1.25rem,4vw,2.5rem)] lg:bottom-[-100px] lg:w-[680px] lg:max-w-none"
         style={{ filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.25))" }}
       />
     </section>

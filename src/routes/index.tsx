@@ -51,7 +51,7 @@ function Hero() {
   return (
     <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden">
       <img src={heroImg} alt="Andaime industrial montado em planta petroquímica" className="absolute inset-0 -z-10 h-full w-full object-cover" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-carbon/50 via-carbon/45 to-carbon/65" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-carbon/40 via-carbon/35 to-carbon/55" />
 
       <div className="container-x w-full pb-20 pt-32 md:pb-28">
         <div className="max-w-4xl fade-up">

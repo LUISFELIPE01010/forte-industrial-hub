@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Linkedin, Youtube, Facebook, MapPin, Mail, Phone } from "lucide-react";
-import logo from "@/assets/rocha-forte-logo.png.asset.json";
+import logo from "@/assets/rocha-forte-logo.png";
 
 export function Footer() {
   return (
     <footer className="bg-carbon text-white/80">
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <img src={logo.url} alt="Rocha Forte Serviços" className="h-12 w-auto" />
+          <img src={logo} alt="Rocha Forte Serviços" className="h-12 w-auto" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/70">
             Soluções industriais com quem entende de campo.
           </p>

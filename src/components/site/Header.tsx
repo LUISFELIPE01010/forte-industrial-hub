@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, Phone, X, ChevronDown } from "lucide-react";
-import logo from "@/assets/rocha-forte-logo.png.asset.json";
+import logo from "@/assets/rocha-forte-logo.png";
 
 const nav: { to: string; label: string; hasMenu?: boolean }[] = [
   { to: "/", label: "Home" },
@@ -40,7 +40,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
     >
       <div className="container-x flex h-20 items-center justify-between gap-6">
         <Link to="/" className="flex shrink-0 items-center" aria-label="Rocha Forte Serviços — Início">
-          <img src={logo.url} alt="Rocha Forte Serviços" className="h-10 w-auto md:h-11" />
+          <img src={logo} alt="Rocha Forte Serviços" className="h-10 w-auto md:h-11" />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Principal">

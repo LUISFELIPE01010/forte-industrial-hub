@@ -167,7 +167,6 @@ function About() {
             className="relative z-10 aspect-[5/4] w-full object-cover"
           />
           <div className="absolute -bottom-5 -left-5 hidden h-44 w-44 border-[3px] border-brand md:block" />
-          <div className="absolute -top-5 -right-5 hidden h-28 w-28 bg-carbon md:block" />
         </div>
       </div>
     </section>

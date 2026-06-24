@@ -54,7 +54,9 @@ export function BeforeAfter({ before, after, alt }: Props) {
             <path d="M8 6L4 12l4 6M16 6l4 6-4 6" />
           </svg>
         </div>
-      </div>
+    </div>
+    </div>
+
     </div>
   );
 }

@@ -36,7 +36,7 @@ function QuemSomos() {
           eyebrow="Rocha Forte Serviços"
           title="Quem Somos"
           subtitle="Mais de uma década entregando soluções industriais com segurança, controle e profissionalismo de campo."
-          image={aboutImg}
+          image={heroImg}
           breadcrumb={[{ label: "Home", to: "/" }, { label: "Quem Somos" }]}
         />
 

@@ -107,7 +107,7 @@ function QuemSomos() {
                 <div key={p.c} className="border border-border bg-white p-6">
                   <MapPin className="h-6 w-6 text-brand" />
                   <div className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-steel">{p.t}</div>
-                  <div className="mt-1 font-display text-xl font-extrabold text-carbon">{p.c}</div>
+                  <div className="mt-1 font-display text-lg font-extrabold text-carbon break-words">{p.c}</div>
                 </div>
               ))}
             </div>

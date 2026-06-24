@@ -98,16 +98,20 @@ function QuemSomos() {
             </div>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
               {[
-                { c: "Cubatão/SP", t: "Escritório Central" },
-                { c: "São Paulo/SP", t: "CDI" },
-                { c: "Pindamonhangaba/SP", t: "CDI" },
-                { c: "Curitiba/PR", t: "CDI" },
-                { c: "Uberaba/MG", t: "CDI" },
+                { city: "Cubatão", uf: "SP", t: "Escritório Central" },
+                { city: "São Paulo", uf: "SP", t: "CDI" },
+                { city: "Pindamonhangaba", uf: "SP", t: "CDI" },
+                { city: "Curitiba", uf: "PR", t: "CDI" },
+                { city: "Uberaba", uf: "MG", t: "CDI" },
               ].map((p) => (
-                <div key={p.c} className="border border-border bg-white p-6">
+                <div key={p.city} className="border border-border bg-white p-6">
                   <MapPin className="h-6 w-6 text-brand" />
                   <div className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-steel">{p.t}</div>
-                  <div className="mt-1 font-display text-lg font-extrabold text-carbon break-words">{p.c}</div>
+                  <div className="mt-1 font-display text-lg font-extrabold text-carbon break-words">
+                    {p.city}
+                    <br />
+                    <span className="whitespace-nowrap">/{p.uf}</span>
+                  </div>
                 </div>
               ))}
             </div>

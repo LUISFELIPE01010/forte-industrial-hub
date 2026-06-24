@@ -27,16 +27,20 @@ export function BeforeAfter({ before, after, alt }: Props) {
       onTouchStart={(e) => update(e.touches[0].clientX)}
     >
 
-      <img src={after} alt={`${alt} — depois`} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-      <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-        <img
-          src={before}
-          alt={`${alt} — antes`}
-          className="h-full w-full object-cover"
-          style={{ width: ref.current?.clientWidth ?? "100%", maxWidth: "none" }}
-          loading="lazy"
-        />
-      </div>
+      <img
+        src={after}
+        alt={`${alt} — depois`}
+        className="absolute inset-0 h-full w-full object-cover object-center"
+        loading="lazy"
+      />
+      <img
+        src={before}
+        alt={`${alt} — antes`}
+        className="absolute inset-0 h-full w-full object-cover object-center"
+        style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+        loading="lazy"
+      />
+
 
       <div className="pointer-events-none absolute top-3 left-3 bg-carbon/85 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white">
         Antes

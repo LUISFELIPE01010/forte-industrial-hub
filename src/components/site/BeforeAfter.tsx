@@ -15,9 +15,10 @@ export function BeforeAfter({ before, after, alt }: Props) {
   };
 
   return (
+    <div className="bg-carbon p-4 rounded-[12px]">
     <div
       ref={ref}
-      className="relative aspect-[4/3] w-full select-none overflow-hidden bg-carbon"
+      className="relative aspect-[4/3] w-full select-none overflow-hidden bg-carbon rounded-[12px]"
       onMouseMove={(e) => dragging.current && update(e.clientX)}
       onMouseDown={(e) => { dragging.current = true; update(e.clientX); }}
       onMouseUp={() => (dragging.current = false)}
@@ -25,6 +26,7 @@ export function BeforeAfter({ before, after, alt }: Props) {
       onTouchMove={(e) => update(e.touches[0].clientX)}
       onTouchStart={(e) => update(e.touches[0].clientX)}
     >
+
       <img src={after} alt={`${alt} — depois`} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
         <img

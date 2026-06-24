@@ -28,18 +28,19 @@ export function BeforeAfter({ before, after, alt }: Props) {
     >
 
       <img
-        src={after}
-        alt={`${alt} — depois`}
+        src={before}
+        alt={`${alt} — antes`}
         className="absolute inset-0 h-full w-full object-cover object-center"
         loading="lazy"
       />
       <img
-        src={before}
-        alt={`${alt} — antes`}
+        src={after}
+        alt={`${alt} — depois`}
         className="absolute inset-0 h-full w-full object-cover object-center"
-        style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+        style={{ clipPath: `inset(0 0 0 ${pos}%)` }}
         loading="lazy"
       />
+
 
 
       <div className="pointer-events-none absolute top-3 left-3 bg-carbon/85 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white">

@@ -61,8 +61,8 @@ function QuemSomos() {
               </div>
             </div>
             <img
-              src={aboutImg}
-              alt="Pátio com equipamentos de andaime"
+              src={apresentacaoImg}
+              alt="Fachada da sede Rocha Forte Serviços"
               loading="lazy"
               className="aspect-[4/3] w-full object-cover"
             />

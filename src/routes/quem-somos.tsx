@@ -6,6 +6,8 @@ import { PageHero } from "@/components/site/PageHero";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { MapPin } from "lucide-react";
 import aboutImg from "@/assets/about-office.jpg";
+import apresentacaoAsset from "@/assets/apresentacao-fachada.png.asset.json";
+const apresentacaoImg = apresentacaoAsset.url;
 import abrinqSeal from "@/assets/certifications/abrinq.png.asset.json";
 import esgSeal from "@/assets/certifications/esg.png.asset.json";
 import profSustSeal from "@/assets/certifications/profissional-sustentavel.png.asset.json";

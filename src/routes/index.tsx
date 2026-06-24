@@ -14,8 +14,10 @@ import tankBeforeAsset from "@/assets/portfolio-tank-before.jpg.asset.json";
 import tankAfterAsset from "@/assets/portfolio-tank-after.jpg.asset.json";
 const tankBefore = tankBeforeAsset.url;
 const tankAfter = tankAfterAsset.url;
-import floorBefore from "@/assets/portfolio-floor-before.jpg";
-import floorAfter from "@/assets/portfolio-floor-after.jpg";
+import floorBeforeAsset from "@/assets/portfolio-floor-before.jpg.asset.json";
+import floorAfterAsset from "@/assets/portfolio-floor-after.jpg.asset.json";
+const floorBefore = floorBeforeAsset.url;
+const floorAfter = floorAfterAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({

@@ -10,8 +10,10 @@ import { ClientLogos } from "@/components/site/ClientLogos";
 import heroImg from "@/assets/hero-scaffold.jpg";
 import aboutImg from "@/assets/about-office.jpg";
 import sobreProfissionalImg from "@/assets/sobre-profissional-4.png.asset.json";
-import tankBefore from "@/assets/portfolio-tank-before.jpg";
-import tankAfter from "@/assets/portfolio-tank-after.jpg";
+import tankBeforeAsset from "@/assets/portfolio-tank-before.jpg.asset.json";
+import tankAfterAsset from "@/assets/portfolio-tank-after.jpg.asset.json";
+const tankBefore = tankBeforeAsset.url;
+const tankAfter = tankAfterAsset.url;
 import floorBefore from "@/assets/portfolio-floor-before.jpg";
 import floorAfter from "@/assets/portfolio-floor-after.jpg";
 

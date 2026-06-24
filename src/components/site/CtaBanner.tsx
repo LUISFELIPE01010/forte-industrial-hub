@@ -1,4 +1,5 @@
-import ctaImg from "@/assets/cta-painting.jpg";
+import ctaAsset from "@/assets/cta-painting.jpg.asset.json";
+const ctaImg = ctaAsset.url;
 
 export function CtaBanner() {
   return (

@@ -3,7 +3,8 @@ import { ServicePage } from "@/components/site/ServicePage";
 import hero from "@/assets/cta-painting.jpg";
 import g1Asset from "@/assets/portfolio-tank-after.jpg.asset.json";
 const g1 = g1Asset.url;
-import g2 from "@/assets/portfolio-floor-after.jpg";
+import g2Asset from "@/assets/portfolio-floor-after.jpg.asset.json";
+const g2 = g2Asset.url;
 import g3 from "@/assets/cta-painting.jpg";
 
 export const Route = createFileRoute("/servicos/pintura")({

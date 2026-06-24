@@ -8,7 +8,8 @@ import { ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero-scaffold.jpg";
 import scaffold from "@/assets/service-scaffold.jpg";
 import maintenance from "@/assets/service-maintenance.jpg";
-import painting from "@/assets/cta-painting.jpg";
+import paintingAsset from "@/assets/cta-painting.jpg.asset.json";
+const painting = paintingAsset.url;
 import caldeiraria from "@/assets/service-caldeiraria.jpg";
 
 export const Route = createFileRoute("/servicos/")({

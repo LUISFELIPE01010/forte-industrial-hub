@@ -7,7 +7,9 @@ import { CtaBanner } from "@/components/site/CtaBanner";
 import { MapPin } from "lucide-react";
 import aboutImg from "@/assets/about-office.jpg";
 import apresentacaoAsset from "@/assets/apresentacao-fachada.png.asset.json";
+import heroAsset from "@/assets/quem-somos-hero.jpg.asset.json";
 const apresentacaoImg = apresentacaoAsset.url;
+const heroImg = heroAsset.url;
 import abrinqSeal from "@/assets/certifications/abrinq.png.asset.json";
 import esgSeal from "@/assets/certifications/esg.png.asset.json";
 import profSustSeal from "@/assets/certifications/profissional-sustentavel.png.asset.json";
@@ -34,7 +36,7 @@ function QuemSomos() {
           eyebrow="Rocha Forte Serviços"
           title="Quem Somos"
           subtitle="Mais de uma década entregando soluções industriais com segurança, controle e profissionalismo de campo."
-          image={aboutImg}
+          image={heroImg}
           breadcrumb={[{ label: "Home", to: "/" }, { label: "Quem Somos" }]}
         />
 

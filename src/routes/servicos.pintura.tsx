@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
 import hero from "@/assets/cta-painting.jpg";
-import g1 from "@/assets/portfolio-tank-after.jpg";
+import g1Asset from "@/assets/portfolio-tank-after.jpg.asset.json";
+const g1 = g1Asset.url;
 import g2 from "@/assets/portfolio-floor-after.jpg";
 import g3 from "@/assets/cta-painting.jpg";
 

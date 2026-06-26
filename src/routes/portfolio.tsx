@@ -71,6 +71,15 @@ const projects: Project[] = [
   { src: heroScaffold, title: "Andaime multidirecional — torre industrial", cat: "Andaimes" },
   { src: scaffold, title: "Andaime para pintura de chaminé", cat: "Andaimes" },
   { src: caldeiraria, title: "Caldeiraria — solda em estrutura", cat: "Caldeiraria" },
+  { src: n1Asset.url, title: "Piso industrial — epóxi azul com demarcação", cat: "Pintura" },
+  { src: n2Asset.url, title: "Demarcação de piso industrial", cat: "Pintura" },
+  { src: n3Asset.url, title: "Tanque vertical — pintura anticorrosiva vermelha", cat: "Pintura" },
+  { src: n4Asset.url, title: "Demarcação de área operacional", cat: "Pintura" },
+  { src: n5Asset.url, title: "Demarcação viária industrial", cat: "Pintura" },
+  { src: n6Asset.url, title: "Pintura de tubulação industrial", cat: "Pintura" },
+  { src: n7Asset.url, title: "Andaime em estrutura industrial", cat: "Andaimes" },
+  { src: n8Asset.url, title: "Andaime envolvendo torre industrial", cat: "Andaimes" },
+  { src: n9Asset.url, title: "Topo de tanque industrial — pintura preta", cat: "Pintura" },
 ];
 
 const cats = ["Todos", "Andaimes", "Pintura", "Caldeiraria"] as const;

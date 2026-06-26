@@ -336,7 +336,7 @@ function Safety() {
 
 function Differentials() {
   const items = [
-    { Icon: Wrench, t: "Experiência Industrial", d: "Equipe acostumada com rotina de fábrica, paradas de manutenção e ambientes de alta exigência operacional." },
+    { Icon: Wrench, t: "Experiência Industrial", d: "Equipe acostumada com rotina de fábrica, paradas programadas e ambientes de alta exigência operacional." },
     { Icon: FileCheck2, t: "Controle por Fichas", d: "Montagem, desmontagem e liberação de andaimes com registro e identificação de cada estrutura." },
     { Icon: MapPin, t: "Atuação Nacional", d: "Escritório em Cubatão e CDIs em São Paulo, Pindamonhangaba, Curitiba e Uberaba." },
     { Icon: Cog, t: "Planejamento e Documentação", d: "Apoio técnico em projetos, medições e acompanhamento de execução com documentação de campo." },

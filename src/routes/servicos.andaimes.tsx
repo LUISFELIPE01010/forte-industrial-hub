@@ -46,7 +46,7 @@ export const Route = createFileRoute("/servicos/andaimes")({
       gallery={[
         { src: g1, alt: "Andaime em torre industrial" },
         { src: g2, alt: "Detalhe de andaime multidirecional" },
-        { src: g3, alt: "Andaime em manutenção" },
+        { src: g3, alt: "Andaime em obra industrial" },
       ]}
     />
   ),

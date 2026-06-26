@@ -24,7 +24,7 @@ export const Route = createFileRoute("/servicos/andaimes")({
       parent={{ label: "Serviços", to: "/servicos" }}
       crumb="Andaimes"
       intro={[
-        "Executamos a montagem, desmontagem e locação de andaimes para manutenções industriais, pintura, inspeções, paradas programadas e obras de grande porte. Trabalhamos com sistemas tubulares e multidirecionais — incluindo fachadeiros, cimbramentos e escoramentos.",
+        "Executamos a montagem, desmontagem e locação de andaimes para obras industriais, pintura, inspeções, paradas programadas e obras de grande porte. Trabalhamos com sistemas tubulares e multidirecionais — incluindo fachadeiros, cimbramentos e escoramentos.",
         "Cada estrutura recebe ficha de controle e identificação visual em campo, com inspeção e liberação documentada antes da entrega ao cliente. Nossa equipe acompanha medições e dá suporte técnico durante todo o ciclo da obra.",
       ]}
       activities={[

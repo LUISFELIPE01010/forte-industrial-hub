@@ -4,8 +4,8 @@ import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { PageHero } from "@/components/site/PageHero";
 import { ClientLogos } from "@/components/site/ClientLogos";
-import heroAsset from "@/assets/hero-clientes.jpg.asset.json";
-const heroImg = heroAsset.url;
+import heroAsset from "@/assets/hero-clientes.jpg";
+const heroImg = heroAsset;
 import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/clientes")({

@@ -52,7 +52,7 @@ function QuemSomos() {
                   A Rocha Forte Serviços Ltda nasceu para atender o setor industrial com
                   rigor técnico e proximidade operacional. Atuamos em locação e montagem
                   de andaimes, cimbramentos, fachadeiros, escoramentos, pintura técnica e
-                  manutenções industriais para clientes de qualquer porte.
+                  caldeiraria para clientes de qualquer porte.
                 </p>
                 <p>
                   Com escritório central em Cubatão/SP e centros de distribuição em São

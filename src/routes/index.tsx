@@ -9,15 +9,15 @@ import { Counter } from "@/components/site/Counter";
 import { ClientLogos } from "@/components/site/ClientLogos";
 import heroImg from "@/assets/hero-scaffold.jpg";
 import aboutImg from "@/assets/about-office.jpg";
-import sobreProfissionalImg from "@/assets/sobre-profissional-4.png.asset.json";
-import tankBeforeAsset from "@/assets/portfolio-tank-before.jpg.asset.json";
-import tankAfterAsset from "@/assets/portfolio-tank-after.jpg.asset.json";
-const tankBefore = tankBeforeAsset.url;
-const tankAfter = tankAfterAsset.url;
-import floorBeforeAsset from "@/assets/portfolio-floor-before.jpg.asset.json";
-import floorAfterAsset from "@/assets/portfolio-floor-after.jpg.asset.json";
-const floorBefore = floorBeforeAsset.url;
-const floorAfter = floorAfterAsset.url;
+import sobreProfissionalImg from "@/assets/sobre-profissional-4.png";
+import tankBeforeAsset from "@/assets/portfolio-tank-before.jpg";
+import tankAfterAsset from "@/assets/portfolio-tank-after.jpg";
+const tankBefore = tankBeforeAsset;
+const tankAfter = tankAfterAsset;
+import floorBeforeAsset from "@/assets/portfolio-floor-before.jpg";
+import floorAfterAsset from "@/assets/portfolio-floor-after.jpg";
+const floorBefore = floorBeforeAsset;
+const floorAfter = floorAfterAsset;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -162,7 +162,7 @@ function About() {
 
         <div className="relative">
           <img
-            src={sobreProfissionalImg.url}
+            src={sobreProfissionalImg}
             alt="Profissional da Rocha Forte em obra industrial"
             width={1280}
             height={960}

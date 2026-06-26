@@ -6,14 +6,14 @@ import { PageHero } from "@/components/site/PageHero";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { MapPin } from "lucide-react";
 import aboutImg from "@/assets/about-office.jpg";
-import apresentacaoAsset from "@/assets/apresentacao-fachada.png.asset.json";
-import heroAsset from "@/assets/quem-somos-hero.jpg.asset.json";
-const apresentacaoImg = apresentacaoAsset.url;
-const heroImg = heroAsset.url;
-import abrinqSeal from "@/assets/certifications/abrinq.png.asset.json";
-import esgSeal from "@/assets/certifications/esg.png.asset.json";
-import profSustSeal from "@/assets/certifications/profissional-sustentavel.png.asset.json";
-import odsSeal from "@/assets/certifications/ods.png.asset.json";
+import apresentacaoAsset from "@/assets/apresentacao-fachada.png";
+import heroAsset from "@/assets/quem-somos-hero.jpg";
+const apresentacaoImg = apresentacaoAsset;
+const heroImg = heroAsset;
+import abrinqSeal from "@/assets/certifications/abrinq.png";
+import esgSeal from "@/assets/certifications/esg.png";
+import profSustSeal from "@/assets/certifications/profissional-sustentavel.png";
+import odsSeal from "@/assets/certifications/ods.png";
 
 export const Route = createFileRoute("/quem-somos")({
   head: () => ({
@@ -126,10 +126,10 @@ function QuemSomos() {
             </h2>
             <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
               {[
-                { label: "Fundação Abrinq", img: abrinqSeal.url },
-                { label: "ESG", img: esgSeal.url },
-                { label: "Profissional Sustentável", img: profSustSeal.url },
-                { label: "ODS — Agenda 2030", img: odsSeal.url },
+                { label: "Fundação Abrinq", img: abrinqSeal },
+                { label: "ESG", img: esgSeal },
+                { label: "Profissional Sustentável", img: profSustSeal },
+                { label: "ODS — Agenda 2030", img: odsSeal },
               ].map((s) => (
                 <div key={s.label} className="flex aspect-square flex-col items-center justify-center border border-border bg-white p-6 text-center">
                   <div className="flex h-32 w-32 items-center justify-center">

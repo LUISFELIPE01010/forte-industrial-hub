@@ -32,7 +32,7 @@ export const Route = createFileRoute("/servicos/caldeiraria")({
         "Recuperação de componentes",
         "Ajustes em estruturas existentes",
         "Corte, solda e montagem",
-        "Apoio em obras e manutenção industrial",
+        "Apoio em obras industriais",
         "Fabricação de peças sob desenho",
       ]}
       norms={[

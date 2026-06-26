@@ -9,7 +9,7 @@ import { Counter } from "@/components/site/Counter";
 import { ClientLogos } from "@/components/site/ClientLogos";
 import heroImg from "@/assets/hero-scaffold.jpg";
 import aboutImg from "@/assets/about-office.jpg";
-import sobreProfissionalImg from "@/assets/sobre-profissional-4.png";
+import sobreProfissionalImg from "@/assets/sobre-profissional-4.jpg";
 import tankBeforeAsset from "@/assets/portfolio-tank-before.jpg";
 import tankAfterAsset from "@/assets/portfolio-tank-after.jpg";
 const tankBefore = tankBeforeAsset;

@@ -6,7 +6,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { MapPin } from "lucide-react";
 import aboutImg from "@/assets/about-office.jpg";
-import apresentacaoAsset from "@/assets/apresentacao-fachada.png";
+import apresentacaoAsset from "@/assets/apresentacao-fachada.jpg";
 import heroAsset from "@/assets/quem-somos-hero.jpg";
 const apresentacaoImg = apresentacaoAsset;
 const heroImg = heroAsset;

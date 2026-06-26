@@ -22,10 +22,10 @@ const floorAfter = floorAfterAsset.url;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rocha Forte Serviços | Andaimes, Pintura e Manutenção Industrial — Cubatão/SP" },
-      { name: "description", content: "Andaimes, manutenção industrial, pintura técnica e caldeiraria com equipes experientes, controle operacional e segurança rigorosa. Atendimento nacional." },
+      { title: "Rocha Forte Serviços | Andaimes, Pintura Industrial e Caldeiraria — Cubatão/SP" },
+      { name: "description", content: "Andaimes, pintura técnica industrial e caldeiraria com equipes experientes, controle operacional e segurança rigorosa. Atendimento nacional." },
       { property: "og:title", content: "Rocha Forte Serviços | Soluções Industriais" },
-      { property: "og:description", content: "Andaimes, manutenção, pintura técnica e caldeiraria com quem entende de campo." },
+      { property: "og:description", content: "Andaimes, pintura técnica e caldeiraria com quem entende de campo." },
     ],
   }),
   component: Home,

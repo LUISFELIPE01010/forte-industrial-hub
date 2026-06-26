@@ -2,12 +2,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
 import heroAsset from "@/assets/cta-painting.jpg.asset.json";
 const hero = heroAsset.url;
-import g1Asset from "@/assets/portfolio-tank-after.jpg.asset.json";
+import g1Asset from "@/assets/proj-20220628_134230.jpg.asset.json";
 const g1 = g1Asset.url;
-import g2Asset from "@/assets/portfolio-floor-after.jpg.asset.json";
+import g2Asset from "@/assets/proj-20230112_092434.jpg.asset.json";
 const g2 = g2Asset.url;
-import g3Asset from "@/assets/cta-painting.jpg.asset.json";
+import g3Asset from "@/assets/proj-20231213_093202.jpg.asset.json";
 const g3 = g3Asset.url;
+import g4Asset from "@/assets/proj-20231213_093130.jpg.asset.json";
+const g4 = g4Asset.url;
+import g5Asset from "@/assets/proj-20231213_093437.jpg.asset.json";
+const g5 = g5Asset.url;
+import g6Asset from "@/assets/proj-20230330_103830.jpg.asset.json";
+const g6 = g6Asset.url;
 
 export const Route = createFileRoute("/servicos/pintura")({
   head: () => ({

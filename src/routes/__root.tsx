@@ -77,19 +77,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Rocha Forte Serviços | Andaimes, Pintura e Manutenção Industrial — Cubatão/SP" },
+      { title: "Rocha Forte Serviços | Andaimes, Pintura Industrial e Caldeiraria — Cubatão/SP" },
       {
         name: "description",
         content:
-          "Empresa especializada em andaimes, manutenção industrial, pintura técnica e caldeiraria. Atendemos indústrias em todo o Brasil. Fale com a Rocha Forte.",
+          "Empresa especializada em andaimes, pintura técnica industrial e caldeiraria. Atendemos indústrias em todo o Brasil. Fale com a Rocha Forte.",
       },
       { name: "author", content: "Rocha Forte Serviços Ltda" },
       { name: "theme-color", content: "#1A1A1A" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Rocha Forte Serviços" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Rocha Forte Serviços | Andaimes, Pintura e Manutenção Industrial — Cubatão/SP" },
-      { name: "twitter:title", content: "Rocha Forte Serviços | Andaimes, Pintura e Manutenção Industrial — Cubatão/SP" },
+      { property: "og:title", content: "Rocha Forte Serviços | Andaimes, Pintura Industrial e Caldeiraria — Cubatão/SP" },
+      { name: "twitter:title", content: "Rocha Forte Serviços | Andaimes, Pintura Industrial e Caldeiraria — Cubatão/SP" },
       { name: "description", content: "Rocha Forte Identity is a professional B2B industrial services website." },
       { property: "og:description", content: "Rocha Forte Identity is a professional B2B industrial services website." },
       { name: "twitter:description", content: "Rocha Forte Identity is a professional B2B industrial services website." },

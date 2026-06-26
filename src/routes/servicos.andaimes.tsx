@@ -9,7 +9,7 @@ export const Route = createFileRoute("/servicos/andaimes")({
   head: () => ({
     meta: [
       { title: "Andaimes — Montagem, Desmontagem e Locação | Rocha Forte" },
-      { name: "description", content: "Andaimes tubulares e multidirecionais para manutenção, pintura, inspeções e paradas programadas, com controle por fichas." },
+      { name: "description", content: "Andaimes tubulares e multidirecionais para pintura, inspeções e paradas programadas, com controle por fichas." },
       { property: "og:title", content: "Andaimes Industriais — Rocha Forte" },
       { property: "og:description", content: "Montagem, desmontagem e locação de andaimes industriais." },
       { property: "og:image", content: hero },
@@ -24,13 +24,13 @@ export const Route = createFileRoute("/servicos/andaimes")({
       parent={{ label: "Serviços", to: "/servicos" }}
       crumb="Andaimes"
       intro={[
-        "Executamos a montagem, desmontagem e locação de andaimes para manutenções industriais, pintura, inspeções, paradas programadas e obras de grande porte. Trabalhamos com sistemas tubulares e multidirecionais — incluindo fachadeiros, cimbramentos e escoramentos.",
+        "Executamos a montagem, desmontagem e locação de andaimes para obras industriais, pintura, inspeções, paradas programadas e obras de grande porte. Trabalhamos com sistemas tubulares e multidirecionais — incluindo fachadeiros, cimbramentos e escoramentos.",
         "Cada estrutura recebe ficha de controle e identificação visual em campo, com inspeção e liberação documentada antes da entrega ao cliente. Nossa equipe acompanha medições e dá suporte técnico durante todo o ciclo da obra.",
       ]}
       activities={[
         "Andaimes tubulares e multidirecionais",
         "Andaimes de acesso e plataformas elevatórias",
-        "Andaimes para manutenção e paradas",
+        "Andaimes para paradas programadas",
         "Andaimes para pintura industrial",
         "Andaimes para caldeiraria",
         "Andaimes para inspeções e ensaios",
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/servicos/andaimes")({
       gallery={[
         { src: g1, alt: "Andaime em torre industrial" },
         { src: g2, alt: "Detalhe de andaime multidirecional" },
-        { src: g3, alt: "Andaime em manutenção" },
+        { src: g3, alt: "Andaime em obra industrial" },
       ]}
     />
   ),

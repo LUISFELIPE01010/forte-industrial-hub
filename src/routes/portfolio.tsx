@@ -17,7 +17,7 @@ const floorAfter = floorAfterAsset.url;
 import paintAsset from "@/assets/cta-painting.jpg.asset.json";
 const paint = paintAsset.url;
 import scaffold from "@/assets/service-scaffold.jpg";
-import maintenance from "@/assets/service-maintenance.jpg";
+
 import caldeiraria from "@/assets/service-caldeiraria.jpg";
 import heroScaffold from "@/assets/hero-scaffold.jpg";
 
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
       { title: "Portfólio de Obras | Rocha Forte Serviços" },
-      { name: "description", content: "Trabalhos executados pela Rocha Forte em indústrias de todo o Brasil — andaimes, pintura, caldeiraria e manutenção." },
+      { name: "description", content: "Trabalhos executados pela Rocha Forte em indústrias de todo o Brasil — andaimes, pintura e caldeiraria." },
       { property: "og:title", content: "Portfólio — Rocha Forte" },
       { property: "og:description", content: "Conheça projetos executados em indústrias de todo o Brasil." },
       { property: "og:image", content: tankAfter },
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
 });
 
-type Project = { src: string; title: string; cat: "Andaimes" | "Pintura" | "Caldeiraria" | "Manutenção" };
+type Project = { src: string; title: string; cat: "Andaimes" | "Pintura" | "Caldeiraria" };
 
 const projects: Project[] = [
   { src: tankAfter, title: "Tanque industrial — pintura anticorrosiva", cat: "Pintura" },
@@ -44,11 +44,10 @@ const projects: Project[] = [
   { src: paint, title: "Pintura tinta alta temperatura", cat: "Pintura" },
   { src: heroScaffold, title: "Andaime multidirecional — torre industrial", cat: "Andaimes" },
   { src: scaffold, title: "Andaime para pintura de chaminé", cat: "Andaimes" },
-  { src: maintenance, title: "Manutenção em estrutura metálica", cat: "Manutenção" },
   { src: caldeiraria, title: "Caldeiraria — solda em estrutura", cat: "Caldeiraria" },
 ];
 
-const cats = ["Todos", "Andaimes", "Pintura", "Caldeiraria", "Manutenção"] as const;
+const cats = ["Todos", "Andaimes", "Pintura", "Caldeiraria"] as const;
 
 function Portfolio() {
   const [active, setActive] = useState<(typeof cats)[number]>("Todos");

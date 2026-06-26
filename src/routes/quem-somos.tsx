@@ -19,7 +19,7 @@ export const Route = createFileRoute("/quem-somos")({
   head: () => ({
     meta: [
       { title: "Quem Somos — Rocha Forte Serviços" },
-      { name: "description", content: "Conheça a Rocha Forte Serviços Ltda: especialistas em andaimes, manutenção, pintura industrial e caldeiraria, com sede em Cubatão e CDIs em todo o Brasil." },
+      { name: "description", content: "Conheça a Rocha Forte Serviços Ltda: especialistas em andaimes, pintura industrial e caldeiraria, com sede em Cubatão e CDIs em todo o Brasil." },
       { property: "og:title", content: "Quem Somos — Rocha Forte Serviços" },
       { property: "og:description", content: "Especialistas em soluções industriais com atuação nacional." },
     ],
@@ -52,7 +52,7 @@ function QuemSomos() {
                   A Rocha Forte Serviços Ltda nasceu para atender o setor industrial com
                   rigor técnico e proximidade operacional. Atuamos em locação e montagem
                   de andaimes, cimbramentos, fachadeiros, escoramentos, pintura técnica e
-                  manutenções industriais para clientes de qualquer porte.
+                  caldeiraria para clientes de qualquer porte.
                 </p>
                 <p>
                   Com escritório central em Cubatão/SP e centros de distribuição em São

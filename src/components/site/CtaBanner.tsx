@@ -9,7 +9,7 @@ export function CtaBanner() {
       <div className="container-x py-24 text-center md:py-32">
         <span className="eyebrow eyebrow-light justify-center">Fale com a Rocha Forte</span>
         <h2 className="mx-auto mt-5 max-w-3xl text-3xl text-white sm:text-4xl md:text-5xl">
-          Precisa de andaimes, manutenção ou pintura industrial?
+          Precisa de andaimes, pintura industrial ou caldeiraria?
         </h2>
         <p className="mx-auto mt-5 max-w-2xl text-base text-white/80">
           Entre em contato e solicite uma proposta. Atendemos Cubatão, Santos, São Vicente,

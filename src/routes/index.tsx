@@ -22,10 +22,10 @@ const floorAfter = floorAfterAsset.url;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rocha Forte Serviços | Andaimes, Pintura e Manutenção Industrial — Cubatão/SP" },
-      { name: "description", content: "Andaimes, manutenção industrial, pintura técnica e caldeiraria com equipes experientes, controle operacional e segurança rigorosa. Atendimento nacional." },
+      { title: "Rocha Forte Serviços | Andaimes, Pintura Industrial e Caldeiraria — Cubatão/SP" },
+      { name: "description", content: "Andaimes, pintura técnica industrial e caldeiraria com equipes experientes, controle operacional e segurança rigorosa. Atendimento nacional." },
       { property: "og:title", content: "Rocha Forte Serviços | Soluções Industriais" },
-      { property: "og:description", content: "Andaimes, manutenção, pintura técnica e caldeiraria com quem entende de campo." },
+      { property: "og:description", content: "Andaimes, pintura técnica e caldeiraria com quem entende de campo." },
     ],
   }),
   component: Home,
@@ -64,7 +64,7 @@ function Hero() {
           <span className="red-rule mb-7" />
           <span className="eyebrow eyebrow-light">Soluções Industriais</span>
           <h1 className="mt-6 text-[2.5rem] leading-[1.02] text-white sm:text-5xl md:text-6xl lg:text-[4.25rem]">
-            Andaimes, Manutenção e Pintura Industrial com quem <span className="text-brand">entende de campo.</span>
+            Andaimes, Pintura Industrial e Caldeiraria com quem <span className="text-brand">entende de campo.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-base text-white/85 md:text-lg md:leading-relaxed">
             Atendemos indústrias em todo o Brasil com equipes experientes, controle operacional rigoroso e compromisso com segurança.
@@ -135,7 +135,7 @@ function About() {
           </h2>
           <p className="mt-6 text-base leading-relaxed text-graphite">
             A Rocha Forte Serviços Ltda é especializada em locação e montagem de andaimes,
-            cimbramentos, fachadeiros, escoramentos, pintura técnica e manutenções industriais.
+            cimbramentos, fachadeiros, escoramentos, pintura técnica e caldeiraria.
             Com escritório central em Cubatão/SP e centros de distribuição industrial em
             São Paulo, Pindamonhangaba, Curitiba e Uberaba, atendemos empresas de qualquer
             porte com equipe técnica qualificada e processos controlados.
@@ -181,14 +181,8 @@ const SERVICES = [
   {
     Icon: Hammer,
     title: "Montagem, Desmontagem e Locação de Andaimes",
-    text: "Andaimes tubulares e multidirecionais para manutenção, pintura, inspeções e paradas programadas. Controle por fichas e acompanhamento técnico em campo.",
+    text: "Andaimes tubulares e multidirecionais para pintura, inspeções e paradas programadas. Controle por fichas e acompanhamento técnico em campo.",
     to: "/servicos/andaimes",
-  },
-  {
-    Icon: Cog,
-    title: "Manutenção Industrial",
-    text: "Apoio operacional em paradas de manutenção, acessos temporários, reparos em estruturas metálicas e suporte técnico em áreas industriais ativas.",
-    to: "/servicos/manutencao",
   },
   {
     Icon: PaintRoller,
@@ -211,10 +205,10 @@ function Services() {
         <div className="max-w-2xl">
           <span className="eyebrow">O Que Fazemos</span>
           <h2 className="mt-5 text-3xl text-foreground sm:text-4xl md:text-5xl">
-            Soluções completas para acesso, manutenção e proteção industrial.
+            Soluções completas para acesso, pintura e proteção industrial.
           </h2>
         </div>
-        <div className="mt-12 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s) => (
             <Link
               key={s.title}
@@ -342,7 +336,7 @@ function Safety() {
 
 function Differentials() {
   const items = [
-    { Icon: Wrench, t: "Experiência Industrial", d: "Equipe acostumada com rotina de fábrica, paradas de manutenção e ambientes de alta exigência operacional." },
+    { Icon: Wrench, t: "Experiência Industrial", d: "Equipe acostumada com rotina de fábrica, paradas programadas e ambientes de alta exigência operacional." },
     { Icon: FileCheck2, t: "Controle por Fichas", d: "Montagem, desmontagem e liberação de andaimes com registro e identificação de cada estrutura." },
     { Icon: MapPin, t: "Atuação Nacional", d: "Escritório em Cubatão e CDIs em São Paulo, Pindamonhangaba, Curitiba e Uberaba." },
     { Icon: Cog, t: "Planejamento e Documentação", d: "Apoio técnico em projetos, medições e acompanhamento de execução com documentação de campo." },

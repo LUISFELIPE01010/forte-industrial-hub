@@ -55,9 +55,8 @@ function Home() {
 function Hero() {
   return (
     <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden">
-      <img src={heroImg} alt="Andaime industrial montado em planta petroquímica" className="absolute inset-0 -z-10 h-full w-full object-cover" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-carbon/70 via-carbon/65 to-carbon/85" />
-      <div className="absolute inset-0 -z-10 bg-carbon/40 backdrop-blur-[2px]" />
+      <img src={heroImg} alt="Andaime industrial montado em planta petroquímica" fetchPriority="high" decoding="async" className="absolute inset-0 -z-10 h-full w-full object-cover" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-carbon/80 via-carbon/75 to-carbon/90" />
 
       <div className="container-x w-full pb-20 pt-32 md:pb-28">
         <div className="max-w-4xl fade-up">

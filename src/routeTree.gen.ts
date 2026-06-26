@@ -19,7 +19,6 @@ import { Route as ClientesRouteImport } from './routes/clientes'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
 import { Route as ServicosPinturaRouteImport } from './routes/servicos.pintura'
-import { Route as ServicosManutencaoRouteImport } from './routes/servicos.manutencao'
 import { Route as ServicosCaldeirariaRouteImport } from './routes/servicos.caldeiraria'
 import { Route as ServicosAndaimesRouteImport } from './routes/servicos.andaimes'
 
@@ -73,11 +72,6 @@ const ServicosPinturaRoute = ServicosPinturaRouteImport.update({
   path: '/pintura',
   getParentRoute: () => ServicosRoute,
 } as any)
-const ServicosManutencaoRoute = ServicosManutencaoRouteImport.update({
-  id: '/manutencao',
-  path: '/manutencao',
-  getParentRoute: () => ServicosRoute,
-} as any)
 const ServicosCaldeirariaRoute = ServicosCaldeirariaRouteImport.update({
   id: '/caldeiraria',
   path: '/caldeiraria',
@@ -100,7 +94,6 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/servicos/andaimes': typeof ServicosAndaimesRoute
   '/servicos/caldeiraria': typeof ServicosCaldeirariaRoute
-  '/servicos/manutencao': typeof ServicosManutencaoRoute
   '/servicos/pintura': typeof ServicosPinturaRoute
   '/servicos/': typeof ServicosIndexRoute
 }
@@ -114,7 +107,6 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/servicos/andaimes': typeof ServicosAndaimesRoute
   '/servicos/caldeiraria': typeof ServicosCaldeirariaRoute
-  '/servicos/manutencao': typeof ServicosManutencaoRoute
   '/servicos/pintura': typeof ServicosPinturaRoute
   '/servicos': typeof ServicosIndexRoute
 }
@@ -130,7 +122,6 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/servicos/andaimes': typeof ServicosAndaimesRoute
   '/servicos/caldeiraria': typeof ServicosCaldeirariaRoute
-  '/servicos/manutencao': typeof ServicosManutencaoRoute
   '/servicos/pintura': typeof ServicosPinturaRoute
   '/servicos/': typeof ServicosIndexRoute
 }
@@ -147,7 +138,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/servicos/andaimes'
     | '/servicos/caldeiraria'
-    | '/servicos/manutencao'
     | '/servicos/pintura'
     | '/servicos/'
   fileRoutesByTo: FileRoutesByTo
@@ -161,7 +151,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/servicos/andaimes'
     | '/servicos/caldeiraria'
-    | '/servicos/manutencao'
     | '/servicos/pintura'
     | '/servicos'
   id:
@@ -176,7 +165,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/servicos/andaimes'
     | '/servicos/caldeiraria'
-    | '/servicos/manutencao'
     | '/servicos/pintura'
     | '/servicos/'
   fileRoutesById: FileRoutesById
@@ -264,13 +252,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicosPinturaRouteImport
       parentRoute: typeof ServicosRoute
     }
-    '/servicos/manutencao': {
-      id: '/servicos/manutencao'
-      path: '/manutencao'
-      fullPath: '/servicos/manutencao'
-      preLoaderRoute: typeof ServicosManutencaoRouteImport
-      parentRoute: typeof ServicosRoute
-    }
     '/servicos/caldeiraria': {
       id: '/servicos/caldeiraria'
       path: '/caldeiraria'
@@ -291,7 +272,6 @@ declare module '@tanstack/react-router' {
 interface ServicosRouteChildren {
   ServicosAndaimesRoute: typeof ServicosAndaimesRoute
   ServicosCaldeirariaRoute: typeof ServicosCaldeirariaRoute
-  ServicosManutencaoRoute: typeof ServicosManutencaoRoute
   ServicosPinturaRoute: typeof ServicosPinturaRoute
   ServicosIndexRoute: typeof ServicosIndexRoute
 }
@@ -299,7 +279,6 @@ interface ServicosRouteChildren {
 const ServicosRouteChildren: ServicosRouteChildren = {
   ServicosAndaimesRoute: ServicosAndaimesRoute,
   ServicosCaldeirariaRoute: ServicosCaldeirariaRoute,
-  ServicosManutencaoRoute: ServicosManutencaoRoute,
   ServicosPinturaRoute: ServicosPinturaRoute,
   ServicosIndexRoute: ServicosIndexRoute,
 }

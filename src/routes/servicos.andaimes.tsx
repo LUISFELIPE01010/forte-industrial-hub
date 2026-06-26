@@ -9,7 +9,7 @@ export const Route = createFileRoute("/servicos/andaimes")({
   head: () => ({
     meta: [
       { title: "Andaimes — Montagem, Desmontagem e Locação | Rocha Forte" },
-      { name: "description", content: "Andaimes tubulares e multidirecionais para manutenção, pintura, inspeções e paradas programadas, com controle por fichas." },
+      { name: "description", content: "Andaimes tubulares e multidirecionais para pintura, inspeções e paradas programadas, com controle por fichas." },
       { property: "og:title", content: "Andaimes Industriais — Rocha Forte" },
       { property: "og:description", content: "Montagem, desmontagem e locação de andaimes industriais." },
       { property: "og:image", content: hero },

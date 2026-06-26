@@ -25,7 +25,7 @@ export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
       { title: "Portfólio de Obras | Rocha Forte Serviços" },
-      { name: "description", content: "Trabalhos executados pela Rocha Forte em indústrias de todo o Brasil — andaimes, pintura, caldeiraria e manutenção." },
+      { name: "description", content: "Trabalhos executados pela Rocha Forte em indústrias de todo o Brasil — andaimes, pintura e caldeiraria." },
       { property: "og:title", content: "Portfólio — Rocha Forte" },
       { property: "og:description", content: "Conheça projetos executados em indústrias de todo o Brasil." },
       { property: "og:image", content: tankAfter },

@@ -37,7 +37,7 @@ function Servicos() {
         <PageHero
           eyebrow="O que fazemos"
           title="Nossos Serviços"
-          subtitle="Soluções industriais completas para acesso em altura, manutenção, pintura e estruturas metálicas."
+          subtitle="Soluções industriais completas para acesso em altura, pintura e estruturas metálicas."
           image={heroImg}
           breadcrumb={[{ label: "Home", to: "/" }, { label: "Serviços" }]}
         />

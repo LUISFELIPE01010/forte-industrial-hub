@@ -13,7 +13,7 @@ export const Route = createFileRoute("/contato")({
       { title: "Contato | Rocha Forte Serviços" },
       { name: "description", content: "Fale com a Rocha Forte: telefone (13) 3324-0071, WhatsApp (13) 3324-0554. Cubatão/SP e atendimento em todo o Brasil." },
       { property: "og:title", content: "Contato — Rocha Forte" },
-      { property: "og:description", content: "Solicite seu orçamento de andaimes, manutenção, pintura ou caldeiraria." },
+      { property: "og:description", content: "Solicite seu orçamento de andaimes, pintura industrial ou caldeiraria." },
     ],
   }),
   component: Contato,

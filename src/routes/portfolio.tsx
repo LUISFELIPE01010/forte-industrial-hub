@@ -16,17 +16,11 @@ const floorBefore = floorBeforeAsset;
 const floorAfter = floorAfterAsset;
 import paintAsset from "@/assets/cta-painting.jpg";
 const paint = paintAsset;
-import scaffold from "@/assets/service-scaffold.jpg";
-
-
-import heroScaffold from "@/assets/hero-scaffold.jpg";
-
 import p1Asset from "@/assets/proj-20220517_154756.jpg";
 import p2Asset from "@/assets/proj-20220628_132721.jpg";
 import p3Asset from "@/assets/proj-20220628_134230.jpg";
 import p4Asset from "@/assets/proj-20230112_092434.jpg";
 import p5Asset from "@/assets/proj-20230330_103830.jpg";
-import p6Asset from "@/assets/proj-20231213_093130.jpg";
 import p7Asset from "@/assets/proj-20231213_093202.jpg";
 import p8Asset from "@/assets/proj-20231213_093437.jpg";
 import n1Asset from "@/assets/new-IMG-20230515-WA0046.jpg";
@@ -60,7 +54,6 @@ const projects: Project[] = [
   { src: p3Asset, title: "Tanque industrial — pintura vermelha anticorrosiva", cat: "Pintura" },
   { src: p4Asset, title: "Pintura de silo com plataforma elevatória", cat: "Pintura" },
   { src: p5Asset, title: "Pintura de estrutura industrial", cat: "Pintura" },
-  { src: p6Asset, title: "Piso industrial — pintura epóxi", cat: "Pintura" },
   { src: p7Asset, title: "Escada industrial — epóxi antiderrapante", cat: "Pintura" },
   { src: p8Asset, title: "Escada com faixas antiderrapantes", cat: "Pintura" },
   { src: tankAfter, title: "Tanque industrial — pintura anticorrosiva", cat: "Pintura" },
@@ -68,9 +61,6 @@ const projects: Project[] = [
   { src: floorAfter, title: "Piso industrial — epóxi azul", cat: "Pintura" },
   { src: floorBefore, title: "Recuperação de piso industrial", cat: "Pintura" },
   { src: paint, title: "Pintura tinta alta temperatura", cat: "Pintura" },
-  { src: heroScaffold, title: "Andaime multidirecional — torre industrial", cat: "Andaimes" },
-  { src: scaffold, title: "Andaime para pintura de chaminé", cat: "Andaimes" },
-  
   { src: n1Asset, title: "Piso industrial — epóxi azul com demarcação", cat: "Pintura" },
   { src: n2Asset, title: "Demarcação de piso industrial", cat: "Pintura" },
   { src: n3Asset, title: "Tanque vertical — pintura anticorrosiva vermelha", cat: "Pintura" },

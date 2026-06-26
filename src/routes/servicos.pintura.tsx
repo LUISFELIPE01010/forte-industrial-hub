@@ -14,6 +14,20 @@ import g5Asset from "@/assets/proj-20231213_093437.jpg.asset.json";
 const g5 = g5Asset.url;
 import g6Asset from "@/assets/proj-20230330_103830.jpg.asset.json";
 const g6 = g6Asset.url;
+import n1Asset from "@/assets/new-IMG-20230515-WA0046.jpg.asset.json";
+const n1 = n1Asset.url;
+import n2Asset from "@/assets/new-IMG-20230515-WA0045.jpg.asset.json";
+const n2 = n2Asset.url;
+import n3Asset from "@/assets/new-IMG-20220304-WA0049.jpg.asset.json";
+const n3 = n3Asset.url;
+import n4Asset from "@/assets/new-IMG-20221017-WA0017.jpg.asset.json";
+const n4 = n4Asset.url;
+import n5Asset from "@/assets/new-IMG-20221118-WA0073.jpg.asset.json";
+const n5 = n5Asset.url;
+import n6Asset from "@/assets/new-IMG_20190308_114843438.jpg.asset.json";
+const n6 = n6Asset.url;
+import n7Asset from "@/assets/new-IMG-20220211-WA0051.jpg.asset.json";
+const n7 = n7Asset.url;
 
 export const Route = createFileRoute("/servicos/pintura")({
   head: () => ({
@@ -60,6 +74,13 @@ export const Route = createFileRoute("/servicos/pintura")({
         { src: g4, alt: "Piso industrial com pintura epóxi" },
         { src: g5, alt: "Escada com pintura epóxi e faixas antiderrapantes" },
         { src: g6, alt: "Estrutura industrial pintada" },
+        { src: n1, alt: "Piso industrial em epóxi azul com demarcação" },
+        { src: n2, alt: "Demarcação de piso industrial com faixas amarelas" },
+        { src: n3, alt: "Tanque industrial pintado em vermelho anticorrosivo" },
+        { src: n4, alt: "Demarcação de área operacional em verde e amarelo" },
+        { src: n5, alt: "Demarcação viária industrial em vermelho e verde" },
+        { src: n6, alt: "Pintura de tubulação industrial em azul" },
+        { src: n7, alt: "Topo de tanque industrial pintado em preto" },
       ]}
     />
   ),

@@ -29,6 +29,15 @@ import p5Asset from "@/assets/proj-20230330_103830.jpg.asset.json";
 import p6Asset from "@/assets/proj-20231213_093130.jpg.asset.json";
 import p7Asset from "@/assets/proj-20231213_093202.jpg.asset.json";
 import p8Asset from "@/assets/proj-20231213_093437.jpg.asset.json";
+import n1Asset from "@/assets/new-IMG-20230515-WA0046.jpg.asset.json";
+import n2Asset from "@/assets/new-IMG-20230515-WA0045.jpg.asset.json";
+import n3Asset from "@/assets/new-IMG-20220304-WA0049.jpg.asset.json";
+import n4Asset from "@/assets/new-IMG-20221017-WA0017.jpg.asset.json";
+import n5Asset from "@/assets/new-IMG-20221118-WA0073.jpg.asset.json";
+import n6Asset from "@/assets/new-IMG_20190308_114843438.jpg.asset.json";
+import n7Asset from "@/assets/new-IMG-20190201-WA0067.jpg.asset.json";
+import n8Asset from "@/assets/new-IMG-20190211-WA0051.jpg.asset.json";
+import n9Asset from "@/assets/new-IMG-20220211-WA0051.jpg.asset.json";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -62,6 +71,15 @@ const projects: Project[] = [
   { src: heroScaffold, title: "Andaime multidirecional — torre industrial", cat: "Andaimes" },
   { src: scaffold, title: "Andaime para pintura de chaminé", cat: "Andaimes" },
   { src: caldeiraria, title: "Caldeiraria — solda em estrutura", cat: "Caldeiraria" },
+  { src: n1Asset.url, title: "Piso industrial — epóxi azul com demarcação", cat: "Pintura" },
+  { src: n2Asset.url, title: "Demarcação de piso industrial", cat: "Pintura" },
+  { src: n3Asset.url, title: "Tanque vertical — pintura anticorrosiva vermelha", cat: "Pintura" },
+  { src: n4Asset.url, title: "Demarcação de área operacional", cat: "Pintura" },
+  { src: n5Asset.url, title: "Demarcação viária industrial", cat: "Pintura" },
+  { src: n6Asset.url, title: "Pintura de tubulação industrial", cat: "Pintura" },
+  { src: n7Asset.url, title: "Andaime em estrutura industrial", cat: "Andaimes" },
+  { src: n8Asset.url, title: "Andaime envolvendo torre industrial", cat: "Andaimes" },
+  { src: n9Asset.url, title: "Topo de tanque industrial — pintura preta", cat: "Pintura" },
 ];
 
 const cats = ["Todos", "Andaimes", "Pintura", "Caldeiraria"] as const;

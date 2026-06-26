@@ -53,6 +53,8 @@ export const Route = createFileRoute("/servicos/andaimes")({
         { src: g1, alt: "Andaime em torre industrial" },
         { src: g2, alt: "Detalhe de andaime multidirecional" },
         { src: g3, alt: "Andaime em obra industrial" },
+        { src: g4, alt: "Andaime envolvendo torre/coluna industrial" },
+        { src: g5, alt: "Andaime tubular em estrutura industrial" },
       ]}
     />
   ),

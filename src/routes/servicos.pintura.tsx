@@ -14,6 +14,20 @@ import g5Asset from "@/assets/proj-20231213_093437.jpg.asset.json";
 const g5 = g5Asset.url;
 import g6Asset from "@/assets/proj-20230330_103830.jpg.asset.json";
 const g6 = g6Asset.url;
+import n1Asset from "@/assets/new-IMG-20230515-WA0046.jpg.asset.json";
+const n1 = n1Asset.url;
+import n2Asset from "@/assets/new-IMG-20230515-WA0045.jpg.asset.json";
+const n2 = n2Asset.url;
+import n3Asset from "@/assets/new-IMG-20220304-WA0049.jpg.asset.json";
+const n3 = n3Asset.url;
+import n4Asset from "@/assets/new-IMG-20221017-WA0017.jpg.asset.json";
+const n4 = n4Asset.url;
+import n5Asset from "@/assets/new-IMG-20221118-WA0073.jpg.asset.json";
+const n5 = n5Asset.url;
+import n6Asset from "@/assets/new-IMG_20190308_114843438.jpg.asset.json";
+const n6 = n6Asset.url;
+import n7Asset from "@/assets/new-IMG-20220211-WA0051.jpg.asset.json";
+const n7 = n7Asset.url;
 
 export const Route = createFileRoute("/servicos/pintura")({
   head: () => ({

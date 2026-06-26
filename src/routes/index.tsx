@@ -64,7 +64,7 @@ function Hero() {
           <span className="red-rule mb-7" />
           <span className="eyebrow eyebrow-light">Soluções Industriais</span>
           <h1 className="mt-6 text-[2.5rem] leading-[1.02] text-white sm:text-5xl md:text-6xl lg:text-[4.25rem]">
-            Andaimes, Manutenção e Pintura Industrial com quem <span className="text-brand">entende de campo.</span>
+            Andaimes, Pintura Industrial e Caldeiraria com quem <span className="text-brand">entende de campo.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-base text-white/85 md:text-lg md:leading-relaxed">
             Atendemos indústrias em todo o Brasil com equipes experientes, controle operacional rigoroso e compromisso com segurança.

@@ -16,17 +16,11 @@ const floorBefore = floorBeforeAsset;
 const floorAfter = floorAfterAsset;
 import paintAsset from "@/assets/cta-painting.jpg";
 const paint = paintAsset;
-import scaffold from "@/assets/service-scaffold.jpg";
-
-
-import heroScaffold from "@/assets/hero-scaffold.jpg";
-
 import p1Asset from "@/assets/proj-20220517_154756.jpg";
 import p2Asset from "@/assets/proj-20220628_132721.jpg";
 import p3Asset from "@/assets/proj-20220628_134230.jpg";
 import p4Asset from "@/assets/proj-20230112_092434.jpg";
 import p5Asset from "@/assets/proj-20230330_103830.jpg";
-import p6Asset from "@/assets/proj-20231213_093130.jpg";
 import p7Asset from "@/assets/proj-20231213_093202.jpg";
 import p8Asset from "@/assets/proj-20231213_093437.jpg";
 import n1Asset from "@/assets/new-IMG-20230515-WA0046.jpg";

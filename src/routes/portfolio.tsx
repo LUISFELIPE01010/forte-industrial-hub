@@ -29,6 +29,15 @@ import p5Asset from "@/assets/proj-20230330_103830.jpg.asset.json";
 import p6Asset from "@/assets/proj-20231213_093130.jpg.asset.json";
 import p7Asset from "@/assets/proj-20231213_093202.jpg.asset.json";
 import p8Asset from "@/assets/proj-20231213_093437.jpg.asset.json";
+import n1Asset from "@/assets/new-IMG-20230515-WA0046.jpg.asset.json";
+import n2Asset from "@/assets/new-IMG-20230515-WA0045.jpg.asset.json";
+import n3Asset from "@/assets/new-IMG-20220304-WA0049.jpg.asset.json";
+import n4Asset from "@/assets/new-IMG-20221017-WA0017.jpg.asset.json";
+import n5Asset from "@/assets/new-IMG-20221118-WA0073.jpg.asset.json";
+import n6Asset from "@/assets/new-IMG_20190308_114843438.jpg.asset.json";
+import n7Asset from "@/assets/new-IMG-20190201-WA0067.jpg.asset.json";
+import n8Asset from "@/assets/new-IMG-20190211-WA0051.jpg.asset.json";
+import n9Asset from "@/assets/new-IMG-20220211-WA0051.jpg.asset.json";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({

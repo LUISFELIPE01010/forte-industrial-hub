@@ -14,7 +14,6 @@ const nav: { to: string; label: string; hasMenu?: boolean }[] = [
 
 const services = [
   { to: "/servicos/andaimes", label: "Andaimes" },
-  { to: "/servicos/manutencao", label: "Manutenção Industrial" },
   { to: "/servicos/pintura", label: "Pintura Industrial" },
   { to: "/servicos/caldeiraria", label: "Caldeiraria" },
 ];

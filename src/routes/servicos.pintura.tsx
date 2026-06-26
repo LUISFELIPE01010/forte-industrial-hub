@@ -71,7 +71,7 @@ export const Route = createFileRoute("/servicos/pintura")({
         { src: g1, alt: "Tanque industrial pintado em vermelho" },
         { src: g2, alt: "Pintura de silo industrial com plataforma elevatória" },
         { src: g3, alt: "Pintura epóxi antiderrapante em escada industrial" },
-        { src: g4, alt: "Piso industrial com pintura epóxi" },
+        
         { src: g5, alt: "Escada com pintura epóxi e faixas antiderrapantes" },
         { src: g6, alt: "Estrutura industrial pintada" },
         { src: n1, alt: "Piso industrial em epóxi azul com demarcação" },

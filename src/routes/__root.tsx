@@ -93,8 +93,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Rocha Forte Identity is a professional B2B industrial services website." },
       { property: "og:description", content: "Rocha Forte Identity is a professional B2B industrial services website." },
       { name: "twitter:description", content: "Rocha Forte Identity is a professional B2B industrial services website." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/33e8776a-bf11-4aa5-9a34-08e6930c4db2/id-preview-f15c7cd0--e3ed0461-28e5-4cbd-8a5e-a3993d4d3b9f.lovable.app-1781990277178.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/33e8776a-bf11-4aa5-9a34-08e6930c4db2/id-preview-f15c7cd0--e3ed0461-28e5-4cbd-8a5e-a3993d4d3b9f.lovable.app-1781990277178.png" },
+      { property: "og:image", content: "https://forte-industrial-hub.lovable.app/og-image.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:image", content: "https://forte-industrial-hub.lovable.app/og-image.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

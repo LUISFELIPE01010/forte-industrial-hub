@@ -17,7 +17,7 @@ export function CtaBanner() {
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <a
-            href="https://wa.me/551333240554"
+            href="https://wa.me/5513974165868"
             target="_blank"
             rel="noopener"
             className="btn-base btn-primary"

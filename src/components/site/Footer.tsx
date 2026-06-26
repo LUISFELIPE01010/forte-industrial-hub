@@ -65,8 +65,8 @@ export function Footer() {
             <Phone className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
             <span>
               <a href="tel:+551333240071" className="block hover:text-white">(13) 3324-0071</a>
-              <a href="https://wa.me/551333240554" className="block hover:text-white" target="_blank" rel="noopener">
-                (13) 3324-0554 · WhatsApp
+              <a href="https://wa.me/5513974165868" className="block hover:text-white" target="_blank" rel="noopener">
+                (13) 97416-5868 · WhatsApp
               </a>
             </span>
           </li>

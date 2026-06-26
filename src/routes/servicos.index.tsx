@@ -7,7 +7,6 @@ import { CtaBanner } from "@/components/site/CtaBanner";
 import { ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero-scaffold.jpg";
 import scaffold from "@/assets/service-scaffold.jpg";
-import maintenance from "@/assets/service-maintenance.jpg";
 import paintingAsset from "@/assets/cta-painting.jpg.asset.json";
 const painting = paintingAsset.url;
 import caldeiraria from "@/assets/service-caldeiraria.jpg";
@@ -15,10 +14,10 @@ import caldeiraria from "@/assets/service-caldeiraria.jpg";
 export const Route = createFileRoute("/servicos/")({
   head: () => ({
     meta: [
-      { title: "Serviços — Andaimes, Manutenção, Pintura e Caldeiraria | Rocha Forte" },
-      { name: "description", content: "Soluções industriais completas: andaimes, manutenção, pintura técnica e caldeiraria para todos os setores industriais." },
+      { title: "Serviços — Andaimes, Pintura e Caldeiraria | Rocha Forte" },
+      { name: "description", content: "Soluções industriais completas: andaimes, pintura técnica e caldeiraria para todos os setores industriais." },
       { property: "og:title", content: "Serviços Industriais — Rocha Forte" },
-      { property: "og:description", content: "Andaimes, manutenção, pintura técnica e caldeiraria." },
+      { property: "og:description", content: "Andaimes, pintura técnica e caldeiraria." },
     ],
   }),
   component: Servicos,
@@ -26,7 +25,6 @@ export const Route = createFileRoute("/servicos/")({
 
 const items = [
   { to: "/servicos/andaimes", img: scaffold, title: "Andaimes", desc: "Montagem, desmontagem e locação de andaimes tubulares e multidirecionais." },
-  { to: "/servicos/manutencao", img: maintenance, title: "Manutenção Industrial", desc: "Apoio em paradas, reparos e suporte técnico em áreas industriais ativas." },
   { to: "/servicos/pintura", img: painting, title: "Pintura Técnica Industrial", desc: "Epóxi, alta temperatura, antiderrapante e poliuretano acrílico." },
   { to: "/servicos/caldeiraria", img: caldeiraria, title: "Caldeiraria", desc: "Fabricação, recuperação e adaptação de peças e estruturas metálicas." },
 ];

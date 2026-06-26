@@ -6,6 +6,10 @@ import g1Asset from "@/assets/proj-20220517_154756.jpg.asset.json";
 const g1 = g1Asset.url;
 import g2 from "@/assets/hero-scaffold.jpg";
 import g3 from "@/assets/service-scaffold.jpg";
+import g4Asset from "@/assets/new-IMG-20190211-WA0051.jpg.asset.json";
+const g4 = g4Asset.url;
+import g5Asset from "@/assets/new-IMG-20190201-WA0067.jpg.asset.json";
+const g5 = g5Asset.url;
 
 export const Route = createFileRoute("/servicos/andaimes")({
   head: () => ({

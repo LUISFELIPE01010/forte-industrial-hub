@@ -34,7 +34,7 @@ export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
 });
 
-type Project = { src: string; title: string; cat: "Andaimes" | "Pintura" | "Caldeiraria" | "Manutenção" };
+type Project = { src: string; title: string; cat: "Andaimes" | "Pintura" | "Caldeiraria" };
 
 const projects: Project[] = [
   { src: tankAfter, title: "Tanque industrial — pintura anticorrosiva", cat: "Pintura" },
@@ -44,11 +44,10 @@ const projects: Project[] = [
   { src: paint, title: "Pintura tinta alta temperatura", cat: "Pintura" },
   { src: heroScaffold, title: "Andaime multidirecional — torre industrial", cat: "Andaimes" },
   { src: scaffold, title: "Andaime para pintura de chaminé", cat: "Andaimes" },
-  { src: maintenance, title: "Manutenção em estrutura metálica", cat: "Manutenção" },
   { src: caldeiraria, title: "Caldeiraria — solda em estrutura", cat: "Caldeiraria" },
 ];
 
-const cats = ["Todos", "Andaimes", "Pintura", "Caldeiraria", "Manutenção"] as const;
+const cats = ["Todos", "Andaimes", "Pintura", "Caldeiraria"] as const;
 
 function Portfolio() {
   const [active, setActive] = useState<(typeof cats)[number]>("Todos");

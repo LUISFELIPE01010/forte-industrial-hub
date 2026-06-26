@@ -45,9 +45,9 @@ export const Route = createFileRoute("/servicos/caldeiraria")({
         "Inspeção visual e dimensional",
       ]}
       gallery={[
-        { src: g1, alt: "Solda industrial" },
-        { src: g2, alt: "Estrutura metálica" },
-        { src: g3, alt: "Apoio caldeiraria" },
+        { src: g1, alt: "Estrutura metálica e tanque elevado" },
+        { src: g2, alt: "Plataforma metálica industrial" },
+        { src: g3, alt: "Solda em estrutura" },
       ]}
     />
   ),

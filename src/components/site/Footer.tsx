@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Linkedin, Youtube, Facebook, MapPin, Mail, Phone } from "lucide-react";
+import { Instagram, MapPin, Mail, Phone } from "lucide-react";
 import logo from "@/assets/rocha-forte-logo.png";
 
 export function Footer() {
@@ -14,9 +14,6 @@ export function Footer() {
           <div className="mt-6 flex gap-3">
             {[
               { Icon: Instagram, href: "https://instagram.com/rochaforteservicos", label: "Instagram" },
-              { Icon: Linkedin, href: "#", label: "LinkedIn" },
-              { Icon: Youtube, href: "#", label: "YouTube" },
-              { Icon: Facebook, href: "#", label: "Facebook" },
             ].map(({ Icon, href, label }) => (
               <a
                 key={label}

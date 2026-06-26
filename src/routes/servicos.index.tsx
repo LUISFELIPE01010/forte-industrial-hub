@@ -9,7 +9,7 @@ import heroImg from "@/assets/hero-scaffold.jpg";
 import scaffold from "@/assets/service-scaffold.jpg";
 import paintingAsset from "@/assets/cta-painting.jpg.asset.json";
 const painting = paintingAsset.url;
-import caldeiraria from "@/assets/service-caldeiraria.jpg";
+import caldeiraria from "@/assets/proj-20220628_132721.jpg.asset.json";
 
 export const Route = createFileRoute("/servicos/")({
   head: () => ({
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/servicos/")({
 const items = [
   { to: "/servicos/andaimes", img: scaffold, title: "Andaimes", desc: "Montagem, desmontagem e locação de andaimes tubulares e multidirecionais." },
   { to: "/servicos/pintura", img: painting, title: "Pintura Técnica Industrial", desc: "Epóxi, alta temperatura, antiderrapante e poliuretano acrílico." },
-  { to: "/servicos/caldeiraria", img: caldeiraria, title: "Caldeiraria", desc: "Fabricação, recuperação e adaptação de peças e estruturas metálicas." },
+  { to: "/servicos/caldeiraria", img: caldeiraria.url, title: "Caldeiraria", desc: "Fabricação, recuperação e adaptação de peças e estruturas metálicas." },
 ];
 
 function Servicos() {

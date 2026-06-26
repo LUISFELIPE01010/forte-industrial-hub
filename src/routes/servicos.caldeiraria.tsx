@@ -6,7 +6,7 @@ import g1Asset from "@/assets/proj-20220628_132721.jpg.asset.json";
 const g1 = g1Asset.url;
 import g2Asset from "@/assets/proj-20230330_103830.jpg.asset.json";
 const g2 = g2Asset.url;
-import g3 from "@/assets/service-caldeiraria.jpg";
+
 
 export const Route = createFileRoute("/servicos/caldeiraria")({
   head: () => ({
@@ -47,7 +47,6 @@ export const Route = createFileRoute("/servicos/caldeiraria")({
       gallery={[
         { src: g1, alt: "Estrutura metálica e tanque elevado" },
         { src: g2, alt: "Plataforma metálica industrial" },
-        { src: g3, alt: "Solda em estrutura" },
       ]}
     />
   ),

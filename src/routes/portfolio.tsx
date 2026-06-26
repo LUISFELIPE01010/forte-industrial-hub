@@ -18,7 +18,7 @@ import paintAsset from "@/assets/cta-painting.jpg.asset.json";
 const paint = paintAsset.url;
 import scaffold from "@/assets/service-scaffold.jpg";
 
-import caldeiraria from "@/assets/service-caldeiraria.jpg";
+
 import heroScaffold from "@/assets/hero-scaffold.jpg";
 
 import p1Asset from "@/assets/proj-20220517_154756.jpg.asset.json";
@@ -70,7 +70,7 @@ const projects: Project[] = [
   { src: paint, title: "Pintura tinta alta temperatura", cat: "Pintura" },
   { src: heroScaffold, title: "Andaime multidirecional — torre industrial", cat: "Andaimes" },
   { src: scaffold, title: "Andaime para pintura de chaminé", cat: "Andaimes" },
-  { src: caldeiraria, title: "Caldeiraria — solda em estrutura", cat: "Caldeiraria" },
+  
   { src: n1Asset.url, title: "Piso industrial — epóxi azul com demarcação", cat: "Pintura" },
   { src: n2Asset.url, title: "Demarcação de piso industrial", cat: "Pintura" },
   { src: n3Asset.url, title: "Tanque vertical — pintura anticorrosiva vermelha", cat: "Pintura" },

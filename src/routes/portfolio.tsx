@@ -60,7 +60,6 @@ const projects: Project[] = [
   { src: p3Asset, title: "Tanque industrial — pintura vermelha anticorrosiva", cat: "Pintura" },
   { src: p4Asset, title: "Pintura de silo com plataforma elevatória", cat: "Pintura" },
   { src: p5Asset, title: "Pintura de estrutura industrial", cat: "Pintura" },
-  { src: p6Asset, title: "Piso industrial — pintura epóxi", cat: "Pintura" },
   { src: p7Asset, title: "Escada industrial — epóxi antiderrapante", cat: "Pintura" },
   { src: p8Asset, title: "Escada com faixas antiderrapantes", cat: "Pintura" },
   { src: tankAfter, title: "Tanque industrial — pintura anticorrosiva", cat: "Pintura" },
@@ -68,9 +67,6 @@ const projects: Project[] = [
   { src: floorAfter, title: "Piso industrial — epóxi azul", cat: "Pintura" },
   { src: floorBefore, title: "Recuperação de piso industrial", cat: "Pintura" },
   { src: paint, title: "Pintura tinta alta temperatura", cat: "Pintura" },
-  { src: heroScaffold, title: "Andaime multidirecional — torre industrial", cat: "Andaimes" },
-  { src: scaffold, title: "Andaime para pintura de chaminé", cat: "Andaimes" },
-  
   { src: n1Asset, title: "Piso industrial — epóxi azul com demarcação", cat: "Pintura" },
   { src: n2Asset, title: "Demarcação de piso industrial", cat: "Pintura" },
   { src: n3Asset, title: "Tanque vertical — pintura anticorrosiva vermelha", cat: "Pintura" },

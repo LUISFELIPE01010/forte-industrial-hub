@@ -52,7 +52,6 @@ export function Footer() {
         <FooterCol title="Serviços">
           {[
             ["/servicos/andaimes", "Andaimes"],
-            ["/servicos/manutencao", "Manutenção Industrial"],
             ["/servicos/pintura", "Pintura Industrial"],
             ["/servicos/caldeiraria", "Caldeiraria"],
           ].map(([to, label]) => (

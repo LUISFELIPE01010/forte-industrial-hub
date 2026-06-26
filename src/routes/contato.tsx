@@ -75,7 +75,7 @@ function Contato() {
                     <select name="servico" className="input-style" defaultValue="">
                       <option value="" disabled>Selecione</option>
                       <option>Andaimes</option>
-                      <option>Manutenção Industrial</option>
+                      
                       <option>Pintura Técnica</option>
                       <option>Caldeiraria</option>
                       <option>Outro</option>

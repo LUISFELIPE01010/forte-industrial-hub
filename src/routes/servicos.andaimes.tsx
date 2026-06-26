@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
 import heroAsset from "@/assets/hero-andaimes.jpg.asset.json";
 const hero = heroAsset.url;
-import g1 from "@/assets/hero-scaffold.jpg";
-import g2 from "@/assets/service-scaffold.jpg";
-import g3 from "@/assets/service-maintenance.jpg";
+import g1Asset from "@/assets/proj-20220517_154756.jpg.asset.json";
+const g1 = g1Asset.url;
+import g2 from "@/assets/hero-scaffold.jpg";
+import g3 from "@/assets/service-scaffold.jpg";
 
 export const Route = createFileRoute("/servicos/andaimes")({
   head: () => ({

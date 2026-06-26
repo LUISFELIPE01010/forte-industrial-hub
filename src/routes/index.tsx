@@ -70,7 +70,7 @@ function Hero() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a
-              href="https://wa.me/551333240554?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+              href="https://wa.me/5513974165868?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
               target="_blank"
               rel="noopener"
               className="btn-base btn-primary"

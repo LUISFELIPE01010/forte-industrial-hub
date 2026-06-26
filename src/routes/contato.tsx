@@ -11,7 +11,7 @@ export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
       { title: "Contato | Rocha Forte Serviços" },
-      { name: "description", content: "Fale com a Rocha Forte: telefone (13) 3324-0071, WhatsApp (13) 3324-0554. Cubatão/SP e atendimento em todo o Brasil." },
+      { name: "description", content: "Fale com a Rocha Forte: telefone (13) 3324-0071, WhatsApp (13) 97416-5868. Cubatão/SP e atendimento em todo o Brasil." },
       { property: "og:title", content: "Contato — Rocha Forte" },
       { property: "og:description", content: "Solicite seu orçamento de andaimes, pintura industrial ou caldeiraria." },
     ],
@@ -96,11 +96,11 @@ function Contato() {
             <aside className="space-y-6">
               <InfoBlock Icon={Phone} title="Telefones">
                 <a href="tel:+551333240071" className="block hover:text-brand">(13) 3324-0071</a>
-                <a href="tel:+551333240554" className="block hover:text-brand">(13) 3324-0554</a>
+                <a href="tel:+5513974165868" className="block hover:text-brand">(13) 97416-5868</a>
               </InfoBlock>
 
               <a
-                href="https://wa.me/551333240554"
+                href="https://wa.me/5513974165868"
                 target="_blank"
                 rel="noopener"
                 className="flex items-center gap-4 border border-whatsapp bg-whatsapp p-6 text-white transition-colors hover:bg-[oklch(0.58_0.18_145)]"

@@ -79,7 +79,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
             (13) 3324-0071
           </a>
           <a
-            href="https://wa.me/551333240554?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+            href="https://wa.me/5513974165868?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
             target="_blank"
             rel="noopener"
             className="btn-base btn-primary !py-2.5 !px-4 !text-[0.7rem]"
@@ -117,7 +117,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
                 Ligar
               </a>
               <a
-                href="https://wa.me/551333240554"
+                href="https://wa.me/5513974165868"
                 target="_blank"
                 rel="noopener"
                 className="btn-base btn-primary !py-3"

@@ -25,7 +25,7 @@ export const Route = createFileRoute("/servicos/caldeiraria")({
       crumb="Caldeiraria"
       intro={[
         "Realizamos serviços de caldeiraria leve para indústria: fabricação, recuperação e adaptação de peças, plataformas e estruturas metálicas. Atuamos com soldadores qualificados e processos compatíveis com as exigências do ambiente industrial.",
-        "Atendemos demandas pontuais, paradas de manutenção e contratos de longo prazo com suporte técnico em obra.",
+        "Atendemos demandas pontuais, paradas programadas e contratos de longo prazo com suporte técnico em obra.",
       ]}
       activities={[
         "Reparos em plataformas metálicas",

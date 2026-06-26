@@ -30,7 +30,7 @@ export const Route = createFileRoute("/servicos/andaimes")({
       activities={[
         "Andaimes tubulares e multidirecionais",
         "Andaimes de acesso e plataformas elevatórias",
-        "Andaimes para manutenção e paradas",
+        "Andaimes para paradas programadas",
         "Andaimes para pintura industrial",
         "Andaimes para caldeiraria",
         "Andaimes para inspeções e ensaios",

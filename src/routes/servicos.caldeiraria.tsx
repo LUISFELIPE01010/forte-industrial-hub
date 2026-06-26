@@ -2,9 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
 import heroAsset from "@/assets/hero-caldeiraria.jpg.asset.json";
 const hero = heroAsset.url;
-import g1 from "@/assets/service-caldeiraria.jpg";
-import g2 from "@/assets/service-maintenance.jpg";
-import g3 from "@/assets/service-scaffold.jpg";
+import g1Asset from "@/assets/proj-20220628_132721.jpg.asset.json";
+const g1 = g1Asset.url;
+import g2Asset from "@/assets/proj-20230330_103830.jpg.asset.json";
+const g2 = g2Asset.url;
+import g3 from "@/assets/service-caldeiraria.jpg";
 
 export const Route = createFileRoute("/servicos/caldeiraria")({
   head: () => ({
@@ -43,9 +45,9 @@ export const Route = createFileRoute("/servicos/caldeiraria")({
         "Inspeção visual e dimensional",
       ]}
       gallery={[
-        { src: g1, alt: "Solda industrial" },
-        { src: g2, alt: "Estrutura metálica" },
-        { src: g3, alt: "Apoio caldeiraria" },
+        { src: g1, alt: "Estrutura metálica e tanque elevado" },
+        { src: g2, alt: "Plataforma metálica industrial" },
+        { src: g3, alt: "Solda em estrutura" },
       ]}
     />
   ),

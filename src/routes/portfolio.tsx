@@ -21,6 +21,15 @@ import scaffold from "@/assets/service-scaffold.jpg";
 import caldeiraria from "@/assets/service-caldeiraria.jpg";
 import heroScaffold from "@/assets/hero-scaffold.jpg";
 
+import p1Asset from "@/assets/proj-20220517_154756.jpg.asset.json";
+import p2Asset from "@/assets/proj-20220628_132721.jpg.asset.json";
+import p3Asset from "@/assets/proj-20220628_134230.jpg.asset.json";
+import p4Asset from "@/assets/proj-20230112_092434.jpg.asset.json";
+import p5Asset from "@/assets/proj-20230330_103830.jpg.asset.json";
+import p6Asset from "@/assets/proj-20231213_093130.jpg.asset.json";
+import p7Asset from "@/assets/proj-20231213_093202.jpg.asset.json";
+import p8Asset from "@/assets/proj-20231213_093437.jpg.asset.json";
+
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
@@ -37,6 +46,14 @@ export const Route = createFileRoute("/portfolio")({
 type Project = { src: string; title: string; cat: "Andaimes" | "Pintura" | "Caldeiraria" };
 
 const projects: Project[] = [
+  { src: p1Asset.url, title: "Andaime multidirecional em torre industrial", cat: "Andaimes" },
+  { src: p2Asset.url, title: "Estrutura metálica e tanque elevado", cat: "Caldeiraria" },
+  { src: p3Asset.url, title: "Tanque industrial — pintura vermelha anticorrosiva", cat: "Pintura" },
+  { src: p4Asset.url, title: "Pintura de silo com plataforma elevatória", cat: "Pintura" },
+  { src: p5Asset.url, title: "Pintura de estrutura industrial", cat: "Pintura" },
+  { src: p6Asset.url, title: "Piso industrial — pintura epóxi", cat: "Pintura" },
+  { src: p7Asset.url, title: "Escada industrial — epóxi antiderrapante", cat: "Pintura" },
+  { src: p8Asset.url, title: "Escada com faixas antiderrapantes", cat: "Pintura" },
   { src: tankAfter, title: "Tanque industrial — pintura anticorrosiva", cat: "Pintura" },
   { src: tankBefore, title: "Tanques brancos → pretos", cat: "Pintura" },
   { src: floorAfter, title: "Piso industrial — epóxi azul", cat: "Pintura" },

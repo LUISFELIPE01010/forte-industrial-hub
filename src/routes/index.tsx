@@ -181,14 +181,8 @@ const SERVICES = [
   {
     Icon: Hammer,
     title: "Montagem, Desmontagem e Locação de Andaimes",
-    text: "Andaimes tubulares e multidirecionais para manutenção, pintura, inspeções e paradas programadas. Controle por fichas e acompanhamento técnico em campo.",
+    text: "Andaimes tubulares e multidirecionais para pintura, inspeções e paradas programadas. Controle por fichas e acompanhamento técnico em campo.",
     to: "/servicos/andaimes",
-  },
-  {
-    Icon: Cog,
-    title: "Manutenção Industrial",
-    text: "Apoio operacional em paradas de manutenção, acessos temporários, reparos em estruturas metálicas e suporte técnico em áreas industriais ativas.",
-    to: "/servicos/manutencao",
   },
   {
     Icon: PaintRoller,
@@ -211,10 +205,10 @@ function Services() {
         <div className="max-w-2xl">
           <span className="eyebrow">O Que Fazemos</span>
           <h2 className="mt-5 text-3xl text-foreground sm:text-4xl md:text-5xl">
-            Soluções completas para acesso, manutenção e proteção industrial.
+            Soluções completas para acesso, pintura e proteção industrial.
           </h2>
         </div>
-        <div className="mt-12 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s) => (
             <Link
               key={s.title}

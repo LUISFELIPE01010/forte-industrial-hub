@@ -17,7 +17,7 @@ const floorAfter = floorAfterAsset.url;
 import paintAsset from "@/assets/cta-painting.jpg.asset.json";
 const paint = paintAsset.url;
 import scaffold from "@/assets/service-scaffold.jpg";
-import maintenance from "@/assets/service-maintenance.jpg";
+
 import caldeiraria from "@/assets/service-caldeiraria.jpg";
 import heroScaffold from "@/assets/hero-scaffold.jpg";
 

@@ -54,9 +54,12 @@ export const Route = createFileRoute("/servicos/pintura")({
         "Controle de qualidade da aplicação",
       ]}
       gallery={[
-        { src: g1, alt: "Tanque pintado" },
-        { src: g2, alt: "Piso industrial epóxi" },
-        { src: g3, alt: "Pintura técnica" },
+        { src: g1, alt: "Tanque industrial pintado em vermelho" },
+        { src: g2, alt: "Pintura de silo industrial com plataforma elevatória" },
+        { src: g3, alt: "Pintura epóxi antiderrapante em escada industrial" },
+        { src: g4, alt: "Piso industrial com pintura epóxi" },
+        { src: g5, alt: "Escada com pintura epóxi e faixas antiderrapantes" },
+        { src: g6, alt: "Estrutura industrial pintada" },
       ]}
     />
   ),

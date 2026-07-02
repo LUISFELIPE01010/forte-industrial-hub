@@ -18,7 +18,7 @@ export function BeforeAfter({ before, after, alt, aspect = "aspect-[4/3]" }: Pro
     <div className="bg-carbon p-4 rounded-[12px]">
     <div
       ref={ref}
-      className="relative aspect-[4/3] w-full select-none overflow-hidden bg-carbon rounded-[12px]"
+      className={`relative ${aspect} w-full select-none overflow-hidden bg-carbon rounded-[12px]`}
       onMouseMove={(e) => dragging.current && update(e.clientX)}
       onMouseDown={(e) => { dragging.current = true; update(e.clientX); }}
       onMouseUp={() => (dragging.current = false)}

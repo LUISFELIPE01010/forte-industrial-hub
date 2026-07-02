@@ -4,6 +4,7 @@ import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { PageHero } from "@/components/site/PageHero";
 import { CtaBanner } from "@/components/site/CtaBanner";
+import { BeforeAfter } from "@/components/site/BeforeAfter";
 import heroImg from "@/assets/hero-scaffold.jpg";
 import p1 from "@/assets/portfolio-new/p1.jpg";
 import p2 from "@/assets/portfolio-new/p2.jpg";
@@ -14,6 +15,14 @@ import p6 from "@/assets/portfolio-new/p6.jpg";
 import p7 from "@/assets/portfolio-new/p7.jpg";
 import p8 from "@/assets/portfolio-new/p8.jpg";
 import p9 from "@/assets/portfolio-new/p9.jpg";
+import tankRedBefore from "@/assets/portfolio-ba/tank-red-before.jpg";
+import tankRedAfter from "@/assets/portfolio-ba/tank-red-after.jpg";
+import tanksBefore from "@/assets/portfolio-ba/tanks-before.jpg";
+import tanksAfter from "@/assets/portfolio-ba/tanks-after.jpg";
+import floorBefore from "@/assets/portfolio-ba/floor-before.jpg";
+import floorAfter from "@/assets/portfolio-ba/floor-after.jpg";
+import corrosionImg from "@/assets/portfolio-ba/corrosion.jpg";
+import poliuretanoImg from "@/assets/portfolio-ba/poliuretano.jpg";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -41,6 +50,36 @@ const projects: Project[] = [
   { src: p9, title: "Andaime em estrutura industrial", cat: "Andaimes", wide: true },
 ];
 
+const beforeAfterPairs = [
+  {
+    before: tankRedBefore,
+    after: tankRedAfter,
+    alt: "Tanque vertical — recuperação e pintura",
+    title: "Recuperação e pintura de tanque vertical",
+    cat: "Pintura Industrial",
+    desc: "Preparação de superfície, tratamento anticorrosivo e acabamento em cor de alto padrão para tanque atmosférico.",
+    aspect: "aspect-[3/4]",
+  },
+  {
+    before: tanksBefore,
+    after: tanksAfter,
+    alt: "Parque de tanques TQ29/30/33 — pintura de conservação",
+    title: "Parque de tanques — pintura de conservação",
+    cat: "Manutenção Programada",
+    desc: "Requalificação estética e proteção anticorrosiva de bateria de tanques (TQ29 a TQ33) em operação industrial.",
+    aspect: "aspect-[4/3]",
+  },
+  {
+    before: floorBefore,
+    after: floorAfter,
+    alt: "Piso industrial — pintura epóxi e demarcação",
+    title: "Piso industrial epóxi com sinalização",
+    cat: "Pintura de Piso",
+    desc: "Lixamento, aplicação de sistema epóxi de alto brilho e demarcação de segurança conforme NR-12.",
+    aspect: "aspect-[3/4]",
+  },
+];
+
 function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
@@ -54,13 +93,125 @@ function Portfolio() {
           breadcrumb={[{ label: "Home", to: "/" }, { label: "Portfólio" }]}
         />
 
+        {/* ANTES / DEPOIS */}
         <section className="section bg-background">
           <div className="container-x">
+            <div className="mb-12 max-w-3xl">
+              <div className="mb-3 flex items-center gap-3">
+                <span className="h-[2px] w-10 bg-brand" />
+                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
+                  Antes & Depois
+                </span>
+              </div>
+              <h2 className="font-display text-3xl font-black tracking-tight text-carbon sm:text-4xl md:text-5xl">
+                A transformação que entregamos em campo
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-steel">
+                Arraste o divisor para comparar. Estas são obras reais executadas pela nossa
+                equipe — preparação de superfície, pintura industrial e recuperação estrutural.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {beforeAfterPairs.map((p) => (
+                <article key={p.title} className="flex flex-col">
+                  <BeforeAfter before={p.before} after={p.after} alt={p.alt} aspect={p.aspect} />
+                  <div className="mt-5">
+                    <div className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-brand">
+                      {p.cat}
+                    </div>
+                    <h3 className="mt-2 font-display text-xl font-extrabold text-carbon">
+                      {p.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-steel">{p.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DESTAQUES TÉCNICOS (2 fotos legendadas) */}
+        <section className="section bg-carbon text-white">
+          <div className="container-x">
+            <div className="mb-12 max-w-3xl">
+              <div className="mb-3 flex items-center gap-3">
+                <span className="h-[2px] w-10 bg-brand" />
+                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
+                  Destaques Técnicos
+                </span>
+              </div>
+              <h2 className="font-display text-3xl font-black tracking-tight text-white sm:text-4xl md:text-5xl">
+                Detalhes que definem o resultado
+              </h2>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              <figure className="group relative overflow-hidden rounded-[12px] bg-black">
+                <img
+                  src={corrosionImg}
+                  alt="Grau de corrosão avançado em tubulação industrial"
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-6">
+                  <div className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-brand">
+                    Diagnóstico de campo
+                  </div>
+                  <h3 className="mt-2 font-display text-xl font-extrabold text-white sm:text-2xl">
+                    Grau de corrosão avançado
+                  </h3>
+                  <p className="mt-2 max-w-lg text-sm leading-relaxed text-white/80">
+                    Inspeção prévia identifica pontos críticos e define o sistema de pintura
+                    e recuperação mecânica adequado.
+                  </p>
+                </div>
+              </figure>
+
+              <figure className="group relative overflow-hidden rounded-[12px] bg-black">
+                <img
+                  src={poliuretanoImg}
+                  alt="Acabamento com poliuretano acrílico alifático em tubulação"
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-6">
+                  <div className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-brand">
+                    Acabamento final
+                  </div>
+                  <h3 className="mt-2 font-display text-xl font-extrabold text-white sm:text-2xl">
+                    Poliuretano acrílico alifático
+                  </h3>
+                  <p className="mt-2 max-w-lg text-sm leading-relaxed text-white/80">
+                    Sistema de alta resistência a intempéries e raios UV, com retenção de cor
+                    e brilho de longa durabilidade.
+                  </p>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        {/* GALERIA */}
+        <section className="section bg-background">
+          <div className="container-x">
+            <div className="mb-12 max-w-3xl">
+              <div className="mb-3 flex items-center gap-3">
+                <span className="h-[2px] w-10 bg-brand" />
+                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
+                  Galeria
+                </span>
+              </div>
+              <h2 className="font-display text-3xl font-black tracking-tight text-carbon sm:text-4xl md:text-5xl">
+                Outros projetos executados
+              </h2>
+            </div>
+
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {projects.map((p) => (
                 <figure
                   key={p.title}
-                  className={`group relative isolate overflow-hidden bg-carbon ${p.wide ? "sm:col-span-2" : ""}`}
+                  className={`group relative isolate overflow-hidden rounded-[12px] bg-carbon ${p.wide ? "sm:col-span-2" : ""}`}
                 >
                   <img
                     src={p.src}

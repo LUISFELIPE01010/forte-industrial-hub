@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 
-type Props = { before: string; after: string; alt: string };
+type Props = { before: string; after: string; alt: string; aspect?: string };
 
-export function BeforeAfter({ before, after, alt }: Props) {
+export function BeforeAfter({ before, after, alt, aspect = "aspect-[4/3]" }: Props) {
   const [pos, setPos] = useState(50);
   const ref = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);

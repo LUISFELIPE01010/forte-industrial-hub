@@ -63,7 +63,7 @@ function Portfolio() {
                     src={p.src}
                     alt={p.title}
                     loading="lazy"
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <figcaption className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-carbon to-transparent p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-brand">{p.cat}</div>

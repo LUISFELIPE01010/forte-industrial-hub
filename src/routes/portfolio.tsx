@@ -27,7 +27,7 @@ export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
 });
 
-type Project = { src: string; title: string; cat: "Andaimes" | "Pintura" | "Caldeiraria" };
+type Project = { src: string; title: string; cat: "Andaimes" | "Pintura" | "Caldeiraria"; wide?: boolean };
 
 const projects: Project[] = [
   { src: p1, title: "Pintura de tanque industrial com acesso por corda", cat: "Pintura" },
@@ -38,7 +38,7 @@ const projects: Project[] = [
   { src: p6, title: "Pintura de silo industrial com plataforma elevatória", cat: "Pintura" },
   { src: p7, title: "Pintura de estrutura industrial complexa", cat: "Pintura" },
   { src: p8, title: "Escada industrial com faixas antiderrapantes", cat: "Pintura" },
-  { src: p9, title: "Andaime em estrutura industrial", cat: "Andaimes" },
+  { src: p9, title: "Andaime em estrutura industrial", cat: "Andaimes", wide: true },
 ];
 
 function Portfolio() {

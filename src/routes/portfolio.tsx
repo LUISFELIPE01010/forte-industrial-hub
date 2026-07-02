@@ -154,7 +154,7 @@ function Portfolio() {
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-6">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/85 to-transparent p-6 pt-24">
                   <div className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-brand">
                     Diagnóstico de campo
                   </div>
@@ -175,7 +175,7 @@ function Portfolio() {
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-6">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/85 to-transparent p-6 pt-24">
                   <div className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-brand">
                     Acabamento final
                   </div>

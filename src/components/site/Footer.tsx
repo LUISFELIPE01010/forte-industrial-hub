@@ -100,11 +100,11 @@ export function Footer() {
 function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h4 className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+      <h4 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white sm:mb-5">
         <span className="mr-2 inline-block h-[2px] w-6 translate-y-[-3px] bg-brand align-middle" />
         {title}
       </h4>
-      <ul className="space-y-3">{children}</ul>
+      <ul className="space-y-2.5 sm:space-y-3">{children}</ul>
     </div>
   );
 }

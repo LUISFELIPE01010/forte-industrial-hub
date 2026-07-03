@@ -2,10 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
 import heroAsset from "@/assets/hero-caldeiraria.jpg";
 const hero = heroAsset;
-import g1Asset from "@/assets/proj-20220628_132721.jpg";
-const g1 = g1Asset;
-import g2Asset from "@/assets/proj-20230330_103830.jpg";
-const g2 = g2Asset;
+import g1 from "@/assets/caldeiraria/Design_sem_nome_25.jpg";
+import g2 from "@/assets/caldeiraria/caldei.jpg";
+import g3 from "@/assets/caldeiraria/Sem_nome_600_x_500_px.jpg";
+
 
 
 export const Route = createFileRoute("/servicos/caldeiraria")({

@@ -50,6 +50,7 @@ export const Route = createFileRoute("/servicos/caldeiraria")({
         { src: g1, alt: "Equipe executando corte e solda em estrutura industrial" },
         { src: g2, alt: "Soldador realizando acabamento com esmerilhadeira" },
         { src: g3, alt: "Recuperação de estrutura metálica — antes e depois" },
+        { src: g4, alt: "Reforma de plataforma metálica industrial — antes e depois" },
       ]}
     />
   ),

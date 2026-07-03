@@ -5,6 +5,8 @@ const hero = heroAsset;
 import g1 from "@/assets/caldeiraria/Design_sem_nome_25.jpg";
 import g2 from "@/assets/caldeiraria/caldei.jpg";
 import g3 from "@/assets/caldeiraria/Sem_nome_600_x_500_px.jpg";
+import g4 from "@/assets/caldeiraria/Sem_nome_600_x_500_px_1.jpg";
+
 
 
 
@@ -48,6 +50,7 @@ export const Route = createFileRoute("/servicos/caldeiraria")({
         { src: g1, alt: "Equipe executando corte e solda em estrutura industrial" },
         { src: g2, alt: "Soldador realizando acabamento com esmerilhadeira" },
         { src: g3, alt: "Recuperação de estrutura metálica — antes e depois" },
+        { src: g4, alt: "Reforma de plataforma metálica industrial — antes e depois" },
       ]}
     />
   ),

@@ -5,6 +5,8 @@ const hero = heroAsset;
 import g1 from "@/assets/caldeiraria/Design_sem_nome_25.jpg";
 import g2 from "@/assets/caldeiraria/caldei.jpg";
 import g3 from "@/assets/caldeiraria/Sem_nome_600_x_500_px.jpg";
+import g4 from "@/assets/caldeiraria/Sem_nome_600_x_500_px_1.jpg";
+
 
 
 

@@ -29,7 +29,7 @@ const n6 = n6Asset;
 import n7Asset from "@/assets/new-IMG-20220211-WA0051.jpg";
 const n7 = n7Asset;
 import tanquePretoPintado from "@/assets/portfolio-ba/tanque-preto-pintado.jpg.asset.json";
-import chaminePintada from "@/assets/portfolio-ba/chamine-pintada.jpg.asset.json";
+
 
 
 export const Route = createFileRoute("/servicos/pintura")({
@@ -85,7 +85,6 @@ export const Route = createFileRoute("/servicos/pintura")({
         { src: n6, alt: "Pintura de tubulação industrial em azul" },
         { src: n7, alt: "Topo de tanque industrial pintado em preto" },
         { src: tanquePretoPintado.url, alt: "Tanque atmosférico com acabamento anticorrosivo preto de alta durabilidade" },
-        { src: chaminePintada.url, alt: "Chaminé industrial pintada em vermelho e branco após serviço em altura" },
       ]}
     />
   ),

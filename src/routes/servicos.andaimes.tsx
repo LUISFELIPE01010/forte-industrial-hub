@@ -15,6 +15,7 @@ import tanquePreto from "@/assets/andaimes-novo/tanque-preto.jpg.asset.json";
 import passarelaAgua from "@/assets/andaimes-novo/passarela-agua.jpg.asset.json";
 import equipeAcao from "@/assets/andaimes-novo/equipe-acao.jpg.asset.json";
 import fabricaAmplo from "@/assets/andaimes-novo/fabrica-amplo.jpg.asset.json";
+import chaminePintada from "@/assets/portfolio-ba/chamine-pintada.jpg.asset.json";
 
 export const Route = createFileRoute("/servicos/andaimes")({
   head: () => ({
@@ -61,6 +62,7 @@ export const Route = createFileRoute("/servicos/andaimes")({
         { src: passarelaAgua.url, alt: "Passarela suspensa em andaime sobre corpo d'água" },
         { src: equipeAcao.url, alt: "Equipe de montagem em ação sobre andaime industrial" },
         { src: fabricaAmplo.url, alt: "Andaime de grande porte em unidade industrial" },
+        { src: chaminePintada.url, alt: "Andaime em chaminé industrial para serviço em altura" },
         { src: g1, alt: "Andaime em torre industrial" },
         { src: g4, alt: "Andaime envolvendo torre/coluna industrial" },
         { src: g5, alt: "Andaime tubular em estrutura industrial" },

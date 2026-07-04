@@ -8,6 +8,13 @@ import g4Asset from "@/assets/new-IMG-20190211-WA0051.jpg";
 const g4 = g4Asset;
 import g5Asset from "@/assets/new-IMG-20190201-WA0067.jpg";
 const g5 = g5Asset;
+import escadasEncosta from "@/assets/andaimes-novo/escadas-encosta.jpg.asset.json";
+import torreAlta from "@/assets/andaimes-novo/torre-alta.jpg.asset.json";
+import tanqueRedondo from "@/assets/andaimes-novo/tanque-redondo.jpg.asset.json";
+import tanquePreto from "@/assets/andaimes-novo/tanque-preto.jpg.asset.json";
+import passarelaAgua from "@/assets/andaimes-novo/passarela-agua.jpg.asset.json";
+import equipeAcao from "@/assets/andaimes-novo/equipe-acao.jpg.asset.json";
+import fabricaAmplo from "@/assets/andaimes-novo/fabrica-amplo.jpg.asset.json";
 
 export const Route = createFileRoute("/servicos/andaimes")({
   head: () => ({
@@ -48,6 +55,13 @@ export const Route = createFileRoute("/servicos/andaimes")({
         "Uso obrigatório de EPI e EPC",
       ]}
       gallery={[
+        { src: torreAlta.url, alt: "Andaime tubular em torre industrial de grande altura" },
+        { src: tanqueRedondo.url, alt: "Andaime multi-nível envolvendo tanque de armazenamento" },
+        { src: tanquePreto.url, alt: "Andaime completo em tanque atmosférico" },
+        { src: escadasEncosta.url, alt: "Escadas de andaime em encosta com acesso técnico" },
+        { src: passarelaAgua.url, alt: "Passarela suspensa em andaime sobre corpo d'água" },
+        { src: equipeAcao.url, alt: "Equipe de montagem em ação sobre andaime industrial" },
+        { src: fabricaAmplo.url, alt: "Andaime de grande porte em unidade industrial" },
         { src: g1, alt: "Andaime em torre industrial" },
         { src: g4, alt: "Andaime envolvendo torre/coluna industrial" },
         { src: g5, alt: "Andaime tubular em estrutura industrial" },

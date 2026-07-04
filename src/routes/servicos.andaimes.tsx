@@ -56,7 +56,7 @@ export const Route = createFileRoute("/servicos/andaimes")({
       ]}
       gallery={[
         { src: torreAlta.url, alt: "Andaime tubular em torre industrial de grande altura" },
-        { src: tanqueRedondo.url, alt: "Andaime multi-nível envolvendo tanque de armazenamento" },
+        
         { src: tanquePreto.url, alt: "Andaime completo em tanque atmosférico" },
         { src: escadasEncosta.url, alt: "Escadas de andaime em encosta com acesso técnico" },
         { src: passarelaAgua.url, alt: "Passarela suspensa em andaime sobre corpo d'água" },

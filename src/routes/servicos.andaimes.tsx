@@ -4,8 +4,6 @@ import heroAsset from "@/assets/hero-andaimes.jpg";
 const hero = heroAsset;
 import g1Asset from "@/assets/proj-20220517_154756.jpg";
 const g1 = g1Asset;
-import g2 from "@/assets/hero-scaffold.jpg";
-import g3 from "@/assets/service-scaffold.jpg";
 import g4Asset from "@/assets/new-IMG-20190211-WA0051.jpg";
 const g4 = g4Asset;
 import g5Asset from "@/assets/new-IMG-20190201-WA0067.jpg";
@@ -51,8 +49,6 @@ export const Route = createFileRoute("/servicos/andaimes")({
       ]}
       gallery={[
         { src: g1, alt: "Andaime em torre industrial" },
-        { src: g2, alt: "Detalhe de andaime multidirecional" },
-        { src: g3, alt: "Andaime em obra industrial" },
         { src: g4, alt: "Andaime envolvendo torre/coluna industrial" },
         { src: g5, alt: "Andaime tubular em estrutura industrial" },
       ]}

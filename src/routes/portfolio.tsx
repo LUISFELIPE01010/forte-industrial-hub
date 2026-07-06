@@ -23,15 +23,15 @@ import floorBefore from "@/assets/portfolio-ba/floor-before.jpg";
 import floorAfter from "@/assets/portfolio-ba/floor-after.jpg";
 import corrosionImg from "@/assets/portfolio-ba/corrosion.jpg";
 import poliuretanoImg from "@/assets/portfolio-ba/poliuretano.jpg";
-import escadasEncosta from "@/assets/andaimes-novo/escadas-encosta.jpg.asset.json";
-import torreAlta from "@/assets/andaimes-novo/torre-alta.jpg.asset.json";
-import tanqueRedondo from "@/assets/andaimes-novo/tanque-redondo.jpg.asset.json";
-import tanquePreto from "@/assets/andaimes-novo/tanque-preto.jpg.asset.json";
-import passarelaAgua from "@/assets/andaimes-novo/passarela-agua.jpg.asset.json";
-import equipeAcao from "@/assets/andaimes-novo/equipe-acao.jpg.asset.json";
-import fabricaAmplo from "@/assets/andaimes-novo/fabrica-amplo.jpg.asset.json";
-import tanquePretoPintado from "@/assets/portfolio-ba/tanque-preto-pintado.jpg.asset.json";
-import chaminePintada from "@/assets/portfolio-ba/chamine-pintada.jpg.asset.json";
+import escadasEncosta from "@/assets/andaimes-novo/escadas-encosta.jpg";
+import torreAlta from "@/assets/andaimes-novo/torre-alta.jpg";
+import tanqueRedondo from "@/assets/andaimes-novo/tanque-redondo.jpg";
+import tanquePreto from "@/assets/andaimes-novo/tanque-preto.jpg";
+import passarelaAgua from "@/assets/andaimes-novo/passarela-agua.jpg";
+import equipeAcao from "@/assets/andaimes-novo/equipe-acao.jpg";
+import fabricaAmplo from "@/assets/andaimes-novo/fabrica-amplo.jpg";
+import tanquePretoPintado from "@/assets/portfolio-ba/tanque-preto-pintado.jpg";
+import chaminePintada from "@/assets/portfolio-ba/chamine-pintada.jpg";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -57,15 +57,15 @@ const projects: Project[] = [
   { src: p7, title: "Pintura de estrutura industrial complexa", cat: "Pintura" },
   { src: p8, title: "Escada industrial com faixas antiderrapantes", cat: "Pintura" },
   { src: p9, title: "Andaime em estrutura industrial", cat: "Andaimes", wide: true },
-  { src: torreAlta.url, title: "Andaime tubular em torre industrial de grande altura", cat: "Andaimes" },
-  { src: tanqueRedondo.url, title: "Andaime multi-nível em tanque de armazenamento", cat: "Andaimes" },
-  { src: tanquePreto.url, title: "Andaime envolvendo tanque atmosférico", cat: "Andaimes" },
-  { src: escadasEncosta.url, title: "Escadas de acesso em andaime sobre encosta", cat: "Andaimes", wide: true },
-  { src: passarelaAgua.url, title: "Passarela suspensa em andaime sobre corpo d'água", cat: "Andaimes", wide: true },
-  { src: equipeAcao.url, title: "Equipe de montagem em ação sobre andaime industrial", cat: "Andaimes" },
-  { src: fabricaAmplo.url, title: "Andaime de grande porte em unidade industrial", cat: "Andaimes" },
-  { src: tanquePretoPintado.url, title: "Tanque atmosférico com acabamento anticorrosivo", cat: "Pintura" },
-  { src: chaminePintada.url, title: "Chaminé industrial pintada em vermelho e branco", cat: "Pintura" },
+  { src: torreAlta, title: "Andaime tubular em torre industrial de grande altura", cat: "Andaimes" },
+  { src: tanqueRedondo, title: "Andaime multi-nível em tanque de armazenamento", cat: "Andaimes" },
+  { src: tanquePreto, title: "Andaime envolvendo tanque atmosférico", cat: "Andaimes" },
+  { src: escadasEncosta, title: "Escadas de acesso em andaime sobre encosta", cat: "Andaimes", wide: true },
+  { src: passarelaAgua, title: "Passarela suspensa em andaime sobre corpo d'água", cat: "Andaimes", wide: true },
+  { src: equipeAcao, title: "Equipe de montagem em ação sobre andaime industrial", cat: "Andaimes" },
+  { src: fabricaAmplo, title: "Andaime de grande porte em unidade industrial", cat: "Andaimes" },
+  { src: tanquePretoPintado, title: "Tanque atmosférico com acabamento anticorrosivo", cat: "Pintura" },
+  { src: chaminePintada, title: "Chaminé industrial pintada em vermelho e branco", cat: "Pintura" },
 ];
 
 const beforeAfterPairs = [

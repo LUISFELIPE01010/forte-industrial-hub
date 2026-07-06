@@ -98,9 +98,9 @@ function QuemSomos() {
             </div>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
               {[
-                { city: "Cubatão", uf: "SP", t: "Escritório Central" },
+                { city: "Cubatão", uf: "SP", t: "Escritório Central / CDI" },
                 { city: "São Paulo", uf: "SP", t: "CDI" },
-                { city: "Pindamonhangaba", uf: "SP", t: "CDI" },
+                { city: "Pindamonhangaba", uf: "SP", t: "Escritório Filial / CDI" },
                 { city: "Curitiba", uf: "PR", t: "CDI" },
                 { city: "Uberaba", uf: "MG", t: "CDI" },
               ].map((p) => (

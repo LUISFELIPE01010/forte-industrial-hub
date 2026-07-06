@@ -53,7 +53,7 @@ const projects: Project[] = [
   { src: p3, title: "Andaime em torre industrial de grande altura", cat: "Andaimes" },
   { src: p4, title: "Andaime multidirecional em equipamento industrial", cat: "Andaimes" },
   { src: p5, title: "Estrutura metálica e tanque elevado", cat: "Caldeiraria" },
-  { src: p6, title: "Pintura de silo industrial com plataforma elevatória", cat: "Pintura" },
+  
   { src: p7, title: "Pintura de estrutura industrial complexa", cat: "Pintura" },
   { src: p8, title: "Escada industrial com faixas antiderrapantes", cat: "Pintura" },
   { src: p9, title: "Andaime em estrutura industrial", cat: "Andaimes", wide: true },

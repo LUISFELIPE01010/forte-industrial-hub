@@ -72,7 +72,7 @@ export const Route = createFileRoute("/servicos/pintura")({
       ]}
       gallery={[
         { src: g1, alt: "Tanque industrial pintado em vermelho" },
-        { src: g2, alt: "Pintura de silo industrial com plataforma elevatória" },
+        
         { src: g3, alt: "Pintura epóxi antiderrapante em escada industrial" },
         
         { src: g5, alt: "Escada com pintura epóxi e faixas antiderrapantes" },

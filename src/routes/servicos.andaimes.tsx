@@ -6,8 +6,7 @@ import g1Asset from "@/assets/proj-20220517_154756.jpg";
 const g1 = g1Asset;
 import g4Asset from "@/assets/new-IMG-20190211-WA0051.jpg";
 const g4 = g4Asset;
-import g5Asset from "@/assets/new-IMG-20190201-WA0067.jpg";
-const g5 = g5Asset;
+
 import escadasEncosta from "@/assets/andaimes-novo/escadas-encosta.jpg";
 import torreAlta from "@/assets/andaimes-novo/torre-alta.jpg";
 
@@ -65,7 +64,7 @@ export const Route = createFileRoute("/servicos/andaimes")({
         { src: chaminePintada, alt: "Andaime em chaminé industrial para serviço em altura" },
         { src: g1, alt: "Andaime em torre industrial" },
         { src: g4, alt: "Andaime envolvendo torre/coluna industrial" },
-        { src: g5, alt: "Andaime tubular em estrutura industrial" },
+
       ]}
     />
   ),

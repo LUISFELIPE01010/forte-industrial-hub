@@ -37,7 +37,11 @@ export function VLibras() {
 
   const attrs = (a: Record<string, string>) => a;
   return (
-    <div {...attrs({ vw: "true" })} className="enabled">
+    <div
+      {...attrs({ vw: "true" })}
+      className="enabled"
+      style={{ position: "fixed", right: "16px", bottom: "16px", zIndex: 2147483000 }}
+    >
       <div {...attrs({ "vw-access-button": "true" })} className="active" />
       <div {...attrs({ "vw-plugin-wrapper": "true" })}>
         <div className="vw-plugin-top-wrapper" />

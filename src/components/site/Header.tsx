@@ -42,7 +42,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
           <img
             src={logo}
             alt="Rocha Forte Serviços"
-            className="h-14 w-auto rounded-md bg-white/95 p-1.5 shadow-lg shadow-black/20 md:h-16 lg:h-20"
+            className="h-14 w-auto rounded-md shadow-lg shadow-black/20 md:h-16 lg:h-20"
           />
         </Link>
 

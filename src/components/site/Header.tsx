@@ -39,7 +39,11 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
     >
       <div className="container-x flex h-20 items-center justify-between gap-6">
         <Link to="/" className="flex shrink-0 items-center" aria-label="Rocha Forte Serviços — Início">
-          <img src={logo} alt="Rocha Forte Serviços" className="h-10 w-auto md:h-11" />
+          <img
+            src={logo}
+            alt="Rocha Forte Serviços"
+            className="h-14 w-auto rounded-md bg-white/95 p-1.5 shadow-lg shadow-black/20 md:h-16 lg:h-20"
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Principal">

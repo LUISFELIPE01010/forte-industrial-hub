@@ -116,12 +116,32 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <head>
         <HeadContent />
       </head>
       <body>
         {children}
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `
+              <div vw class="enabled">
+                <div vw-access-button class="active"></div>
+                <div vw-plugin-wrapper>
+                  <div class="vw-plugin-top-wrapper"></div>
+                </div>
+              </div>
+              <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+              <script>
+                (function() {
+                  if (typeof window !== 'undefined' && window.VLibras) {
+                    new window.VLibras.Widget('https://vlibras.gov.br/app');
+                  }
+                })();
+              </script>
+            `,
+          }}
+        />
         <Scripts />
       </body>
     </html>

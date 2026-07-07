@@ -248,3 +248,49 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 }
+
+/* VLibras — acessibilidade em Libras
+   O plugin posiciona o botão no meio da lateral direita por padrão.
+   Em mobile movemos para o canto inferior esquerdo para não cobrir o conteúdo
+   nem o botão do WhatsApp (canto inferior direito). */
+[vw] {
+  z-index: 9998 !important;
+}
+
+[vw-access-button] {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+[vw-access-button] .vp-access-button {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+[vw-access-button] .vp-pop-up {
+  height: 48px !important;
+}
+
+@media (max-width: 768px) {
+  [vw] {
+    top: auto !important;
+    bottom: 16px !important;
+    right: auto !important;
+    left: 16px !important;
+    transform: none !important;
+  }
+
+  [vw-access-button] {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  [vw-access-button] .vp-access-button {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  [vw-access-button] .vp-pop-up {
+    height: 44px !important;
+  }
+}

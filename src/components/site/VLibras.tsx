@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 declare global {
   interface Window {
@@ -14,8 +14,23 @@ declare global {
  * https://www.gov.br/governodigital/pt-br/vlibras
  */
 export function VLibras() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (typeof window === "undefined") return;
+
+    // Injeta a marcação exigida pelo plugin
+    if (containerRef.current && containerRef.current.childElementCount === 0) {
+      containerRef.current.innerHTML = `
+        <div vw class="enabled">
+          <div vw-access-button class="active"></div>
+          <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+          </div>
+        </div>
+      `;
+    }
+
     if (document.getElementById("vlibras-script")) return;
 
     const script = document.createElement("script");
@@ -30,7 +45,5 @@ export function VLibras() {
     document.body.appendChild(script);
   }, []);
 
-  return (
-    <div vw-access-button="true" className="active"></div>
-  );
+  return <div ref={containerRef} aria-label="Tradutor de Libras" />;
 }

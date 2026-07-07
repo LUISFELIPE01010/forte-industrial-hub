@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 declare global {
   interface Window {
@@ -9,41 +9,39 @@ declare global {
 }
 
 /**
- * VLibras — widget oficial do Governo Federal que traduz
- * conteúdo em português para Libras (Língua Brasileira de Sinais).
- * https://www.gov.br/governodigital/pt-br/vlibras
+ * VLibras — widget oficial do Governo Federal.
+ * O script é carregado via head() em __root.tsx.
  */
 export function VLibras() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Injeta a marcação exigida pelo plugin
-    if (containerRef.current && containerRef.current.childElementCount === 0) {
-      containerRef.current.innerHTML = `
-        <div vw class="enabled">
-          <div vw-access-button class="active"></div>
-          <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-          </div>
-        </div>
-      `;
-    }
-
-    if (document.getElementById("vlibras-script")) return;
-
-    const script = document.createElement("script");
-    script.id = "vlibras-script";
-    script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
-    script.async = true;
-    script.onload = () => {
+    let cancelled = false;
+    const init = () => {
+      if (cancelled) return;
       if (window.VLibras) {
-        new window.VLibras.Widget("https://vlibras.gov.br/app");
+        try {
+          new window.VLibras.Widget("https://vlibras.gov.br/app");
+        } catch {
+          /* já inicializado */
+        }
+        return;
       }
+      setTimeout(init, 300);
     };
-    document.body.appendChild(script);
+    init();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  return <div ref={containerRef} aria-label="Tradutor de Libras" />;
+  const attrs = (a: Record<string, string>) => a;
+  return (
+    <div {...attrs({ vw: "true" })} className="enabled">
+      <div {...attrs({ "vw-access-button": "true" })} className="active" />
+      <div {...attrs({ "vw-plugin-wrapper": "true" })}>
+        <div className="vw-plugin-top-wrapper" />
+      </div>
+    </div>
+  );
 }

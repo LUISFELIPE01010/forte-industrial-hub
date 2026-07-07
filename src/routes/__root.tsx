@@ -108,6 +108,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap",
       },
     ],
+    scripts: [
+      { src: "https://vlibras.gov.br/app/vlibras-plugin.js", defer: true },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

@@ -6,7 +6,7 @@ import g1Asset from "@/assets/proj-20220628_134230.jpg";
 const g1 = g1Asset;
 import g2Asset from "@/assets/proj-20230112_092434.jpg";
 const g2 = g2Asset;
-import g3Asset from "@/assets/proj-20231213_093202.jpg";
+import g3Asset from "@/assets/pintura-escada-epoxi-antiderrapante.jpg";
 const g3 = g3Asset;
 import g4Asset from "@/assets/proj-20231213_093130.jpg";
 const g4 = g4Asset;

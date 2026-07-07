@@ -11,7 +11,6 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { VLibras } from "../components/site/VLibras";
 
 function NotFoundComponent() {
   return (
@@ -108,9 +107,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap",
       },
     ],
-    scripts: [
-      { src: "https://vlibras.gov.br/app/vlibras-plugin.js", defer: true },
-    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -139,7 +135,6 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <VLibras />
     </QueryClientProvider>
   );
 }

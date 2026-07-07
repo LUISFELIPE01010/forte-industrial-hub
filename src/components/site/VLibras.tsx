@@ -9,25 +9,30 @@ declare global {
 }
 
 /**
- * VLibras — widget oficial do Governo Federal que traduz
- * conteúdo em português para Libras (Língua Brasileira de Sinais).
- * https://www.gov.br/governodigital/pt-br/vlibras
+ * VLibras — widget oficial do Governo Federal.
+ * O script é carregado via head() em __root.tsx.
  */
 export function VLibras() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (document.getElementById("vlibras-script")) return;
 
-    const script = document.createElement("script");
-    script.id = "vlibras-script";
-    script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
-    script.async = true;
-    script.onload = () => {
+    let cancelled = false;
+    const init = () => {
+      if (cancelled) return;
       if (window.VLibras) {
-        new window.VLibras.Widget("https://vlibras.gov.br/app");
+        try {
+          new window.VLibras.Widget("https://vlibras.gov.br/app");
+        } catch {
+          /* já inicializado */
+        }
+        return;
       }
+      setTimeout(init, 300);
     };
-    document.body.appendChild(script);
+    init();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const attrs = (a: Record<string, string>) => a;

@@ -15,34 +15,33 @@ const VLBRAS_HTML = `
       <div class="vw-plugin-top-wrapper"></div>
     </div>
   </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
-    (function() {
-      if (typeof window !== 'undefined' && window.VLibras) {
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-      }
-    })();
-  </script>
 `;
 
 export function VLibrasWidget() {
   const ref = useRef<HTMLDivElement>(null);
+  const initialized = useRef(false);
 
   useEffect(() => {
-    if (!ref.current) return;
-    // Scripts injected via innerHTML do not execute; recreate them as DOM nodes.
-    const scripts = ref.current.querySelectorAll("script");
-    scripts.forEach((oldScript) => {
-      const newScript = document.createElement("script");
-      if (oldScript.src) {
-        newScript.src = oldScript.src;
-      } else {
-        newScript.textContent = oldScript.textContent;
+    if (!ref.current || initialized.current) return;
+    initialized.current = true;
+
+    const existing = document.querySelector("script[src='https://vlibras.gov.br/app/vlibras-plugin.js']");
+    if (existing) return;
+
+    // Render VLibras markup
+    ref.current.innerHTML = VLBRAS_HTML;
+
+    // Load plugin script as a real DOM script so it executes
+    const script = document.createElement("script");
+    script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
+    script.async = false;
+    script.onload = () => {
+      if (window.VLibras) {
+        new window.VLibras.Widget("https://vlibras.gov.br/app");
       }
-      newScript.async = false;
-      oldScript.parentNode?.replaceChild(newScript, oldScript);
-    });
+    };
+    document.body.appendChild(script);
   }, []);
 
-  return <div ref={ref} dangerouslySetInnerHTML={{ __html: VLBRAS_HTML }} />;
+  return <div ref={ref} />;
 }

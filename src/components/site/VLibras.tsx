@@ -30,13 +30,11 @@ export function VLibras() {
     document.body.appendChild(script);
   }, []);
 
+  const attrs = (a: Record<string, string>) => a;
   return (
-    // @ts-expect-error - VLibras custom attributes
-    <div vw="true" className="enabled">
-      {/* @ts-expect-error - VLibras custom attributes */}
-      <div vw-access-button="true" className="active" />
-      {/* @ts-expect-error - VLibras custom attributes */}
-      <div vw-plugin-wrapper="true">
+    <div {...attrs({ vw: "true" })} className="enabled">
+      <div {...attrs({ "vw-access-button": "true" })} className="active" />
+      <div {...attrs({ "vw-plugin-wrapper": "true" })}>
         <div className="vw-plugin-top-wrapper" />
       </div>
     </div>

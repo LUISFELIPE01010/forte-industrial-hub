@@ -5,16 +5,35 @@ declare global {
     VLibras?: {
       Widget: new (url: string) => unknown;
     };
+    __vlibrasMounted?: boolean;
   }
 }
 
 /**
  * VLibras — widget oficial do Governo Federal.
- * O script é carregado via head() em __root.tsx.
+ * Injetamos o markup diretamente no <body> (fora da árvore React) para
+ * evitar que a hidratação/reconciliação interfira com as mutações que o
+ * script do VLibras faz no DOM do próprio widget.
  */
 export function VLibras() {
   useEffect(() => {
     if (typeof window === "undefined") return;
+    if (window.__vlibrasMounted) return;
+    window.__vlibrasMounted = true;
+
+    // Cria o container fora do React
+    const root = document.createElement("div");
+    root.setAttribute("vw", "");
+    root.className = "enabled";
+    root.style.cssText =
+      "position:fixed;right:16px;bottom:16px;z-index:2147483000";
+    root.innerHTML = `
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    `;
+    document.body.appendChild(root);
 
     let cancelled = false;
     const init = () => {
@@ -30,22 +49,12 @@ export function VLibras() {
       setTimeout(init, 300);
     };
     init();
+
     return () => {
       cancelled = true;
+      // Mantemos o widget montado entre navegações client-side.
     };
   }, []);
 
-  const attrs = (a: Record<string, string>) => a;
-  return (
-    <div
-      {...attrs({ vw: "true" })}
-      className="enabled"
-      style={{ position: "fixed", right: "16px", bottom: "16px", zIndex: 2147483000 }}
-    >
-      <div {...attrs({ "vw-access-button": "true" })} className="active" />
-      <div {...attrs({ "vw-plugin-wrapper": "true" })}>
-        <div className="vw-plugin-top-wrapper" />
-      </div>
-    </div>
-  );
+  return null;
 }

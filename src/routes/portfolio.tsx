@@ -32,17 +32,11 @@ import equipeAcao from "@/assets/andaimes-novo/equipe-acao.jpg";
 import fabricaAmplo from "@/assets/andaimes-novo/fabrica-amplo.jpg";
 import tanquePretoPintado from "@/assets/portfolio-ba/tanque-preto-pintado.jpg";
 import chaminePintada from "@/assets/portfolio-ba/chamine-pintada.jpg";
-import evaporativoAsset from "@/assets/portfolio-evaporativo.jpg.asset.json";
-import reducaoInoxAsset from "@/assets/portfolio-reducao-inox.jpg.asset.json";
-import juntaExpansaoAsset from "@/assets/portfolio-junta-expansao.jpg.asset.json";
-import tanquesVerdesAsset from "@/assets/portfolio-tanques-verdes.jpg.asset.json";
-import ventiladoresAzuisAsset from "@/assets/portfolio-ventiladores-azuis.jpg.asset.json";
-import { assetUrl } from "@/lib/asset";
-const evaporativoImg = assetUrl(evaporativoAsset);
-const reducaoInoxImg = assetUrl(reducaoInoxAsset);
-const juntaExpansaoImg = assetUrl(juntaExpansaoAsset);
-const tanquesVerdesImg = assetUrl(tanquesVerdesAsset);
-const ventiladoresAzuisImg = assetUrl(ventiladoresAzuisAsset);
+import evaporativoImg from "@/assets/vercel/portfolio-evaporativo.jpg";
+import reducaoInoxImg from "@/assets/vercel/portfolio-reducao-inox.jpg";
+import juntaExpansaoImg from "@/assets/vercel/portfolio-junta-expansao.jpg";
+import tanquesVerdesImg from "@/assets/vercel/portfolio-tanques-verdes.jpg";
+import ventiladoresAzuisImg from "@/assets/vercel/portfolio-evaporativo.jpg";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({

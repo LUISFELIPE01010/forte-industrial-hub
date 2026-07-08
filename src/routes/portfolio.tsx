@@ -234,7 +234,7 @@ function Portfolio() {
               </h2>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-flow-dense gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {projects.map((p) => (
                 <figure
                   key={p.title}

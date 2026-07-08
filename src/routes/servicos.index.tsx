@@ -6,10 +6,12 @@ import { PageHero } from "@/components/site/PageHero";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero-scaffold.jpg";
-import scaffold from "@/assets/service-scaffold.jpg";
-import paintingAsset from "@/assets/cta-painting.jpg";
-const painting = paintingAsset;
-import caldeiraria from "@/assets/proj-20220628_132721.jpg";
+import scaffoldAsset from "@/assets/servico-andaimes.jpg.asset.json";
+import paintingAssetJson from "@/assets/servico-pintura.jpg.asset.json";
+import caldeirariaAsset from "@/assets/servico-caldeiraria.jpg.asset.json";
+const scaffold = scaffoldAsset.url;
+const painting = paintingAssetJson.url;
+const caldeiraria = caldeirariaAsset.url;
 
 export const Route = createFileRoute("/servicos/")({
   head: () => ({

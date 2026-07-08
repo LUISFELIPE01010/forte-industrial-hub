@@ -32,6 +32,12 @@ import equipeAcao from "@/assets/andaimes-novo/equipe-acao.jpg";
 import fabricaAmplo from "@/assets/andaimes-novo/fabrica-amplo.jpg";
 import tanquePretoPintado from "@/assets/portfolio-ba/tanque-preto-pintado.jpg";
 import chaminePintada from "@/assets/portfolio-ba/chamine-pintada.jpg";
+import evaporativoAsset from "@/assets/portfolio-evaporativo.jpg.asset.json";
+import reducaoInoxAsset from "@/assets/portfolio-reducao-inox.jpg.asset.json";
+import juntaExpansaoAsset from "@/assets/portfolio-junta-expansao.jpg.asset.json";
+const evaporativoImg = evaporativoAsset.url;
+const reducaoInoxImg = reducaoInoxAsset.url;
+const juntaExpansaoImg = juntaExpansaoAsset.url;
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({

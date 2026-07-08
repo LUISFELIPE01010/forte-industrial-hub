@@ -36,10 +36,12 @@ import evaporativoAsset from "@/assets/portfolio-evaporativo.jpg.asset.json";
 import reducaoInoxAsset from "@/assets/portfolio-reducao-inox.jpg.asset.json";
 import juntaExpansaoAsset from "@/assets/portfolio-junta-expansao.jpg.asset.json";
 import tanquesVerdesAsset from "@/assets/portfolio-tanques-verdes.jpg.asset.json";
+import ventiladoresAzuisAsset from "@/assets/portfolio-ventiladores-azuis.jpg.asset.json";
 const evaporativoImg = evaporativoAsset.url;
 const reducaoInoxImg = reducaoInoxAsset.url;
 const juntaExpansaoImg = juntaExpansaoAsset.url;
 const tanquesVerdesImg = tanquesVerdesAsset.url;
+const ventiladoresAzuisImg = ventiladoresAzuisAsset.url;
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -78,6 +80,7 @@ const projects: Project[] = [
   { src: reducaoInoxImg, title: "Instalação e soldagem de boca em redução de inox", cat: "Caldeiraria" },
   { src: juntaExpansaoImg, title: "Substituição de bomba e instalação de junta de expansão", cat: "Caldeiraria" },
   { src: tanquesVerdesImg, title: "Tanques industriais com pintura anticorrosiva", cat: "Pintura" },
+  { src: ventiladoresAzuisImg, title: "Ventiladores industriais com acabamento anticorrosivo", cat: "Pintura" },
 ];
 
 const beforeAfterPairs = [
@@ -237,7 +240,7 @@ function Portfolio() {
               </h2>
             </div>
 
-            <div className="grid grid-flow-dense gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-flow-dense gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:[&>figure:last-child:nth-child(3n+1)]:col-span-full lg:[&>figure:last-child:nth-child(3n+1)>img]:aspect-[16/9]">
               {projects.map((p) => (
                 <figure
                   key={p.title}

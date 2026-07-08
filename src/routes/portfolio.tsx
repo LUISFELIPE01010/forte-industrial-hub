@@ -240,7 +240,7 @@ function Portfolio() {
               </h2>
             </div>
 
-            <div className="grid grid-flow-dense gap-4 sm:grid-cols-2 lg:grid-cols-3 [&>figure:last-child:nth-child(3n+1)]:col-span-full [&>figure:last-child:nth-child(3n+1)>img]:aspect-[16/9]">
+            <div className="grid grid-flow-dense gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:[&>figure:last-child:nth-child(3n+1)]:col-span-full lg:[&>figure:last-child:nth-child(3n+1)>img]:aspect-[16/9]">
               {projects.map((p) => (
                 <figure
                   key={p.title}

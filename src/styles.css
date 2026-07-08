@@ -257,13 +257,6 @@
   z-index: 9998 !important;
 }
 
-div[vw].enabled {
-  top: 50% !important;
-  right: 0 !important;
-  left: auto !important;
-  transform: translateY(-50%) !important;
-}
-
 [vw-access-button] {
   width: 48px !important;
   height: 48px !important;
@@ -300,23 +293,4 @@ div[vw].enabled {
   [vw-access-button] .vp-pop-up {
     height: 44px !important;
   }
-}
-
-/* VLibras fix */
-[vw] {
-  position: fixed !important;
-  bottom: 20px !important;
-  right: 20px !important;
-  z-index: 99999 !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-[vw-access-button] {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  width: 50px !important;
-  height: 50px !important;
 }

@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { VLibrasWidget } from "../components/VLibrasWidget";
 
 function NotFoundComponent() {
   return (
@@ -108,7 +109,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
   }),
-  scripts: () => [{ src: "/vlibras-loader.js", defer: true }],
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -123,6 +123,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <VLibrasWidget />
         <Scripts />
       </body>
     </html>

@@ -35,9 +35,11 @@ import chaminePintada from "@/assets/portfolio-ba/chamine-pintada.jpg";
 import evaporativoAsset from "@/assets/portfolio-evaporativo.jpg.asset.json";
 import reducaoInoxAsset from "@/assets/portfolio-reducao-inox.jpg.asset.json";
 import juntaExpansaoAsset from "@/assets/portfolio-junta-expansao.jpg.asset.json";
+import tanquesVerdesAsset from "@/assets/portfolio-tanques-verdes.jpg.asset.json";
 const evaporativoImg = evaporativoAsset.url;
 const reducaoInoxImg = reducaoInoxAsset.url;
 const juntaExpansaoImg = juntaExpansaoAsset.url;
+const tanquesVerdesImg = tanquesVerdesAsset.url;
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({

@@ -6,9 +6,10 @@ import { PageHero } from "@/components/site/PageHero";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero-scaffold.jpg";
-import scaffold from "@/assets/vercel/servico-andaimes.jpg";
-import painting from "@/assets/vercel/servico-pintura.jpg";
-import caldeiraria from "@/assets/vercel/servico-caldeiraria.jpg";
+
+const scaffold = "/images/vercel-fix/servico-andaimes.jpg";
+const painting = "/images/vercel-fix/servico-pintura.jpg";
+const caldeiraria = "/images/vercel-fix/servico-caldeiraria.jpg";
 
 export const Route = createFileRoute("/servicos/")({
   head: () => ({

@@ -59,10 +59,11 @@ const projects: Project[] = [
   { src: p3, title: "Andaime em torre industrial de grande altura", cat: "Andaimes" },
   { src: p4, title: "Andaime multidirecional em equipamento industrial", cat: "Andaimes" },
   { src: p5, title: "Estrutura metálica e tanque elevado", cat: "Caldeiraria" },
-  
+
   { src: p7, title: "Pintura de estrutura industrial complexa", cat: "Pintura" },
   { src: p8, title: "Escada industrial com faixas antiderrapantes", cat: "Pintura" },
   { src: p9, title: "Andaime em estrutura industrial", cat: "Andaimes", wide: true },
+  { src: evaporativoImg, title: "Fabricação e instalação de chaparia do evaporativo", cat: "Caldeiraria" },
   { src: torreAlta, title: "Andaime tubular em torre industrial de grande altura", cat: "Andaimes" },
   { src: tanqueRedondo, title: "Andaime multi-nível em tanque de armazenamento", cat: "Andaimes" },
   { src: tanquePreto, title: "Andaime envolvendo tanque atmosférico", cat: "Andaimes" },
@@ -72,7 +73,6 @@ const projects: Project[] = [
   { src: fabricaAmplo, title: "Andaime de grande porte em unidade industrial", cat: "Andaimes" },
   { src: tanquePretoPintado, title: "Tanque atmosférico com acabamento anticorrosivo", cat: "Pintura" },
   { src: chaminePintada, title: "Chaminé industrial pintada em vermelho e branco", cat: "Pintura" },
-  { src: evaporativoImg, title: "Fabricação e instalação de chaparia do evaporativo", cat: "Caldeiraria" },
   { src: reducaoInoxImg, title: "Instalação e soldagem de boca em redução de inox", cat: "Caldeiraria" },
   { src: juntaExpansaoImg, title: "Substituição de bomba e instalação de junta de expansão", cat: "Caldeiraria" },
 ];

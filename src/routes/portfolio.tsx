@@ -32,11 +32,12 @@ import equipeAcao from "@/assets/andaimes-novo/equipe-acao.jpg";
 import fabricaAmplo from "@/assets/andaimes-novo/fabrica-amplo.jpg";
 import tanquePretoPintado from "@/assets/portfolio-ba/tanque-preto-pintado.jpg";
 import chaminePintada from "@/assets/portfolio-ba/chamine-pintada.jpg";
-import evaporativoImg from "@/assets/vercel/portfolio-evaporativo.jpg";
-import reducaoInoxImg from "@/assets/vercel/portfolio-reducao-inox.jpg";
-import juntaExpansaoImg from "@/assets/vercel/portfolio-junta-expansao.jpg";
-import tanquesVerdesImg from "@/assets/vercel/portfolio-tanques-verdes.jpg";
-import ventiladoresAzuisImg from "@/assets/vercel/portfolio-evaporativo.jpg";
+
+const evaporativoImg = "/images/vercel-fix/portfolio-evaporativo.jpg";
+const reducaoInoxImg = "/images/vercel-fix/portfolio-reducao-inox.jpg";
+const juntaExpansaoImg = "/images/vercel-fix/portfolio-junta-expansao.jpg";
+const tanquesVerdesImg = "/images/vercel-fix/portfolio-tanques-verdes.jpg";
+const ventiladoresAzuisImg = "/images/vercel-fix/portfolio-ventiladores-azuis.jpg";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({

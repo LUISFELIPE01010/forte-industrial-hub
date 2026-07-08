@@ -32,6 +32,12 @@ import equipeAcao from "@/assets/andaimes-novo/equipe-acao.jpg";
 import fabricaAmplo from "@/assets/andaimes-novo/fabrica-amplo.jpg";
 import tanquePretoPintado from "@/assets/portfolio-ba/tanque-preto-pintado.jpg";
 import chaminePintada from "@/assets/portfolio-ba/chamine-pintada.jpg";
+import evaporativoAsset from "@/assets/portfolio-evaporativo.jpg.asset.json";
+import reducaoInoxAsset from "@/assets/portfolio-reducao-inox.jpg.asset.json";
+import juntaExpansaoAsset from "@/assets/portfolio-junta-expansao.jpg.asset.json";
+const evaporativoImg = evaporativoAsset.url;
+const reducaoInoxImg = reducaoInoxAsset.url;
+const juntaExpansaoImg = juntaExpansaoAsset.url;
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -66,6 +72,9 @@ const projects: Project[] = [
   { src: fabricaAmplo, title: "Andaime de grande porte em unidade industrial", cat: "Andaimes" },
   { src: tanquePretoPintado, title: "Tanque atmosférico com acabamento anticorrosivo", cat: "Pintura" },
   { src: chaminePintada, title: "Chaminé industrial pintada em vermelho e branco", cat: "Pintura" },
+  { src: evaporativoImg, title: "Fabricação e instalação de chaparia do evaporativo", cat: "Caldeiraria" },
+  { src: reducaoInoxImg, title: "Instalação e soldagem de boca em redução de inox", cat: "Caldeiraria" },
+  { src: juntaExpansaoImg, title: "Substituição de bomba e instalação de junta de expansão", cat: "Caldeiraria" },
 ];
 
 const beforeAfterPairs = [

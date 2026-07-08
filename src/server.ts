@@ -37,12 +37,37 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   });
 }
 
+async function injectStaticVlibrasLoader(response: Response): Promise<Response> {
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("text/html")) return response;
+
+  const html = await response.clone().text();
+  if (html.includes("/vlibras-loader.js")) return response;
+
+  const loaderScript = '<script src="/vlibras-loader.js" defer></script>';
+  const bodyCloseIndex = html.lastIndexOf("</body>");
+  const nextHtml =
+    bodyCloseIndex >= 0
+      ? `${html.slice(0, bodyCloseIndex)}${loaderScript}${html.slice(bodyCloseIndex)}`
+      : `${html}${loaderScript}`;
+
+  const headers = new Headers(response.headers);
+  headers.delete("content-length");
+
+  return new Response(nextHtml, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const normalizedResponse = await normalizeCatastrophicSsrResponse(response);
+      return await injectStaticVlibrasLoader(normalizedResponse);
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {

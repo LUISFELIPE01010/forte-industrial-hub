@@ -7,7 +7,6 @@ import { CtaBanner } from "@/components/site/CtaBanner";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { Counter } from "@/components/site/Counter";
 import { ClientLogos } from "@/components/site/ClientLogos";
-import { VLibrasPortal } from "@/components/VLibrasPortal";
 import heroImg from "@/assets/hero-scaffold.jpg";
 import aboutImg from "@/assets/about-office.jpg";
 import sobreProfissionalImg from "@/assets/sobre-profissional-4.png";
@@ -49,7 +48,6 @@ function Home() {
       </main>
       <Footer />
       <WhatsAppFab />
-      <VLibrasPortal />
     </div>
   );
 }

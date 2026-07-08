@@ -25,7 +25,7 @@ export const Route = createFileRoute("/servicos/")({
 const items = [
   { to: "/servicos/andaimes", img: scaffold, title: "Andaimes", desc: "Montagem, desmontagem e locação de andaimes tubulares e multidirecionais." },
   { to: "/servicos/pintura", img: painting, title: "Pintura Técnica Industrial", desc: "Epóxi, alta temperatura, antiderrapante e poliuretano acrílico." },
-  { to: "/servicos/caldeiraria", img: caldeiraria, title: "Caldeiraria", desc: "Fabricação e instalação de chaparia do evaporativo." },
+  { to: "/servicos/caldeiraria", img: caldeiraria, title: "Caldeiraria", desc: "Fabricação, recuperação e adaptação de peças e estruturas metálicas." },
 ];
 
 function Servicos() {

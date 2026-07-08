@@ -77,6 +77,7 @@ const projects: Project[] = [
   { src: chaminePintada, title: "Chaminé industrial pintada em vermelho e branco", cat: "Pintura" },
   { src: reducaoInoxImg, title: "Instalação e soldagem de boca em redução de inox", cat: "Caldeiraria" },
   { src: juntaExpansaoImg, title: "Substituição de bomba e instalação de junta de expansão", cat: "Caldeiraria" },
+  { src: tanquesVerdesImg, title: "Tanques industriais com pintura anticorrosiva", cat: "Pintura" },
 ];
 
 const beforeAfterPairs = [

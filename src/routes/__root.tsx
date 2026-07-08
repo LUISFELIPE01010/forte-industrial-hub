@@ -11,7 +11,6 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { VLibrasWidget } from "../components/VLibrasWidget";
 
 function NotFoundComponent() {
   return (
@@ -121,23 +120,67 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body suppressHydrationWarning>
+      <body>
         {children}
-        <div
-          {...({ vw: "" } as Record<string, string>)}
-          className="enabled"
-          suppressHydrationWarning
-        >
-          <div
-            {...({ "vw-access-button": "" } as Record<string, string>)}
-            className="active"
-          />
-          <div {...({ "vw-plugin-wrapper": "" } as Record<string, string>)}>
-            <div className="vw-plugin-top-wrapper" />
-          </div>
-        </div>
-        <VLibrasWidget />
         <Scripts />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                function startVLibras() {
+                  if (window.__vlibrasLoaded) return;
+                  window.__vlibrasLoaded = true;
+
+                  function createContainer() {
+                    var existingContainer = document.querySelector('[vw]');
+                    if (existingContainer) return existingContainer;
+
+                    var container = document.createElement('div');
+                    container.setAttribute('vw', '');
+                    container.className = 'enabled';
+                    container.style.top = '50%';
+                    container.style.right = '0';
+                    container.style.left = 'auto';
+                    container.style.transform = 'translateY(-50%)';
+                    container.innerHTML = '<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
+                    document.body.appendChild(container);
+                    return container;
+                  }
+
+                  function initWidget() {
+                    createContainer();
+                    if (window.VLibras && window.VLibras.Widget) {
+                      new window.VLibras.Widget('https://vlibras.gov.br/app');
+                    }
+                  }
+
+                  if (window.VLibras && window.VLibras.Widget) {
+                    initWidget();
+                    return;
+                  }
+
+                  var existingScript = document.querySelector('script[src="https://vlibras.gov.br/app/vlibras-plugin.js"]');
+                  if (existingScript) {
+                    existingScript.addEventListener('load', initWidget, { once: true });
+                    return;
+                  }
+
+                  var script = document.createElement('script');
+                  script.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+                  script.async = true;
+                  script.onload = initWidget;
+                  document.body.appendChild(script);
+                }
+
+                if (document.readyState === 'complete') {
+                  startVLibras();
+                } else {
+                  window.addEventListener('load', startVLibras, { once: true });
+                }
+              })();
+            `,
+          }}
+        />
       </body>
     </html>
   );

@@ -37,11 +37,12 @@ import reducaoInoxAsset from "@/assets/portfolio-reducao-inox.jpg.asset.json";
 import juntaExpansaoAsset from "@/assets/portfolio-junta-expansao.jpg.asset.json";
 import tanquesVerdesAsset from "@/assets/portfolio-tanques-verdes.jpg.asset.json";
 import ventiladoresAzuisAsset from "@/assets/portfolio-ventiladores-azuis.jpg.asset.json";
-const evaporativoImg = evaporativoAsset.url;
-const reducaoInoxImg = reducaoInoxAsset.url;
-const juntaExpansaoImg = juntaExpansaoAsset.url;
-const tanquesVerdesImg = tanquesVerdesAsset.url;
-const ventiladoresAzuisImg = ventiladoresAzuisAsset.url;
+import { assetUrl } from "@/lib/asset";
+const evaporativoImg = assetUrl(evaporativoAsset);
+const reducaoInoxImg = assetUrl(reducaoInoxAsset);
+const juntaExpansaoImg = assetUrl(juntaExpansaoAsset);
+const tanquesVerdesImg = assetUrl(tanquesVerdesAsset);
+const ventiladoresAzuisImg = assetUrl(ventiladoresAzuisAsset);
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({

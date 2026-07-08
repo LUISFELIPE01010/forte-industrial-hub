@@ -2,9 +2,7 @@ import { createStart, createMiddleware } from "@tanstack/react-start";
 
 import { renderErrorPage } from "./lib/error-page";
 
-async function injectStaticVlibrasLoader(response: unknown) {
-  if (!(response instanceof Response)) return response;
-
+async function injectStaticVlibrasLoader(response: Response): Promise<Response> {
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("text/html")) return response;
 
@@ -30,7 +28,11 @@ async function injectStaticVlibrasLoader(response: unknown) {
 
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
   try {
-    return await injectStaticVlibrasLoader(await next());
+    const response = await next();
+    if (response instanceof Response) {
+      return await injectStaticVlibrasLoader(response);
+    }
+    return response;
   } catch (error) {
     if (error != null && typeof error === "object" && "statusCode" in error) {
       throw error;

@@ -123,64 +123,6 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function () {
-                function startVLibras() {
-                  if (window.__vlibrasLoaded) return;
-                  window.__vlibrasLoaded = true;
-
-                  function createContainer() {
-                    var existingContainer = document.querySelector('[vw]');
-                    if (existingContainer) return existingContainer;
-
-                    var container = document.createElement('div');
-                    container.setAttribute('vw', '');
-                    container.className = 'enabled';
-                    container.style.top = '50%';
-                    container.style.right = '0';
-                    container.style.left = 'auto';
-                    container.style.transform = 'translateY(-50%)';
-                    container.innerHTML = '<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
-                    document.body.appendChild(container);
-                    return container;
-                  }
-
-                  function initWidget() {
-                    createContainer();
-                    if (window.VLibras && window.VLibras.Widget) {
-                      new window.VLibras.Widget('https://vlibras.gov.br/app');
-                    }
-                  }
-
-                  if (window.VLibras && window.VLibras.Widget) {
-                    initWidget();
-                    return;
-                  }
-
-                  var existingScript = document.querySelector('script[src="https://vlibras.gov.br/app/vlibras-plugin.js"]');
-                  if (existingScript) {
-                    existingScript.addEventListener('load', initWidget, { once: true });
-                    return;
-                  }
-
-                  var script = document.createElement('script');
-                  script.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
-                  script.async = true;
-                  script.onload = initWidget;
-                  document.body.appendChild(script);
-                }
-
-                if (document.readyState === 'complete') {
-                  startVLibras();
-                } else {
-                  window.addEventListener('load', startVLibras, { once: true });
-                }
-              })();
-            `,
-          }}
-        />
       </body>
     </html>
   );

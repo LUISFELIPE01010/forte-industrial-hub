@@ -35,9 +35,11 @@ import chaminePintada from "@/assets/portfolio-ba/chamine-pintada.jpg";
 import evaporativoAsset from "@/assets/portfolio-evaporativo.jpg.asset.json";
 import reducaoInoxAsset from "@/assets/portfolio-reducao-inox.jpg.asset.json";
 import juntaExpansaoAsset from "@/assets/portfolio-junta-expansao.jpg.asset.json";
+import tanquesVerdesAsset from "@/assets/portfolio-tanques-verdes.jpg.asset.json";
 const evaporativoImg = evaporativoAsset.url;
 const reducaoInoxImg = reducaoInoxAsset.url;
 const juntaExpansaoImg = juntaExpansaoAsset.url;
+const tanquesVerdesImg = tanquesVerdesAsset.url;
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -75,6 +77,7 @@ const projects: Project[] = [
   { src: chaminePintada, title: "Chaminé industrial pintada em vermelho e branco", cat: "Pintura" },
   { src: reducaoInoxImg, title: "Instalação e soldagem de boca em redução de inox", cat: "Caldeiraria" },
   { src: juntaExpansaoImg, title: "Substituição de bomba e instalação de junta de expansão", cat: "Caldeiraria" },
+  { src: tanquesVerdesImg, title: "Tanques industriais com pintura anticorrosiva", cat: "Pintura" },
 ];
 
 const beforeAfterPairs = [

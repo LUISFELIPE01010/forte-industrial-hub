@@ -25,22 +25,30 @@ export function VLibrasWidget() {
     if (!ref.current || initialized.current) return;
     initialized.current = true;
 
-    const existing = document.querySelector("script[src='https://vlibras.gov.br/app/vlibras-plugin.js']");
-    if (existing) return;
+    if (ref.current) {
+      ref.current.innerHTML = VLBRAS_HTML;
+    }
 
-    // Render VLibras markup
-    ref.current.innerHTML = VLBRAS_HTML;
+    const existing = document.querySelector(
+      "script[src='https://vlibras.gov.br/app/vlibras-plugin.js']"
+    );
 
-    // Load plugin script as a real DOM script so it executes
-    const script = document.createElement("script");
-    script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
-    script.async = false;
-    script.onload = () => {
+    const initWidget = () => {
       if (window.VLibras) {
         new window.VLibras.Widget("https://vlibras.gov.br/app");
       }
     };
-    document.body.appendChild(script);
+
+    if (existing) {
+      // Script já existe, só inicializa o widget
+      initWidget();
+    } else {
+      const script = document.createElement("script");
+      script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
+      script.async = false;
+      script.onload = initWidget;
+      document.body.appendChild(script);
+    }
   }, []);
 
   return <div ref={ref} />;

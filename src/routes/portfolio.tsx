@@ -72,6 +72,9 @@ const projects: Project[] = [
   { src: fabricaAmplo, title: "Andaime de grande porte em unidade industrial", cat: "Andaimes" },
   { src: tanquePretoPintado, title: "Tanque atmosférico com acabamento anticorrosivo", cat: "Pintura" },
   { src: chaminePintada, title: "Chaminé industrial pintada em vermelho e branco", cat: "Pintura" },
+  { src: evaporativoImg, title: "Fabricação e instalação de chaparia do evaporativo", cat: "Caldeiraria" },
+  { src: reducaoInoxImg, title: "Instalação e soldagem de boca em redução de inox", cat: "Caldeiraria" },
+  { src: juntaExpansaoImg, title: "Substituição de bomba e instalação de junta de expansão", cat: "Caldeiraria" },
 ];
 
 const beforeAfterPairs = [

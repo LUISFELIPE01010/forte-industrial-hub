@@ -9,55 +9,41 @@ declare global {
   }
 }
 
-const SCRIPT_SRC = "https://vlibras.gov.br/app/vlibras-plugin.js";
-const BASE_URL = "https://vlibras.gov.br/app";
-
-function ensureMarkup() {
-  if (document.querySelector("[vw]")) return;
-  const container = document.createElement("div");
-  container.innerHTML = `
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
-    </div>
-  `.trim();
-  document.body.appendChild(container.firstElementChild as Node);
-}
-
-function initWidget() {
-  if (window.__vlibrasInitialized) return;
-  if (!window.VLibras) return;
-  try {
-    new window.VLibras.Widget(BASE_URL);
-    window.__vlibrasInitialized = true;
-  } catch (e) {
-    console.error("VLibras init failed", e);
-  }
-}
-
 export function VLibrasWidget() {
   useEffect(() => {
-    ensureMarkup();
+    if (typeof window === "undefined") return;
 
-    if (window.VLibras) {
-      initWidget();
-      return;
+    // Ensure the required markup exists in the DOM (VLibras looks for [vw]).
+    if (!document.querySelector("[vw]")) {
+      const wrapper = document.createElement("div");
+      wrapper.innerHTML =
+        '<div vw class="enabled">' +
+        '<div vw-access-button class="active"></div>' +
+        '<div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>' +
+        "</div>";
+      const el = wrapper.firstElementChild;
+      if (el) document.body.appendChild(el);
     }
 
-    let script = document.querySelector<HTMLScriptElement>(
-      `script[src='${SCRIPT_SRC}']`,
-    );
-    if (!script) {
-      script = document.createElement("script");
-      script.src = SCRIPT_SRC;
-      script.async = true;
-      document.body.appendChild(script);
-    }
-    const onLoad = () => initWidget();
-    script.addEventListener("load", onLoad);
-    return () => script?.removeEventListener("load", onLoad);
+    let cancelled = false;
+    const tryInit = () => {
+      if (cancelled) return;
+      if (window.__vlibrasInitialized) return;
+      if (window.VLibras) {
+        try {
+          new window.VLibras.Widget("https://vlibras.gov.br/app");
+          window.__vlibrasInitialized = true;
+        } catch (e) {
+          console.error("VLibras init failed", e);
+        }
+        return;
+      }
+      setTimeout(tryInit, 300);
+    };
+    tryInit();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return (

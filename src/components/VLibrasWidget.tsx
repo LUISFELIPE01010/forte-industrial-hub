@@ -8,30 +8,24 @@ declare global {
   }
 }
 
-const VLBRAS_HTML = `
-  <div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
-  </div>
-`;
-
 export function VLibrasWidget() {
-  const ref = useRef<HTMLDivElement>(null);
   const initialized = useRef(false);
 
   useEffect(() => {
-    if (!ref.current || initialized.current) return;
+    if (initialized.current) return;
     initialized.current = true;
 
-    if (ref.current) {
-      ref.current.innerHTML = VLBRAS_HTML;
-    }
-
-    const existing = document.querySelector(
-      "script[src='https://vlibras.gov.br/app/vlibras-plugin.js']"
-    );
+    // Cria o container do VLibras diretamente no body
+    const container = document.createElement("div");
+    container.setAttribute("vw", "");
+    container.className = "enabled";
+    container.innerHTML = `
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    `;
+    document.body.appendChild(container);
 
     const initWidget = () => {
       if (window.VLibras) {
@@ -39,8 +33,11 @@ export function VLibrasWidget() {
       }
     };
 
+    const existing = document.querySelector(
+      "script[src='https://vlibras.gov.br/app/vlibras-plugin.js']"
+    );
+
     if (existing) {
-      // Script já existe, só inicializa o widget
       initWidget();
     } else {
       const script = document.createElement("script");
@@ -51,5 +48,5 @@ export function VLibrasWidget() {
     }
   }, []);
 
-  return <div ref={ref} />;
+  return null;
 }

@@ -9,9 +9,10 @@ import heroImg from "@/assets/hero-scaffold.jpg";
 import scaffoldAsset from "@/assets/servico-andaimes.jpg.asset.json";
 import paintingAssetJson from "@/assets/servico-pintura.jpg.asset.json";
 import caldeirariaAsset from "@/assets/servico-caldeiraria.jpg.asset.json";
-const scaffold = scaffoldAsset.url;
-const painting = paintingAssetJson.url;
-const caldeiraria = caldeirariaAsset.url;
+import { assetUrl } from "@/lib/asset";
+const scaffold = assetUrl(scaffoldAsset);
+const painting = assetUrl(paintingAssetJson);
+const caldeiraria = assetUrl(caldeirariaAsset);
 
 export const Route = createFileRoute("/servicos/")({
   head: () => ({

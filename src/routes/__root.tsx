@@ -121,8 +121,21 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {children}
+        <div
+          {...({ vw: "" } as Record<string, string>)}
+          className="enabled"
+          suppressHydrationWarning
+        >
+          <div
+            {...({ "vw-access-button": "" } as Record<string, string>)}
+            className="active"
+          />
+          <div {...({ "vw-plugin-wrapper": "" } as Record<string, string>)}>
+            <div className="vw-plugin-top-wrapper" />
+          </div>
+        </div>
         <VLibrasWidget />
         <Scripts />
       </body>

@@ -43,5 +43,23 @@ export function VLibrasWidget() {
     document.body.appendChild(script);
   }, []);
 
-  return <div ref={ref} />;
+  return (
+    <>
+      <style>{`
+        [vw], [vw-access-button], [vw-plugin-wrapper] { display: block !important; }
+        [vw-access-button] {
+          position: fixed !important;
+          right: 16px !important;
+          bottom: 16px !important;
+          z-index: 2147483647 !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
+        @media (max-width: 768px) {
+          [vw-access-button] { right: 12px !important; bottom: 12px !important; }
+        }
+      `}</style>
+      <div ref={ref} />
+    </>
+  );
 }

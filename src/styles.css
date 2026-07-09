@@ -294,3 +294,24 @@
     height: 44px !important;
   }
 }
+
+/* VLibras — override de posicionamento do botão de acesso */
+[vw][vw-access-button].active,
+[vw] [vw-access-button].active {
+  display: flex !important;
+  right: 20px !important;
+  left: auto !important;
+  overflow: visible !important;
+  width: 48px !important;
+  height: 48px !important;
+  position: fixed !important;
+  bottom: 80px !important;
+  z-index: 999999 !important;
+}
+
+[vw] {
+  position: fixed !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 999999 !important;
+}

@@ -55,6 +55,7 @@ export const Route = createFileRoute("/servicos/caldeiraria")({
         { src: "/images/vercel-fix/caldeiraria-junta.jpg", alt: "Substituição de bomba e instalação de junta de expansão" },
         { src: "/images/vercel-fix/caldeiraria-reducao.jpg", alt: "Instalação e soldagem de boca em redução de inox" },
         { src: "/images/vercel-fix/caldeiraria-ventiladores.jpg", alt: "Manutenção em ventiladores industriais" },
+        { src: "/images/vercel-fix/caldeiraria-estrutura-fachada.jpg", alt: "Montagem de estrutura metálica em fachada comercial" },
       ]}
     />
   ),

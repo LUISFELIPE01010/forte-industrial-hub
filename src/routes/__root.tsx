@@ -120,25 +120,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
-  useEffect(() => {
-    if (document.querySelector('[vw]')) return;
-
-    const container = document.createElement('div');
-    container.setAttribute('vw', '');
-    container.className = 'enabled';
-    container.innerHTML = `
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
-    `;
-    document.body.appendChild(container);
-
-    if ((window as any).VLibras) {
-      new (window as any).VLibras.Widget('https://vlibras.gov.br/app');
-    }
-  }, []);
-
   return (
     <html lang="pt-br">
       <head>
@@ -147,6 +128,26 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.__vlibrasInit = function() {
+                if (document.querySelector('[vw]')) return;
+                var container = document.createElement('div');
+                container.setAttribute('vw', '');
+                container.className = 'enabled';
+                container.innerHTML = '<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
+                document.body.appendChild(container);
+                new VLibras.Widget('https://vlibras.gov.br/app');
+              };
+              if (document.readyState === 'complete') {
+                window.__vlibrasInit();
+              } else {
+                window.addEventListener('load', window.__vlibrasInit);
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );

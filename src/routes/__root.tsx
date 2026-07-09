@@ -120,6 +120,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  useEffect(() => {
+    if (document.querySelector('[vw]')) return;
+
+    const container = document.createElement('div');
+    container.setAttribute('vw', '');
+    container.className = 'enabled';
+    container.innerHTML = `
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    `;
+    document.body.appendChild(container);
+
+    if ((window as any).VLibras) {
+      new (window as any).VLibras.Widget('https://vlibras.gov.br/app');
+    }
+  }, []);
+
   return (
     <html lang="pt-br">
       <head>
@@ -127,13 +146,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `<div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>`,
-          }}
-        />
         <Scripts />
-        <script dangerouslySetInnerHTML={{ __html: `new VLibras.Widget('https://vlibras.gov.br/app');` }} />
       </body>
     </html>
   );

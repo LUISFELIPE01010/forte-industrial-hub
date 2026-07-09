@@ -48,9 +48,13 @@ export const Route = createFileRoute("/servicos/caldeiraria")({
       ]}
       gallery={[
         { src: g1, alt: "Equipe executando corte e solda em estrutura industrial" },
-        
         { src: g3, alt: "Recuperação de estrutura metálica — antes e depois" },
         { src: g4, alt: "Reforma de plataforma metálica industrial — antes e depois" },
+        { src: "/images/vercel-fix/caldeiraria-evaporativo.jpg", alt: "Fabricação e instalação de chaparia do evaporativo" },
+        { src: "/images/vercel-fix/caldeiraria-bancada.jpg", alt: "Fabricação de tubulação com flange em bancada de caldeiraria" },
+        { src: "/images/vercel-fix/caldeiraria-junta.jpg", alt: "Substituição de bomba e instalação de junta de expansão" },
+        { src: "/images/vercel-fix/caldeiraria-reducao.jpg", alt: "Instalação e soldagem de boca em redução de inox" },
+        { src: "/images/vercel-fix/caldeiraria-ventiladores.jpg", alt: "Manutenção em ventiladores industriais" },
       ]}
     />
   ),

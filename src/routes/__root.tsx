@@ -127,27 +127,13 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
-        <Scripts />
-        <script
+        <div
           dangerouslySetInnerHTML={{
-            __html: `
-              function initVLibras() {
-                if (document.querySelector('[vw]')) return;
-                if (typeof VLibras === 'undefined') {
-                  setTimeout(initVLibras, 500);
-                  return;
-                }
-                var container = document.createElement('div');
-                container.setAttribute('vw', '');
-                container.className = 'enabled';
-                container.innerHTML = '<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
-                document.body.appendChild(container);
-                new VLibras.Widget('https://vlibras.gov.br/app');
-              }
-              window.addEventListener('load', initVLibras);
-            `,
+            __html: `<div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>`,
           }}
         />
+        <Scripts />
+        <script dangerouslySetInnerHTML={{ __html: `new VLibras.Widget('https://vlibras.gov.br/app');` }} />
       </body>
     </html>
   );

@@ -1,15 +1,41 @@
-// @lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
-// or the app will break with duplicate plugins:
-//   - tanstackStart, viteReact, tailwindcss, tsConfigPaths, nitro (build-only using cloudflare as a default target),
-//     componentTagger (dev-only), VITE_* env injection, @ path alias, React/TanStack dedupe,
-//     error logger plugins, and sandbox detection (port/host/strictPort).
-// You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+
+const vlibrasSnippet = `
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      (function () {
+        function initVLibras() {
+          if (typeof window !== "undefined" && window.VLibras) {
+            new window.VLibras.Widget("https://vlibras.gov.br/app");
+          } else {
+            setTimeout(initVLibras, 300);
+          }
+        }
+        if (document.readyState === "complete") {
+          initVLibras();
+        } else {
+          window.addEventListener("load", initVLibras);
+        }
+      })();
+    </script>
+  </body>`;
 
 export default defineConfig({
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
     server: { entry: "server" },
   },
+  plugins: [
+    {
+      name: "vlibras-inject",
+      transformIndexHtml(html: string) {
+        return html.replace("</body>", vlibrasSnippet);
+      },
+    },
+  ],
 });

@@ -127,11 +127,18 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `<div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>`,
+          }}
+        />
         <Scripts />
+        <script dangerouslySetInnerHTML={{ __html: `new VLibras.Widget('https://vlibras.gov.br/app');` }} />
       </body>
     </html>
   );
 }
+
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();

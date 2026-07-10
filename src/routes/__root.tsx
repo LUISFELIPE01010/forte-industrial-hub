@@ -182,7 +182,7 @@ function VLibrasLoader() {
 
           new vlibras.Widget({
             rootPath: "https://vlibras.gov.br/app",
-            position: "BL",
+            position: "BR",
             opacity: 1,
           });
 

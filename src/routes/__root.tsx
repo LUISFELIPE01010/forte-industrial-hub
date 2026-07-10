@@ -171,7 +171,7 @@ function VLibrasLoader() {
         const vlibras = (window as typeof window & {
           VLibras?: {
             Widget: new (
-              options: { rootPath: string; position: "BL"; opacity: number } | string,
+              options: { rootPath: string; position: "BL" | "BR" | "TL" | "TR"; opacity: number } | string,
             ) => unknown;
           };
         }).VLibras;

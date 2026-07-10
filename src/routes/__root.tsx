@@ -146,9 +146,11 @@ function VLibrasLoader() {
 
       widget.className = "enabled";
       widget.style.setProperty("position", "fixed", "important");
-      widget.style.setProperty("bottom", "16px", "important");
+      widget.style.setProperty("top", "50%", "important");
       widget.style.setProperty("right", "16px", "important");
+      widget.style.setProperty("bottom", "auto", "important");
       widget.style.setProperty("left", "auto", "important");
+      widget.style.setProperty("transform", "translateY(-50%)", "important");
       widget.style.setProperty("display", "block", "important");
       widget.style.setProperty("visibility", "visible", "important");
       widget.style.setProperty("opacity", "1", "important");

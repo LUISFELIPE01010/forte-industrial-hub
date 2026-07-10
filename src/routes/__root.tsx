@@ -123,18 +123,49 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `<div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>`,
-          }}
-        />
         <Scripts />
-        <script dangerouslySetInnerHTML={{ __html: `new VLibras.Widget('https://vlibras.gov.br/app');` }} />
       </body>
     </html>
   );
 }
 
+function VLibrasLoader() {
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    if (document.getElementById("vlibras-root")) return;
+
+    // Inject widget markup directly into <body>, outside React's tree.
+    const wrapper = document.createElement("div");
+    wrapper.id = "vlibras-root";
+    wrapper.innerHTML = `<div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>`;
+    document.body.appendChild(wrapper);
+
+    // Inject stylesheet.
+    if (!document.getElementById("vlibras-css")) {
+      const link = document.createElement("link");
+      link.id = "vlibras-css";
+      link.rel = "stylesheet";
+      link.href = "https://vlibras.gov.br/app/vlibras-plugin.css";
+      document.head.appendChild(link);
+    }
+
+    // Load plugin script and initialize.
+    const script = document.createElement("script");
+    script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
+    script.async = true;
+    script.onload = () => {
+      try {
+        // @ts-expect-error VLibras is defined by the external script
+        new window.VLibras.Widget("https://vlibras.gov.br/app");
+      } catch (e) {
+        console.error("VLibras init failed", e);
+      }
+    };
+    document.body.appendChild(script);
+  }, []);
+
+  return null;
+}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -143,6 +174,8 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <VLibrasLoader />
     </QueryClientProvider>
   );
 }
+

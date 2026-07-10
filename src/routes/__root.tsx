@@ -131,9 +131,36 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function VLibrasLoader() {
   useEffect(() => {
-    if (typeof document === "undefined") return;
+    if (typeof document === "undefined" || typeof window === "undefined") return;
 
     let initialized = false;
+
+    const isMobile = () => window.innerWidth <= 768;
+
+    const applyPositionStyles = (widget: HTMLElement) => {
+      widget.style.setProperty("position", "fixed", "important");
+      widget.style.setProperty("display", "block", "important");
+      widget.style.setProperty("visibility", "visible", "important");
+      widget.style.setProperty("opacity", "1", "important");
+      widget.style.setProperty("pointer-events", "auto", "important");
+      widget.style.setProperty("z-index", "2147483647", "important");
+
+      if (isMobile()) {
+        // Mobile: canto inferior esquerdo
+        widget.style.setProperty("bottom", "16px", "important");
+        widget.style.setProperty("left", "16px", "important");
+        widget.style.setProperty("top", "auto", "important");
+        widget.style.setProperty("right", "auto", "important");
+        widget.style.setProperty("transform", "none", "important");
+      } else {
+        // Desktop: centro direito
+        widget.style.setProperty("top", "50%", "important");
+        widget.style.setProperty("right", "16px", "important");
+        widget.style.setProperty("bottom", "auto", "important");
+        widget.style.setProperty("left", "auto", "important");
+        widget.style.setProperty("transform", "translateY(-50%)", "important");
+      }
+    };
 
     const ensureWidget = () => {
       let widget = document.querySelector<HTMLElement>("[vw]");
@@ -145,17 +172,7 @@ function VLibrasLoader() {
       }
 
       widget.className = "enabled";
-      widget.style.setProperty("position", "fixed", "important");
-      widget.style.setProperty("top", "50%", "important");
-      widget.style.setProperty("right", "16px", "important");
-      widget.style.setProperty("bottom", "auto", "important");
-      widget.style.setProperty("left", "auto", "important");
-      widget.style.setProperty("transform", "translateY(-50%)", "important");
-      widget.style.setProperty("display", "block", "important");
-      widget.style.setProperty("visibility", "visible", "important");
-      widget.style.setProperty("opacity", "1", "important");
-      widget.style.setProperty("pointer-events", "auto", "important");
-      widget.style.setProperty("z-index", "2147483647", "important");
+      applyPositionStyles(widget);
 
       if (!widget.querySelector("[vw-access-button]")) {
         widget.innerHTML = `<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>`;
@@ -184,7 +201,7 @@ function VLibrasLoader() {
 
           new vlibras.Widget({
             rootPath: "https://vlibras.gov.br/app",
-            position: "BR",
+            position: isMobile() ? "BL" : "BR",
             opacity: 1,
           });
 
@@ -234,11 +251,13 @@ function VLibrasLoader() {
 
     window.addEventListener("click", ensureWidget, true);
     window.addEventListener("popstate", ensureWidget);
+    window.addEventListener("resize", ensureWidget);
 
     return () => {
       observer.disconnect();
       window.removeEventListener("click", ensureWidget, true);
       window.removeEventListener("popstate", ensureWidget);
+      window.removeEventListener("resize", ensureWidget);
     };
   }, []);
 

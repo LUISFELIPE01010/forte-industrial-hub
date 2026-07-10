@@ -132,24 +132,34 @@ function RootShell({ children }: { children: ReactNode }) {
 function VLibrasLoader() {
   useEffect(() => {
     if (typeof document === "undefined") return;
-    if (document.querySelector("[vw]")) return;
 
-    // Inject widget markup directly into <body>, outside React's tree.
-    // NOTE: must be the [vw] element itself — wrapping it in another div
-    // breaks VLibras's own CSS (button ends up position:absolute).
-    const widget = document.createElement("div");
-    widget.setAttribute("vw", "");
-    widget.className = "enabled";
-    // Force position; without this the container renders at its in-flow y
-    // (end of body) instead of pinned to the viewport.
-    widget.style.position = "fixed";
-    widget.style.bottom = "16px";
-    widget.style.left = "16px";
-    widget.style.zIndex = "9998";
-    widget.innerHTML = `<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>`;
-    document.body.appendChild(widget);
+    const ensureWidget = () => {
+      let widget = document.querySelector<HTMLElement>("[vw]");
 
-    // Inject stylesheet.
+      if (!widget) {
+        widget = document.createElement("div");
+        widget.setAttribute("vw", "");
+        document.body.appendChild(widget);
+      }
+
+      widget.className = "enabled";
+      widget.style.setProperty("position", "fixed", "important");
+      widget.style.setProperty("bottom", "16px", "important");
+      widget.style.setProperty("left", "16px", "important");
+      widget.style.setProperty("right", "auto", "important");
+      widget.style.setProperty("display", "block", "important");
+      widget.style.setProperty("visibility", "visible", "important");
+      widget.style.setProperty("opacity", "1", "important");
+      widget.style.setProperty("pointer-events", "auto", "important");
+      widget.style.setProperty("z-index", "2147483647", "important");
+
+      if (!widget.querySelector("[vw-access-button]")) {
+        widget.innerHTML = `<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>`;
+      }
+    };
+
+    ensureWidget();
+
     if (!document.getElementById("vlibras-css")) {
       const link = document.createElement("link");
       link.id = "vlibras-css";
@@ -158,19 +168,47 @@ function VLibrasLoader() {
       document.head.appendChild(link);
     }
 
-    // Load plugin script and initialize.
-    const script = document.createElement("script");
-    script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
-    script.async = true;
-    script.onload = () => {
+    const initializeVLibras = () => {
+      ensureWidget();
       try {
-        // @ts-expect-error VLibras is defined by the external script
-        new window.VLibras.Widget("https://vlibras.gov.br/app");
+        const vlibras = (window as typeof window & {
+          VLibras?: { Widget: new (url: string) => unknown };
+        }).VLibras;
+
+        if (vlibras?.Widget) {
+          new vlibras.Widget("https://vlibras.gov.br/app");
+          requestAnimationFrame(ensureWidget);
+        }
       } catch (e) {
         console.error("VLibras init failed", e);
       }
     };
-    document.body.appendChild(script);
+
+    const existingScript = document.getElementById("vlibras-script") as HTMLScriptElement | null;
+
+    if (existingScript) {
+      initializeVLibras();
+      existingScript.addEventListener("load", initializeVLibras, { once: true });
+    } else {
+      const script = document.createElement("script");
+      script.id = "vlibras-script";
+      script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
+      script.async = true;
+      script.onload = initializeVLibras;
+      document.body.appendChild(script);
+    }
+
+    const observer = new MutationObserver(ensureWidget);
+    observer.observe(document.body, { childList: true, subtree: false });
+
+    window.addEventListener("click", ensureWidget, true);
+    window.addEventListener("popstate", ensureWidget);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("click", ensureWidget, true);
+      window.removeEventListener("popstate", ensureWidget);
+    };
   }, []);
 
   return null;

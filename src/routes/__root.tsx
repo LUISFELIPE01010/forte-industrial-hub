@@ -135,6 +135,19 @@ function VLibrasLoader() {
 
     let initialized = false;
 
+    // Reseta qualquer estado salvo pelo VLibras (ex.: fechado com X) para que
+    // o widget sempre reapareça em cada carregamento do site.
+    try {
+      Object.keys(localStorage)
+        .filter((k) => k.toLowerCase().includes("vlibras"))
+        .forEach((k) => localStorage.removeItem(k));
+      Object.keys(sessionStorage)
+        .filter((k) => k.toLowerCase().includes("vlibras"))
+        .forEach((k) => sessionStorage.removeItem(k));
+    } catch {
+      // ignore storage access errors
+    }
+
     const isMobile = () => window.innerWidth <= 768;
 
     const applyPositionStyles = (widget: HTMLElement) => {

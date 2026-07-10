@@ -132,13 +132,22 @@ function RootShell({ children }: { children: ReactNode }) {
 function VLibrasLoader() {
   useEffect(() => {
     if (typeof document === "undefined") return;
-    if (document.getElementById("vlibras-root")) return;
+    if (document.querySelector("[vw]")) return;
 
     // Inject widget markup directly into <body>, outside React's tree.
-    const wrapper = document.createElement("div");
-    wrapper.id = "vlibras-root";
-    wrapper.innerHTML = `<div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>`;
-    document.body.appendChild(wrapper);
+    // NOTE: must be the [vw] element itself — wrapping it in another div
+    // breaks VLibras's own CSS (button ends up position:absolute).
+    const widget = document.createElement("div");
+    widget.setAttribute("vw", "");
+    widget.className = "enabled";
+    // Force position; without this the container renders at its in-flow y
+    // (end of body) instead of pinned to the viewport.
+    widget.style.position = "fixed";
+    widget.style.bottom = "16px";
+    widget.style.left = "16px";
+    widget.style.zIndex = "9998";
+    widget.innerHTML = `<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>`;
+    document.body.appendChild(widget);
 
     // Inject stylesheet.
     if (!document.getElementById("vlibras-css")) {

@@ -117,11 +117,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {children}
         <Scripts />
       </body>
@@ -132,6 +132,8 @@ function RootShell({ children }: { children: ReactNode }) {
 function VLibrasLoader() {
   useEffect(() => {
     if (typeof document === "undefined") return;
+
+    let initialized = false;
 
     const ensureWidget = () => {
       let widget = document.querySelector<HTMLElement>("[vw]");
@@ -160,24 +162,51 @@ function VLibrasLoader() {
 
     ensureWidget();
 
-    if (!document.getElementById("vlibras-css")) {
-      const link = document.createElement("link");
-      link.id = "vlibras-css";
-      link.rel = "stylesheet";
-      link.href = "https://vlibras.gov.br/app/vlibras-plugin.css";
-      document.head.appendChild(link);
-    }
-
     const initializeVLibras = () => {
       ensureWidget();
+
+      if (initialized) return;
+
       try {
         const vlibras = (window as typeof window & {
-          VLibras?: { Widget: new (url: string) => unknown };
+          VLibras?: {
+            Widget: new (
+              options: { rootPath: string; position: "BL"; opacity: number } | string,
+            ) => unknown;
+          };
         }).VLibras;
 
         if (vlibras?.Widget) {
-          new vlibras.Widget("https://vlibras.gov.br/app");
-          requestAnimationFrame(ensureWidget);
+          initialized = true;
+          const previousOnload = window.onload;
+
+          new vlibras.Widget({
+            rootPath: "https://vlibras.gov.br/app",
+            position: "BL",
+            opacity: 1,
+          });
+
+          const finishInitialization = () => {
+            const officialOnload = window.onload;
+
+            if (typeof officialOnload === "function" && officialOnload !== previousOnload) {
+              officialOnload.call(window, new Event("load"));
+
+              if (document.readyState === "complete") {
+                window.onload = previousOnload;
+              }
+            }
+
+            requestAnimationFrame(ensureWidget);
+          };
+
+          if (document.readyState === "complete") {
+            finishInitialization();
+          } else {
+            window.addEventListener("load", () => requestAnimationFrame(ensureWidget), {
+              once: true,
+            });
+          }
         }
       } catch (e) {
         console.error("VLibras init failed", e);

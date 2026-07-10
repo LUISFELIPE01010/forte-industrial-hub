@@ -134,35 +134,10 @@ function VLibrasLoader() {
     if (typeof document === "undefined" || typeof window === "undefined") return;
 
     let initialized = false;
-    const STORAGE_KEY = "vlibras-hidden";
 
     const isMobile = () => window.innerWidth <= 768;
 
-    const isHidden = () => {
-      try {
-        return localStorage.getItem(STORAGE_KEY) === "true";
-      } catch {
-        return false;
-      }
-    };
-
-    const setHidden = (hidden: boolean) => {
-      try {
-        localStorage.setItem(STORAGE_KEY, hidden ? "true" : "false");
-      } catch {
-        // ignore
-      }
-    };
-
     const applyPositionStyles = (widget: HTMLElement) => {
-      if (isHidden()) {
-        widget.style.setProperty("display", "none", "important");
-        widget.style.setProperty("visibility", "hidden", "important");
-        widget.style.setProperty("opacity", "0", "important");
-        widget.style.setProperty("pointer-events", "none", "important");
-        return;
-      }
-
       widget.style.setProperty("position", "fixed", "important");
       widget.style.setProperty("display", "block", "important");
       widget.style.setProperty("visibility", "visible", "important");
@@ -187,54 +162,6 @@ function VLibrasLoader() {
       }
     };
 
-    const createCloseButton = (widget: HTMLElement) => {
-      if (widget.querySelector("[data-vlibras-close]")) return;
-
-      const closeBtn = document.createElement("button");
-      closeBtn.setAttribute("data-vlibras-close", "");
-      closeBtn.setAttribute("aria-label", "Fechar VLibras");
-      closeBtn.title = "Fechar VLibras";
-      closeBtn.innerHTML = "&#10005;";
-
-      closeBtn.style.setProperty("position", "absolute", "important");
-      closeBtn.style.setProperty("width", "22px", "important");
-      closeBtn.style.setProperty("height", "22px", "important");
-      closeBtn.style.setProperty("border-radius", "50%", "important");
-      closeBtn.style.setProperty("background", "#1a1a1a", "important");
-      closeBtn.style.setProperty("color", "#fff", "important");
-      closeBtn.style.setProperty("border", "none", "important");
-      closeBtn.style.setProperty("font-size", "12px", "important");
-      closeBtn.style.setProperty("line-height", "1", "important");
-      closeBtn.style.setProperty("cursor", "pointer", "important");
-      closeBtn.style.setProperty("display", "flex", "important");
-      closeBtn.style.setProperty("align-items", "center", "important");
-      closeBtn.style.setProperty("justify-content", "center", "important");
-      closeBtn.style.setProperty("padding", "0", "important");
-      closeBtn.style.setProperty("z-index", "2147483648", "important");
-      closeBtn.style.setProperty("pointer-events", "auto", "important");
-      closeBtn.style.setProperty("box-shadow", "0 2px 6px rgba(0,0,0,0.3)", "important");
-
-      if (isMobile()) {
-        closeBtn.style.setProperty("top", "-8px", "important");
-        closeBtn.style.setProperty("right", "-8px", "important");
-      } else {
-        closeBtn.style.setProperty("top", "-8px", "important");
-        closeBtn.style.setProperty("left", "-8px", "important");
-      }
-
-      closeBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        setHidden(true);
-        widget.style.setProperty("display", "none", "important");
-        widget.style.setProperty("visibility", "hidden", "important");
-        widget.style.setProperty("opacity", "0", "important");
-        widget.style.setProperty("pointer-events", "none", "important");
-      });
-
-      widget.appendChild(closeBtn);
-    };
-
     const ensureWidget = () => {
       let widget = document.querySelector<HTMLElement>("[vw]");
 
@@ -247,20 +174,14 @@ function VLibrasLoader() {
       widget.className = "enabled";
       applyPositionStyles(widget);
 
-      if (isHidden()) return;
-
       if (!widget.querySelector("[vw-access-button]")) {
         widget.innerHTML = `<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>`;
       }
-
-      createCloseButton(widget);
     };
 
     ensureWidget();
 
     const initializeVLibras = () => {
-      if (isHidden()) return;
-
       ensureWidget();
 
       if (initialized) return;

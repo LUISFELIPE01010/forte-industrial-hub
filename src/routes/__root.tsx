@@ -140,6 +140,12 @@ function VLibrasLoader() {
     const widget = document.createElement("div");
     widget.setAttribute("vw", "");
     widget.className = "enabled";
+    // Force position; without this the container renders at its in-flow y
+    // (end of body) instead of pinned to the viewport.
+    widget.style.position = "fixed";
+    widget.style.bottom = "16px";
+    widget.style.left = "16px";
+    widget.style.zIndex = "9998";
     widget.innerHTML = `<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>`;
     document.body.appendChild(widget);
 

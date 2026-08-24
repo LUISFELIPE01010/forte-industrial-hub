@@ -133,8 +133,6 @@ function VLibrasLoader() {
   useEffect(() => {
     if (typeof document === "undefined" || typeof window === "undefined") return;
 
-    let initialized = false;
-
     // Reseta qualquer estado salvo pelo VLibras (ex.: fechado com X) para que
     // o widget sempre reapareça em cada carregamento do site.
     try {
@@ -148,101 +146,40 @@ function VLibrasLoader() {
       // ignore storage access errors
     }
 
-    const isMobile = () => window.innerWidth <= 768;
+    document.querySelector("[vw]")?.remove();
 
-    const applyPositionStyles = (widget: HTMLElement) => {
-      widget.style.setProperty("position", "fixed", "important");
-      widget.style.setProperty("display", "block", "important");
-      widget.style.setProperty("visibility", "visible", "important");
-      widget.style.setProperty("opacity", "1", "important");
-      widget.style.setProperty("pointer-events", "auto", "important");
-      widget.style.setProperty("z-index", "2147483647", "important");
+    const positionWidget = () => {
+      const host = document.getElementById("vlibras-access-wrapper");
+      const access = host?.shadowRoot?.getElementById("vlibras-access");
+      if (!(access instanceof HTMLElement)) return false;
 
-      if (isMobile()) {
-        // Mobile: canto inferior esquerdo
-        widget.style.setProperty("bottom", "16px", "important");
-        widget.style.setProperty("left", "16px", "important");
-        widget.style.setProperty("top", "auto", "important");
-        widget.style.setProperty("right", "auto", "important");
-        widget.style.setProperty("transform", "none", "important");
+      if (window.innerWidth <= 768) {
+        access.style.setProperty("top", "auto", "important");
+        access.style.setProperty("right", "auto", "important");
+        access.style.setProperty("bottom", "16px", "important");
+        access.style.setProperty("left", "16px", "important");
       } else {
-        // Desktop: centro direito
-        widget.style.setProperty("top", "50%", "important");
-        widget.style.setProperty("right", "16px", "important");
-        widget.style.setProperty("bottom", "auto", "important");
-        widget.style.setProperty("left", "auto", "important");
-        widget.style.setProperty("transform", "translateY(-50%)", "important");
+        access.style.setProperty("top", "calc(50vh - 20px)", "important");
+        access.style.setProperty("right", "16px", "important");
+        access.style.setProperty("bottom", "auto", "important");
+        access.style.setProperty("left", "auto", "important");
       }
+
+      return true;
     };
-
-    const ensureWidget = () => {
-      let widget = document.querySelector<HTMLElement>("[vw]");
-
-      if (!widget) {
-        widget = document.createElement("div");
-        widget.setAttribute("vw", "");
-        document.body.appendChild(widget);
-      }
-
-      widget.className = "enabled";
-      applyPositionStyles(widget);
-
-      if (!widget.querySelector("[vw-access-button]")) {
-        widget.innerHTML = `<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>`;
-      }
-    };
-
-    ensureWidget();
 
     const initializeVLibras = () => {
-      ensureWidget();
+      const vlibras = (window as typeof window & {
+        VLibras?: {
+          Widget: new (rootPath?: string, configUrl?: string, avatar?: string, position?: "l" | "r") => unknown;
+        };
+      }).VLibras;
 
-      if (initialized) return;
-
-      try {
-        const vlibras = (window as typeof window & {
-          VLibras?: {
-            Widget: new (
-              options: { rootPath: string; position: "BL" | "BR" | "TL" | "TR"; opacity: number } | string,
-            ) => unknown;
-          };
-        }).VLibras;
-
-        if (vlibras?.Widget) {
-          initialized = true;
-          const previousOnload = window.onload;
-
-          new vlibras.Widget({
-            rootPath: "https://vlibras.gov.br/app",
-            position: isMobile() ? "BL" : "BR",
-            opacity: 1,
-          });
-
-          const finishInitialization = () => {
-            const officialOnload = window.onload;
-
-            if (typeof officialOnload === "function" && officialOnload !== previousOnload) {
-              officialOnload.call(window, new Event("load"));
-
-              if (document.readyState === "complete") {
-                window.onload = previousOnload;
-              }
-            }
-
-            requestAnimationFrame(ensureWidget);
-          };
-
-          if (document.readyState === "complete") {
-            finishInitialization();
-          } else {
-            window.addEventListener("load", () => requestAnimationFrame(ensureWidget), {
-              once: true,
-            });
-          }
-        }
-      } catch (e) {
-        console.error("VLibras init failed", e);
+      if (vlibras?.Widget && !document.getElementById("vlibras-access-wrapper")) {
+        new vlibras.Widget("https://vlibras.gov.br/app", undefined, undefined, "r");
       }
+
+      requestAnimationFrame(positionWidget);
     };
 
     const existingScript = document.getElementById("vlibras-script") as HTMLScriptElement | null;
@@ -259,18 +196,14 @@ function VLibrasLoader() {
       document.body.appendChild(script);
     }
 
-    const observer = new MutationObserver(ensureWidget);
+    const observer = new MutationObserver(positionWidget);
     observer.observe(document.body, { childList: true, subtree: false });
 
-    window.addEventListener("click", ensureWidget, true);
-    window.addEventListener("popstate", ensureWidget);
-    window.addEventListener("resize", ensureWidget);
+    window.addEventListener("resize", positionWidget);
 
     return () => {
       observer.disconnect();
-      window.removeEventListener("click", ensureWidget, true);
-      window.removeEventListener("popstate", ensureWidget);
-      window.removeEventListener("resize", ensureWidget);
+      window.removeEventListener("resize", positionWidget);
     };
   }, []);
 
